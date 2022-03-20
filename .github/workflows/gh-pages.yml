@@ -43,7 +43,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/web/*"
-          tag: v1.0.${{ github.run.number }}
+          tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
 
