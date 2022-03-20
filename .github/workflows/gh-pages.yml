@@ -22,6 +22,7 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
+          flutter-version: "2.10.2"
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
@@ -36,6 +37,7 @@ jobs:
           BRANCH: gh-pages
           FOLDER: web
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 # For wider build and deployment options, run VM per build item
 
