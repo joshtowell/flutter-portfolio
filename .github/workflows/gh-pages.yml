@@ -44,7 +44,7 @@ jobs:
         with:
           artifacts: "build/web/*"
           tag: v1.0.${{ github.run.number }}
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
 
 # For wider build and deployment options, run VM per build item
