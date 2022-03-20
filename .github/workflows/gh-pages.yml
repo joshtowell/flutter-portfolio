@@ -38,6 +38,13 @@ jobs:
           FOLDER: web
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Create a release
+      - name: Create a web release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/web/*"
+          tag: v1.0.${{ github.run.number }}
+
 
 # For wider build and deployment options, run VM per build item
 
