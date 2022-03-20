@@ -28,6 +28,7 @@ jobs:
 
   build_web:
     name: Build and deploy flutter (web)
+    needs: [flutter_test]
     # VM type and version that runs this code
     runs-on: ubuntu-latest
     steps:
