@@ -45522,7 +45522,7 @@ return A.a0x(this.r,s.b.al(0,r.gu(r)),B.dE)}}
 A.uP.prototype={
 K(a,b){return this.e.$2(b,this.f)}}
 A.xO.prototype={
-K(a,b){return new A.pm(B.AF,"Flutter Demo",A.a2i(null,B.p6),null)}}
+K(a,b){return new A.pm(B.AF,"Joshua Towell Portfolio",A.a2i(null,B.p6),null)}}
 A.pz.prototype={
 aE(){return new A.ti(B.n)}}
 A.ti.prototype={
