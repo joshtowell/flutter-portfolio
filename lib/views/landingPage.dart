@@ -19,16 +19,9 @@ class LandingPage extends StatelessWidget {
               Text("Hi there user!"),
               SizedBox(height: 20.0,),
               TextButton(
-                child: Text("To Page 2"),
+                child: Text("To Projects"),
                 onPressed: () async {
-                  await Navigator.pushNamed(context, AppRoutes.pageTwo,);
-                },
-              ),
-              TextButton(
-                child: Text("To Page 3"),
-                onPressed: () async {
-                  final args = LoginArguments(username: "JohnDoe", password: "password",);
-                  await Navigator.pushNamed(context, AppRoutes.pageThree, arguments: args,);
+                  await Navigator.pushNamed(context, AppRoutes.projects,);
                 },
               ),
             ],

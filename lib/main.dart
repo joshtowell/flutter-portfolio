@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'controllers/appRoutes.dart';
-import 'objects/loginArguments.dart';
 import 'views/landingPage.dart';
-import 'views/pageThree.dart';
-import 'views/pageTwo.dart';
+import 'views/projectsPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,11 +17,8 @@ class MyApp extends StatelessWidget {
     switch (settings.name) {
       case AppRoutes.landing:
         return buildRoute(const LandingPage(), settings: settings,);
-      case AppRoutes.pageTwo:
-        return buildRoute(const PageTwo(), settings: settings,);
-      case AppRoutes.pageThree:
-        final LoginArguments args = settings.arguments as LoginArguments;
-        return buildRoute(PageThree(arguments: args,), settings: settings,);
+      case AppRoutes.projects:
+        return buildRoute(const ProjectsPage(), settings: settings,);
       default:
         return null;
     }

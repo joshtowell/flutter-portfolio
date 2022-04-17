@@ -1,15 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/objects/loginArguments.dart';
 
-class PageThree extends StatelessWidget {
-  final LoginArguments? arguments;
-
-  const PageThree({
-    this.arguments,
-    Key? key,
-  }) : super(key: key);
+class ProjectsPage extends StatelessWidget {
+  const ProjectsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +13,7 @@ class PageThree extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("This is page 3"),
-              SizedBox(height: 20.0,),
-              Text("Username: ${arguments?.username}"),
-              SizedBox(height: 20.0,),
-              Text("Password: ${arguments?.password}"),
+              Text("Welcome to my projects!"),
               SizedBox(height: 20.0,),
               TextButton(
                 child: Text("Back to Landing"),
