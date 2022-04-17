@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'AppRoutes.dart';
+import 'loginArguments.dart';
 import 'views/landingPage.dart';
 import 'views/pageThree.dart';
 import 'views/pageTwo.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       case AppRoutes.pageTwo:
         return buildRoute(const PageTwo(), settings: settings,);
       case AppRoutes.pageThree:
-        return buildRoute(const PageThree(), settings: settings,);
+        final LoginArguments args = settings.arguments as LoginArguments;
+        return buildRoute(PageThree(arguments: args,), settings: settings,);
       default:
         return null;
     }
