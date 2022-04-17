@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../AppRoutes.dart';
-import '../loginArguments.dart';
+import '../controllers/appRoutes.dart';
+import '../objects/loginArguments.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);

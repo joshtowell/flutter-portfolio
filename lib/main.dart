@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'AppRoutes.dart';
-import 'loginArguments.dart';
+import 'controllers/appRoutes.dart';
+import 'objects/loginArguments.dart';
 import 'views/landingPage.dart';
 import 'views/pageThree.dart';
 import 'views/pageTwo.dart';
