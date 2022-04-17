@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/constants.dart';
 
 import 'controllers/appRoutes.dart';
 import 'views/landingPage.dart';
@@ -37,7 +38,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Joshua Towell Portfolio',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        // primaryColor: primaryColourDark,
+        // backgroundColor: backgroundColourDark,
+        /*colorScheme: ColorScheme.fromSwatch().copyWith(
+            primary: primaryColourDark,
+            secondary: secondaryColourDark,
+            background: backgroundColourDark,
+        ),*/
       ),
       initialRoute: getInitialRoute(),
       onGenerateRoute: (route) => getRoute(route),
