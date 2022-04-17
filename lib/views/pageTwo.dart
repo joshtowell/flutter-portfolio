@@ -10,7 +10,19 @@ class PageTwo extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Text("This is page 2"),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text("This is page 2"),
+              SizedBox(height: 20.0,),
+              TextButton(
+                child: Text("Back to Landing"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

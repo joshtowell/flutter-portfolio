@@ -24,6 +24,13 @@ class PageThree extends StatelessWidget {
               Text("Username: ${arguments?.username}"),
               SizedBox(height: 20.0,),
               Text("Password: ${arguments?.password}"),
+              SizedBox(height: 20.0,),
+              TextButton(
+                child: Text("Back to Landing"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ],
           ),
         ),
