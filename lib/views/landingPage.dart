@@ -5,8 +5,15 @@ import 'package:flutter/material.dart';
 import '../controllers/appRoutes.dart';
 import '../objects/loginArguments.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
+
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  bool isLightMode = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +30,10 @@ class LandingPage extends StatelessWidget {
                 onPressed: () async {
                   await Navigator.pushNamed(context, AppRoutes.projects,);
                 },
+              ),
+              SizedBox(height: 20.0,),
+              GestureDetector(
+                child: Icon(Icons.light_mode),
               ),
             ],
           ),
