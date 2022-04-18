@@ -52,9 +52,33 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
+  Widget hook() {
+    return Padding(
+      padding: const EdgeInsets.all(defaultPadding,),
+      child: Text("Eye-catching visuals", style: headline1(context),),
+    );
+  }
+
   Widget bio() {
     return WideCard(
       child: Text("My name is Joshua Towell and I am making this portfolio look awesome!", style: subtitle1(context),),
+    );
+  }
+
+  Widget projects() {
+    return WideCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Check out these projects...", style: headline2(context),),
+          TextButton(
+            child: Text("See projects"),
+            onPressed: () async {
+              await Navigator.pushNamed(context, AppRoutes.projects,);
+            },
+          ),
+        ],
+      ),
     );
   }
 
@@ -75,20 +99,72 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
+  Widget experience() {
+    return WideCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Experience", style: Theme.of(context).textTheme.headline2,),
+          shoebox,
+          Text("Opportunity C", style: subtitle1(context),),
+          shoebox,
+          Text("Opportunity B", style: subtitle1(context),),
+          shoebox,
+          Text("Opportunity A", style: subtitle1(context),),
+        ],
+      ),
+    );
+  }
+
+  Widget skills() {
+    return WideCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Skills", style: Theme.of(context).textTheme.headline2,),
+          shoebox,
+          Text("Juggling balls", style: subtitle1(context),),
+          shoebox,
+          Text("Juggling cubes", style: subtitle1(context),),
+          shoebox,
+          Text("Juggling dodecahedrons", style: subtitle1(context),),
+        ],
+      ),
+    );
+  }
+
+  Widget contact() {
+    return WideCard(
+      child: Text("Contact me here!", style: headline2(context),),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
-          child: Column(
-            children: [
-              ChangeThemeWidget(),
-              shoebox,
-              bio(),
-              shoebox,
-              qualifications(),
-            ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
+            child: Column(
+              children: [
+                ChangeThemeWidget(),
+                shoebox,
+                hook(),
+                shoebox,
+                bio(),
+                shoebox,
+                projects(),
+                shoebox,
+                qualifications(),
+                shoebox,
+                experience(),
+                shoebox,
+                skills(),
+                shoebox,
+                contact(),
+              ],
+            ),
           ),
         ),
       ),
