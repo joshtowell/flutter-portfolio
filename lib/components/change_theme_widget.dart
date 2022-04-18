@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../controllers/appThemes.dart';
+import '../controllers/app_themes.dart';
 
 class ChangeThemeWidget extends StatelessWidget {
   const ChangeThemeWidget({Key? key}) : super(key: key);

@@ -18,7 +18,6 @@ class Responsive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size _screenSize = MediaQuery.of(context).size;
     if (isDesktop(context)) {
       return desktop;
     } else if (isTablet(context)) {

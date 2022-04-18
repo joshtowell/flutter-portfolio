@@ -1,10 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/components/changeThemeWidget.dart';
+import 'package:flutter_portfolio/components/change_theme_widget.dart';
 
-import '../controllers/appRoutes.dart';
-import '../objects/loginArguments.dart';
+import '../controllers/app_routes.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);

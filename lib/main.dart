@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/constants.dart';
 import 'package:provider/provider.dart';
 
-import 'controllers/appRoutes.dart';
-import 'controllers/appThemes.dart';
-import 'views/landingPage.dart';
-import 'views/projectsPage.dart';
+import 'controllers/app_routes.dart';
+import 'controllers/app_themes.dart';
+import 'views/landing_page.dart';
+import 'views/projects_page.dart';
 
 void main() {
   runApp(const MyApp());
