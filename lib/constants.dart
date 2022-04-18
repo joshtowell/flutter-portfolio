@@ -4,6 +4,9 @@ import 'controllers/app_routes.dart';
 
 /// # COLOURS
 
+const Color whiteColour = Color(0xFFFFFFFF);
+const Color blackColour = Color(0xFF000000);
+
 /// Dark colours
 const Color primaryColourDark = Color(0xFFF5F5F5);
 const Color secondaryColourDark = Color(0xFF5050D4);
@@ -24,3 +27,6 @@ TextStyle? subtitle1 (BuildContext context) => Theme.of(context).textTheme.subti
 TextStyle? subtitle2 (BuildContext context) => Theme.of(context).textTheme.subtitle2;
 TextStyle? bodyText1 (BuildContext context) => Theme.of(context).textTheme.bodyText1;
 TextStyle? button (context) => Theme.of(context).textTheme.button;
+
+/// # MINI WIDGETS
+const Widget shoebox = SizedBox(height: defaultPadding,);
