@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/components/change_theme_widget.dart';
+import 'package:flutter_portfolio/constants.dart';
 
 import '../controllers/app_routes.dart';
 
@@ -19,15 +20,15 @@ class _LandingPageState extends State<LandingPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Headline 1", style: Theme.of(context).textTheme.headline1,),
+        Text("Headline 1", style: headline1(context),),
         SizedBox(height: 20.0,),
-        Text("Headline 2", style: Theme.of(context).textTheme.headline2,),
+        Text("Headline 2", style: headline2(context),),
         SizedBox(height: 20.0,),
-        Text("Subtitle 1", style: Theme.of(context).textTheme.subtitle1,),
+        Text("Subtitle 1", style: subtitle1(context),),
         SizedBox(height: 20.0,),
-        Text("Subtitle 2", style: Theme.of(context).textTheme.subtitle2,),
+        Text("Subtitle 2", style: subtitle2(context),),
         SizedBox(height: 20.0,),
-        Text("Body text 1", style: Theme.of(context).textTheme.bodyText1,),
+        Text("Body text 1", style: bodyText1(context),),
       ],
     );
   }
@@ -40,7 +41,7 @@ class _LandingPageState extends State<LandingPage> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("Hi there user!", style: Theme.of(context).textTheme.subtitle1,),
+              Text("Hi there user!", style: subtitle1(context),),
               SizedBox(height: 20.0,),
               TextButton(
                 child: Text("See projects"),
@@ -50,6 +51,8 @@ class _LandingPageState extends State<LandingPage> {
               ),
               SizedBox(height: 20.0,),
               ChangeThemeWidget(),
+              SizedBox(height: 20.0,),
+              fontsTest(),
             ],
           ),
         ),

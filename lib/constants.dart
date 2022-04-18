@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'controllers/app_routes.dart';
+
 /// # COLOURS
 
 /// Dark colours
@@ -14,3 +16,11 @@ const Color backgroundColourLight = Color(0xFFF5F5F5);
 
 /// # DIMENSIONS
 const double defaultPadding = 16.0;
+
+/// # STYLE SHORTCUTS
+TextStyle? headline1 (BuildContext context) => Theme.of(context).textTheme.headline1;
+TextStyle? headline2 (BuildContext context) => Theme.of(context).textTheme.headline2;
+TextStyle? subtitle1 (BuildContext context) => Theme.of(context).textTheme.subtitle1;
+TextStyle? subtitle2 (BuildContext context) => Theme.of(context).textTheme.subtitle2;
+TextStyle? bodyText1 (BuildContext context) => Theme.of(context).textTheme.bodyText1;
+TextStyle? button (context) => Theme.of(context).textTheme.button;
