@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.system;
@@ -12,9 +13,40 @@ class ThemeProvider extends ChangeNotifier {
 }
 
 class AppThemes {
-  // ignore: prefer_const_constructors
+
+  /// FontWeight.normal (w400)
+  /// FontWeight.normal (w700)
   static final TextTheme textTheme = TextTheme(
-    // headline1: TextStyle(),
+    headline1: GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+        fontSize: 68.0,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    headline2: GoogleFonts.sora(
+      textStyle: const TextStyle(
+        fontSize: 36.0,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    subtitle1: GoogleFonts.sora(
+      textStyle: const TextStyle(
+        fontSize: 24.0,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    subtitle2: GoogleFonts.sora(
+      textStyle: const TextStyle(
+        fontSize: 20.0,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    bodyText1: GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+        fontSize: 16.0,
+        fontWeight: FontWeight.normal,
+      ),
+    ),
   );
 
   static final ThemeData darkTheme = ThemeData(
@@ -25,7 +57,9 @@ class AppThemes {
     ),
     iconTheme: const IconThemeData(color: primaryColourDark,),
     textTheme: textTheme.apply(
-      bodyColor: secondaryColourDark,
+      /// BodyColour = Headlines
+      bodyColor: primaryColourDark,
+      /// DisplayColour = Subtitles, BodyText
       displayColor: primaryColourDark,
     ),
   );
@@ -38,7 +72,9 @@ class AppThemes {
     ),
     iconTheme: const IconThemeData(color: primaryColourLight,),
     textTheme: textTheme.apply(
+      /// BodyColour = Headlines
       bodyColor: primaryColourLight,
+      /// DisplayColour = Subtitles, BodyText
       displayColor: primaryColourLight,
     ),
   );

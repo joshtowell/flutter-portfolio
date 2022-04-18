@@ -14,11 +14,3 @@ const Color backgroundColourLight = Color(0xFFF5F5F5);
 
 /// # DIMENSIONS
 const double defaultPadding = 16.0;
-
-/// # FONTS
-/// Monterrat
-/// Titillium Web
-/// Sora
-/// Inter
-/// Oxygen
-/// Roboto
