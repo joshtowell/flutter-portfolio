@@ -47,6 +47,12 @@ class AppThemes {
         fontWeight: FontWeight.normal,
       ),
     ),
+    button: GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+        fontSize: 16.0,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
   );
 
   static final ThemeData darkTheme = ThemeData(

@@ -9,7 +9,7 @@ const Color backgroundColourDark = Color(0xFF202022);
 
 /// Light colours
 const Color primaryColourLight = Color(0xFF202022);
-const Color secondaryColourLight = Color(0xFF363699);
+const Color secondaryColourLight = Color(0xFF2a2abf);
 const Color backgroundColourLight = Color(0xFFF5F5F5);
 
 /// # DIMENSIONS

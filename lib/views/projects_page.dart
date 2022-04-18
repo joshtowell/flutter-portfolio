@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../controllers/app_routes.dart';
+
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage({Key? key}) : super(key: key);
 
@@ -13,12 +15,12 @@ class ProjectsPage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("Welcome to my projects!"),
+              Text("Welcome to my projects!", style: Theme.of(context).textTheme.subtitle1,),
               SizedBox(height: 20.0,),
               TextButton(
                 child: Text("Back to Landing"),
-                onPressed: () {
-                  Navigator.pop(context);
+                onPressed: () async {
+                  await Navigator.pushNamedAndRemoveUntil(context, AppRoutes.landing, (r) => false,);
                 },
               ),
             ],
