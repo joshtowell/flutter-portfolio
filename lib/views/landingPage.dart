@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/components/changeThemeWidget.dart';
 
 import '../controllers/appRoutes.dart';
 import '../objects/loginArguments.dart';
@@ -32,9 +33,7 @@ class _LandingPageState extends State<LandingPage> {
                 },
               ),
               SizedBox(height: 20.0,),
-              GestureDetector(
-                child: Icon(Icons.light_mode),
-              ),
+              ChangeThemeWidget(),
             ],
           ),
         ),

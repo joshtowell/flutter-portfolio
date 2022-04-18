@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/constants.dart';
+import 'package:provider/provider.dart';
 
 import 'controllers/appRoutes.dart';
 import 'controllers/appThemes.dart';
@@ -35,23 +36,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Joshua Towell Portfolio',
-      themeMode: ThemeMode.system,
-      theme: AppThemes.lightTheme,
-      darkTheme: AppThemes.darkTheme,
-      /*theme: ThemeData(
-        // primaryColor: primaryColourDark,
-        // backgroundColor: backgroundColourDark,
-        *//*colorScheme: ColorScheme.fromSwatch().copyWith(
-            primary: primaryColourDark,
-            secondary: secondaryColourDark,
-            background: backgroundColourDark,
-        ),*//*
-      ),*/
-      initialRoute: getInitialRoute(),
-      onGenerateRoute: (route) => getRoute(route),
+    return ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      builder: (context, _) {
+        final themeProvider = Provider.of<ThemeProvider>(context);
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Joshua Towell Portfolio',
+          themeMode: themeProvider.themeMode,
+          theme: AppThemes.lightTheme,
+          darkTheme: AppThemes.darkTheme,
+          initialRoute: getInitialRoute(),
+          onGenerateRoute: (route) => getRoute(route),
+        );
+      }
     );
   }
 }
