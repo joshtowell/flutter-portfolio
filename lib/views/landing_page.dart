@@ -227,7 +227,7 @@ class _LandingPageState extends State<LandingPage> {
                         Expanded(
                           child: Padding(
                             /// Temporary alignment adjustments until SVGs are ready
-                            padding: const EdgeInsets.only(bottom: 24.0,),
+                            padding: const EdgeInsets.only(bottom: 32.0,),
                             child: Image.asset(workPersonalController[0] ? "assets/images/work_art.png" : "assets/images/personal_art.png"),
                           ),
                           // TODO: fix SVG opacity not obeying
