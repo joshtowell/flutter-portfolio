@@ -56,32 +56,32 @@ class AppThemes {
   );
 
   static final ThemeData darkTheme = ThemeData(
-    scaffoldBackgroundColor: backgroundColourDark,
+    scaffoldBackgroundColor: sixtyColourDark,
     colorScheme: const ColorScheme.dark().copyWith(
-      primary: secondaryColourDark,
-      secondary: secondaryColourDark,
+      primary: tenColourDark,
+      secondary: tenColourDark,
     ),
-    iconTheme: const IconThemeData(color: primaryColourDark,),
+    iconTheme: const IconThemeData(color: thirtyColourDark,),
     textTheme: textTheme.apply(
       /// BodyColour = Headlines
-      bodyColor: primaryColourDark,
+      bodyColor: thirtyColourDark,
       /// DisplayColour = Subtitles, BodyText
-      displayColor: primaryColourDark,
+      displayColor: thirtyColourDark,
     ),
   );
 
   static final ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: backgroundColourLight,
+    scaffoldBackgroundColor: sixtyColourLight,
     colorScheme: const ColorScheme.light().copyWith(
-      primary: secondaryColourLight,
-      secondary: secondaryColourLight,
+      primary: tenColourLight,
+      secondary: tenColourLight,
     ),
-    iconTheme: const IconThemeData(color: primaryColourLight,),
+    iconTheme: const IconThemeData(color: thirtyColourLight,),
     textTheme: textTheme.apply(
       /// BodyColour = Headlines
-      bodyColor: primaryColourLight,
+      bodyColor: thirtyColourLight,
       /// DisplayColour = Subtitles, BodyText
-      displayColor: primaryColourLight,
+      displayColor: thirtyColourLight,
     ),
   );
 }

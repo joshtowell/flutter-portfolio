@@ -7,15 +7,11 @@ import 'controllers/app_routes.dart';
 const Color whiteColour = Color(0xFFFFFFFF);
 const Color blackColour = Color(0xFF000000);
 
-/// Dark colours
-const Color primaryColourDark = Color(0xFFF5F5F5);
-const Color secondaryColourDark = Color(0xFF5050D4);
-const Color backgroundColourDark = Color(0xFF202022);
+const Color purpleHighlightColour = Color(0xFF4444BB);
+const Color pinkHighlightColour = Color(0xFFDF56DA);
 
-/// Light colours
-const Color primaryColourLight = Color(0xFF202022);
-const Color secondaryColourLight = Color(0xFF2a2abf);
-const Color backgroundColourLight = Color(0xFFF5F5F5);
+const LinearGradient purpleHighlightGradient = LinearGradient(colors: [pinkHighlightColour, purpleHighlightColour,],);
+const LinearGradient greyHighlightGradient = LinearGradient(colors: [backgroundColour0Light, backgroundColour0Dark,],);
 
 /// For dark mode reduce saturation of light mode colour by -20%
 
@@ -24,7 +20,29 @@ const Color backgroundColourLight = Color(0xFFF5F5F5);
 /// Traditionally 3 layers in total is enough
 /// Use hints of primary colour in hierarchy colours
 
+/// Dark colours
+const Color backgroundColour0Dark = Color(0xFF202022);
+const Color backgroundColour1Dark = Color(0xFF333336);
+const Color backgroundColour2Dark = Color(0xFF49494E);
+const Color backgroundColour3Dark = Color(0xFF5C5C63);
+
+const Color sixtyColourDark = backgroundColour0Dark;
+const Color thirtyColourDark = backgroundColour0Light;
+const Color tenColourDark = purpleHighlightColour;
+
+/// Light colours
+const Color backgroundColour0Light = Color(0xFFF5F5F5);
+const Color backgroundColour1Light = Color(0xFFE8E8F3);
+const Color backgroundColour2Light = Color(0xFFDDDDEF);
+const Color backgroundColour3Light = Color(0xFFB0B0E0);
+
+const Color sixtyColourLight = backgroundColour0Light;
+const Color thirtyColourLight = backgroundColour0Dark;
+const Color tenColourLight = purpleHighlightColour;
+
+
 /// # DIMENSIONS
+
 const double defaultPadding = 16.0;
 
 /// Icon sizes recommended:
