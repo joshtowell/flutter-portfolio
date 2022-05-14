@@ -307,29 +307,6 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Widget personalViewMobileBuild() {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
-        child: Column(
-          children: [
-            /// Padding from behind navbar
-            SizedBox(height: 64.0,),
-            shoebox,
-            contact(),shoebox,
-            contact(),shoebox,
-            contact(),shoebox,
-            contact(),shoebox,
-            contact(),shoebox,
-            contact(),shoebox,
-            contact(),shoebox,
-            contact(),
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget desktopBuild() {
     return SingleChildScrollView(
       child: Padding(
