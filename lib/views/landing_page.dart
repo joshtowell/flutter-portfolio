@@ -128,23 +128,30 @@ class _LandingPageState extends State<LandingPage> {
   Widget workCard() {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return WideCard(
+      padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ElevatingButton(
-            hasShadow: false,
-            padding: defaultPadding * 0.5,
-            colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
-            child: Image.asset("assets/images/pr_logo_small.png", width: 40.0, height: 40.0,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ElevatingButton(
+                hasShadow: false,
+                padding: defaultPadding * 0.5,
+                colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
+                child: Image.asset("assets/images/pr_logo_small.png", width: 40.0, height: 40.0,),
+              ),
+              Icon(Icons.chevron_right_rounded, size: 40.0,)
+            ],
           ),
           shoebox,
-          Text("Probably Rational Ltd.", style: Theme.of(context).textTheme.headline1,),
+          Text("Probably Rational Ltd.", style: headline1(context),),
+          SizedBox(height: defaultPadding * 0.5,),
+          Text("Software Engineer • 3 years", style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
           shoebox,
-          Text("Juggling balls", style: subtitle1(context),),
-          shoebox,
-          Text("Juggling cubes", style: subtitle1(context),),
-          shoebox,
-          Text("Juggling dodecahedrons", style: subtitle1(context),),
+          Text("Build and develop efficient applications based on specified requirements set by the client.", style: bodyText1(context),),
+          SizedBox(height: defaultPadding * 2,),
+          Image.asset("assets/images/ryb_mock_cropped.png"),
         ],
       ),
     );
@@ -179,13 +186,12 @@ class _LandingPageState extends State<LandingPage> {
   Widget workViewCards() {
     return Column(
       children: [
-        workCard(),shoebox,
-        workCard(),shoebox,
-        workCard(),shoebox,
-        workCard(),shoebox,
-        workCard(),shoebox,
-        workCard(),shoebox,
-        workCard(),shoebox,
+        workCard(),
+        SizedBox(height: defaultPadding * 2,),
+        workCard(),
+        SizedBox(height: defaultPadding * 2,),
+        workCard(),
+        SizedBox(height: defaultPadding * 2,),
         fontsTest(),
       ],
     );
@@ -276,7 +282,7 @@ class _LandingPageState extends State<LandingPage> {
                               ? "I am currently a Cyber Security Masters’ student, looking for a graduate job in the Cyber Security industry."
                               : "An enthusiastic, independent and confident learner. Looking to develop my passion for UI/UX into an exciting freelance career.",
                           textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: bodyText1(context),
                         ),
                       ),
                     ],

@@ -6,9 +6,11 @@ import '../controllers/app_themes.dart';
 
 class WideCard extends StatelessWidget {
   final Widget child;
+  final EdgeInsetsGeometry? padding;
 
   const WideCard({
     required this.child,
+    this.padding,
     Key? key,
   }) : super(key: key);
 
@@ -19,7 +21,7 @@ class WideCard extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            padding: const EdgeInsets.all(defaultPadding,),
+            padding: padding ?? EdgeInsets.all(defaultPadding,),
             decoration: BoxDecoration(
               color: themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light,
               borderRadius: BorderRadius.circular(20.0),

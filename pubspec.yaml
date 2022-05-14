@@ -69,6 +69,7 @@ flutter:
     - assets/images/pr_logo_small.png
     - assets/images/personal_art.png
     - assets/images/work_art.png
+    - assets/images/ryb_mock_cropped.png
     - assets/svgs/personal_art.svg
     - assets/svgs/work_art.svg
 

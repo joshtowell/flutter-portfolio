@@ -54,6 +54,7 @@ TextStyle? headline2 (BuildContext context) => Theme.of(context).textTheme.headl
 TextStyle? subtitle1 (BuildContext context) => Theme.of(context).textTheme.subtitle1;
 TextStyle? subtitle2 (BuildContext context) => Theme.of(context).textTheme.subtitle2;
 TextStyle? bodyText1 (BuildContext context) => Theme.of(context).textTheme.bodyText1;
+TextStyle? bodyText2 (BuildContext context) => Theme.of(context).textTheme.bodyText2;
 TextStyle? button (context) => Theme.of(context).textTheme.button;
 
 /// Button shadows should use same colour as button
