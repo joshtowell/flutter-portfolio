@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/components/change_theme_widget.dart';
 import 'package:flutter_portfolio/components/wide_card.dart';
 import 'package:flutter_portfolio/constants.dart';
+import 'package:flutter_portfolio/controllers/responsive.dart';
 
 import '../controllers/app_routes.dart';
 
@@ -139,33 +140,56 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
+  Widget mobileBuild() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
+        child: Column(
+          children: [
+            ChangeThemeWidget(),
+            shoebox,
+            contact(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget desktopBuild() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
+        child: Column(
+          children: [
+            ChangeThemeWidget(),
+            shoebox,
+            hook(),
+            shoebox,
+            bio(),
+            shoebox,
+            projects(),
+            shoebox,
+            qualifications(),
+            shoebox,
+            experience(),
+            shoebox,
+            skills(),
+            shoebox,
+            contact(),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
-            child: Column(
-              children: [
-                ChangeThemeWidget(),
-                shoebox,
-                hook(),
-                shoebox,
-                bio(),
-                shoebox,
-                projects(),
-                shoebox,
-                qualifications(),
-                shoebox,
-                experience(),
-                shoebox,
-                skills(),
-                shoebox,
-                contact(),
-              ],
-            ),
-          ),
+        child: Responsive(
+          mobile: mobileBuild(),
+          tablet: mobileBuild(),
+          desktop: desktopBuild(),
         ),
       ),
     );
