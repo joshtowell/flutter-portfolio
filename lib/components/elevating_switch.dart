@@ -34,39 +34,41 @@ class _ElevatingSwitchState extends State<ElevatingSwitch> {
     switchController = widget.initialState;
   }
 
+  Widget highlightBox({required Widget child, required bool isSelected, required Function() onChildTap}) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return GestureDetector(
+      child: Container(
+        decoration: BoxDecoration(
+          color: isSelected ? (themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour1Light) : null,
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        padding: const EdgeInsets.all(defaultPadding * 0.5,),
+        child: child,
+      ),
+      onTap: onChildTap,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
     return ElevatingButton(
       padding: defaultPadding * 0.5,
       child: Row(
         children: [
-          GestureDetector(
-            child: Container(
-              decoration: BoxDecoration(
-                color: switchController[0] ? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light) : null,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              padding: const EdgeInsets.all(defaultPadding * 0.5,),
-              child: widget.firstChild,
-            ),
-            onTap: () {
+          highlightBox(
+            child: widget.firstChild,
+            isSelected: switchController[0],
+            onChildTap:  () {
               switchController[0] = true;
               switchController[1] = false;
               setState(widget.firstAction);
             },
           ),
           const SizedBox(width: defaultPadding * 0.5,),
-          GestureDetector(
-            child: Container(
-              decoration: BoxDecoration(
-                color: switchController[1] ? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light) : null,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              padding: const EdgeInsets.all(defaultPadding * 0.5,),
-              child: widget.secondChild,
-            ),
-            onTap: () {
+          highlightBox(
+            child: widget.secondChild,
+            isSelected: switchController[1],
+            onChildTap:  () {
               switchController[0] = false;
               switchController[1] = true;
               setState(widget.secondAction);

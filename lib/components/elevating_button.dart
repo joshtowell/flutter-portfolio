@@ -24,7 +24,7 @@ class ElevatingButton extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(padding ?? defaultPadding,),
       decoration: BoxDecoration(
-        color: colour ?? (themeProvider.isDarkMode ? backgroundColour0Dark : backgroundColour0Light),
+        color: colour ?? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour0Light),
         borderRadius: BorderRadius.circular(20.0),
         boxShadow: hasShadow ? [
           BoxShadow(
