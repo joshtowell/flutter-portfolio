@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/components/change_theme_widget.dart';
 import 'package:flutter_portfolio/components/wide_card.dart';
 import 'package:flutter_portfolio/constants.dart';
 import 'package:flutter_portfolio/controllers/responsive.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../components/elevating_button.dart';
@@ -174,7 +176,38 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Widget workViewMobileBuild() {
+  Widget workViewCards() {
+    return Column(
+      children: [
+        workCard(),shoebox,
+        workCard(),shoebox,
+        workCard(),shoebox,
+        workCard(),shoebox,
+        workCard(),shoebox,
+        workCard(),shoebox,
+        workCard(),shoebox,
+        fontsTest(),
+      ],
+    );
+  }
+
+  Widget personalViewCards() {
+    return Column(
+      children: [
+        contact(),shoebox,
+        contact(),shoebox,
+        contact(),shoebox,
+        contact(),shoebox,
+        contact(),shoebox,
+        contact(),shoebox,
+        contact(),shoebox,
+        contact(),
+      ],
+    );
+  }
+
+  Widget mobileBuild() {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
@@ -188,7 +221,31 @@ class _LandingPageState extends State<LandingPage> {
               height: screenSize.height * 0.8,
               child: Stack(
                 children: [
-                  // TODO: Top art goes here!
+                  Center(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            /// Temporary alignment adjustments until SVGs are ready
+                            padding: const EdgeInsets.only(bottom: 24.0,),
+                            child: Image.asset(workPersonalController[0] ? "assets/images/work_art.png" : "assets/images/personal_art.png"),
+                          ),
+                          // TODO: fix SVG opacity not obeying
+                          /*ShaderMask(
+                            shaderCallback: (bounds) {
+                              return RadialGradient(
+                                center: Alignment.center,
+                                radius: 1,
+                                colors: const [pinkHighlightColour, Color(0xFF5050D4),],
+                                tileMode: TileMode.mirror,
+                              ).createShader(bounds);
+                            },
+                            child: SvgPicture.asset(workPersonalController[0] ? "assets/svgs/work_art.svg" : "assets/svgs/personal_art.svg"),
+                          ),*/
+                        ),
+                      ],
+                    ),
+                  ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -198,13 +255,30 @@ class _LandingPageState extends State<LandingPage> {
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.person_pin_circle_rounded),
+                          Icon(Icons.person_pin_circle_rounded, size: 16.0, color: themeProvider.isDarkMode ? backgroundColour3Dark : backgroundColour3Light,),
                           SizedBox(width: defaultPadding * 0.5,),
-                          Text("Swansea, Wales", textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodyText2,),
+                          Text(
+                            "Swansea, Wales",
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                              color: workPersonalController[0]
+                                  ? (themeProvider.isDarkMode ? backgroundColour3Dark : backgroundColour3Light)
+                                  : (themeProvider.isDarkMode ? pinkHighlightColour : purpleHighlightColour),
+                            ),
+                          ),
                         ],
                       ),
                       shoebox,
-                      Text("I am currently a Cyber Security Masters’ student, looking for a graduate job in the security industry.", textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodyText1,),
+                      SizedBox(
+                        height: screenSize.width * 0.25,
+                        child: Text(
+                          workPersonalController[0]
+                              ? "I am currently a Cyber Security Masters’ student, looking for a graduate job in the Cyber Security industry."
+                              : "An enthusiastic, independent and confident learner. Looking to develop my passion for UI/UX into an exciting freelance career.",
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.bodyText1,
+                        ),
+                      ),
                     ],
                   ),
                   Align(
@@ -220,14 +294,7 @@ class _LandingPageState extends State<LandingPage> {
             SizedBox(height: defaultPadding * 4,),
 
             /// Start of second view
-            workCard(),shoebox,
-            workCard(),shoebox,
-            workCard(),shoebox,
-            workCard(),shoebox,
-            workCard(),shoebox,
-            workCard(),shoebox,
-            workCard(),shoebox,
-            fontsTest(),
+            workPersonalController[0] ? workViewCards() : personalViewCards(),
           ],
         ),
       ),
@@ -292,8 +359,8 @@ class _LandingPageState extends State<LandingPage> {
         child: Stack(
           children: [
             Responsive(
-              mobile: workPersonalController[0] ? workViewMobileBuild() : personalViewMobileBuild(),
-              tablet:  workPersonalController[0] ? workViewMobileBuild() : personalViewMobileBuild(),
+              mobile: mobileBuild(),
+              tablet:  mobileBuild(),
               desktop: desktopBuild(),
             ),
             navbar(),

@@ -39,6 +39,9 @@ dependencies:
   # State management (see https://www.youtube.com/watch?v=HSAa9yi0OMA)
   provider: ^6.0.2
 
+  # Allow SVGs to be displayed
+  flutter_svg: ^1.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,6 +67,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/pr_logo_small.png
+    - assets/images/personal_art.png
+    - assets/images/work_art.png
+    - assets/svgs/personal_art.svg
+    - assets/svgs/work_art.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -9,7 +9,7 @@ const Color blackColour = Color(0xFF000000);
 const Color purpleHighlightColour = Color(0xFF4444BB);
 const Color pinkHighlightColour = Color(0xFFDF56DA);
 
-const LinearGradient purpleHighlightGradient = LinearGradient(colors: [pinkHighlightColour, purpleHighlightColour,],);
+const LinearGradient purpleHighlightGradient = LinearGradient(colors: [pinkHighlightColour, Color(0xFF5050D4),],);
 const LinearGradient greyHighlightGradient = LinearGradient(colors: [backgroundColour0Light, backgroundColour0Dark,],);
 
 /// For dark mode reduce saturation of light mode colour by -20%
