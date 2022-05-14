@@ -7,6 +7,7 @@ import 'package:flutter_portfolio/constants.dart';
 import 'package:flutter_portfolio/controllers/responsive.dart';
 import 'package:provider/provider.dart';
 
+import '../components/elevating_button.dart';
 import '../controllers/app_routes.dart';
 import '../controllers/app_themes.dart';
 
@@ -143,7 +144,7 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Widget elevatedButton({Widget? child, double? padding,}) {
+  /*Widget elevatedButton({Widget? child, double? padding,}) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Container(
       padding: EdgeInsets.all(padding ?? defaultPadding,),
@@ -160,11 +161,11 @@ class _LandingPageState extends State<LandingPage> {
       ),
       child: child ?? Container(),
     );
-  }
+  }*/
 
   Widget elevatedSwitch() {
     final themeProvider = Provider.of<ThemeProvider>(context);
-    return elevatedButton(
+    return ElevatingButton(
       padding: defaultPadding * 0.5,
       child: Row(
         children: [
@@ -270,9 +271,9 @@ class _LandingPageState extends State<LandingPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  elevatedButton(child: ChangeThemeWidget()),
+                  ElevatingButton(child: ChangeThemeWidget()),
                   elevatedSwitch(),
-                  elevatedButton(child: Icon(Icons.menu_rounded)),
+                  ElevatingButton(child: Icon(Icons.menu_rounded)),
                 ],
               ),
             ),
