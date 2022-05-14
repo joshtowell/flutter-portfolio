@@ -5,11 +5,10 @@ import 'package:flutter_portfolio/components/change_theme_widget.dart';
 import 'package:flutter_portfolio/components/wide_card.dart';
 import 'package:flutter_portfolio/constants.dart';
 import 'package:flutter_portfolio/controllers/responsive.dart';
-import 'package:provider/provider.dart';
 
 import '../components/elevating_button.dart';
+import '../components/elevating_swtich.dart';
 import '../controllers/app_routes.dart';
-import '../controllers/app_themes.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -20,7 +19,7 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   bool isLightMode = false;
-  Map<String, bool> workPersonalController = {"work": true, "personal": false,};
+  List <bool> workPersonalController = [true, false,];
 
   Widget fontsTest() {
     return Column(
@@ -163,7 +162,7 @@ class _LandingPageState extends State<LandingPage> {
     );
   }*/
 
-  Widget elevatedSwitch() {
+ /* Widget elevatedSwitch() {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return ElevatingButton(
       padding: defaultPadding * 0.5,
@@ -172,7 +171,7 @@ class _LandingPageState extends State<LandingPage> {
           GestureDetector(
             child: Container(
               decoration: BoxDecoration(
-                color: workPersonalController!["work"]! ? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light) : null,
+                color: workPersonalController["work"]! ? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light) : null,
                 borderRadius: BorderRadius.circular(12.0),
               ),
               padding: EdgeInsets.all(defaultPadding * 0.5,),
@@ -188,7 +187,7 @@ class _LandingPageState extends State<LandingPage> {
           GestureDetector(
             child: Container(
               decoration: BoxDecoration(
-                color: workPersonalController!["personal"]! ? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light) : null,
+                color: workPersonalController["personal"]! ? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light) : null,
                 borderRadius: BorderRadius.circular(12.0),
               ),
               padding: EdgeInsets.all(defaultPadding * 0.5,),
@@ -203,9 +202,32 @@ class _LandingPageState extends State<LandingPage> {
         ],
       ),
     );
+  }*/
+
+  Widget workViewMobileBuild() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
+        child: Column(
+          children: [
+            /// Padding from behind navbar
+            SizedBox(height: 64.0,),
+            shoebox,
+            skills(),shoebox,
+            skills(),shoebox,
+            skills(),shoebox,
+            skills(),shoebox,
+            skills(),shoebox,
+            skills(),shoebox,
+            skills(),shoebox,
+            skills(),
+          ],
+        ),
+      ),
+    );
   }
 
-  Widget mobileBuild() {
+  Widget personalViewMobileBuild() {
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
@@ -262,8 +284,8 @@ class _LandingPageState extends State<LandingPage> {
         child: Stack(
           children: [
             Responsive(
-              mobile: mobileBuild(),
-              tablet: mobileBuild(),
+              mobile: workPersonalController[0] ? workViewMobileBuild() : personalViewMobileBuild(),
+              tablet:  workPersonalController[0] ? workViewMobileBuild() : personalViewMobileBuild(),
               desktop: desktopBuild(),
             ),
             Padding(
@@ -272,7 +294,13 @@ class _LandingPageState extends State<LandingPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatingButton(child: ChangeThemeWidget()),
-                  elevatedSwitch(),
+                  ElevatingSwitch(
+                    initialState: workPersonalController,
+                    firstChild: Icon(Icons.business_center),
+                    firstAction: () => setState(() => workPersonalController = [true, false,]),
+                    secondChild: Icon(Icons.person_rounded),
+                    secondAction: () => setState(() => workPersonalController = [false, true,]),
+                  ),
                   ElevatingButton(child: Icon(Icons.menu_rounded)),
                 ],
               ),
