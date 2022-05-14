@@ -19,36 +19,56 @@ class AppThemes {
   static final TextTheme textTheme = TextTheme(
     headline1: GoogleFonts.montserrat(
       textStyle: const TextStyle(
-        fontSize: 68.0,
-        fontWeight: FontWeight.bold,
+        /// Mobile: 36.0
+        /// Desktop: 68.0
+        fontSize: 36.0,
+        fontWeight: FontWeight.w600,
       ),
     ),
-    headline2: GoogleFonts.sora(
+    headline2: GoogleFonts.montserrat(
       textStyle: const TextStyle(
+        /// Mobile:
+        /// Desktop: 36.0
         fontSize: 36.0,
         fontWeight: FontWeight.bold,
       ),
     ),
     subtitle1: GoogleFonts.sora(
       textStyle: const TextStyle(
+        /// Mobile:
+        /// Desktop: 24.0
         fontSize: 24.0,
         fontWeight: FontWeight.bold,
       ),
     ),
     subtitle2: GoogleFonts.sora(
       textStyle: const TextStyle(
+        /// Mobile:
+        /// Desktop: 20.0
         fontSize: 20.0,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.normal,
       ),
     ),
     bodyText1: GoogleFonts.montserrat(
       textStyle: const TextStyle(
+        /// Mobile: 16.0
+        /// Desktop: 16.0
         fontSize: 16.0,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w300,
+      ),
+    ),
+    bodyText2: GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+        /// Mobile: 14.0
+        /// Desktop: 16.0
+        fontSize: 14.0,
+        fontWeight: FontWeight.w300,
       ),
     ),
     button: GoogleFonts.montserrat(
       textStyle: const TextStyle(
+        /// Mobile:
+        /// Desktop: 16.0
         fontSize: 16.0,
         fontWeight: FontWeight.bold,
       ),

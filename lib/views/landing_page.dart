@@ -5,10 +5,12 @@ import 'package:flutter_portfolio/components/change_theme_widget.dart';
 import 'package:flutter_portfolio/components/wide_card.dart';
 import 'package:flutter_portfolio/constants.dart';
 import 'package:flutter_portfolio/controllers/responsive.dart';
+import 'package:provider/provider.dart';
 
 import '../components/elevating_button.dart';
 import '../components/elevating_switch.dart';
 import '../controllers/app_routes.dart';
+import '../controllers/app_themes.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -18,6 +20,7 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  Size screenSize = Size(0.0, 0.0);
   bool isLightMode = false;
   List <bool> workPersonalController = [true, false,];
 
@@ -120,12 +123,20 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Widget skills() {
+  Widget workCard() {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return WideCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Skills", style: Theme.of(context).textTheme.headline2,),
+          ElevatingButton(
+            hasShadow: false,
+            padding: defaultPadding * 0.5,
+            colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
+            child: Image.asset("assets/images/pr_logo_small.png", width: 40.0, height: 40.0,),
+          ),
+          shoebox,
+          Text("Probably Rational Ltd.", style: Theme.of(context).textTheme.headline1,),
           shoebox,
           Text("Juggling balls", style: subtitle1(context),),
           shoebox,
@@ -143,66 +154,25 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  /*Widget elevatedButton({Widget? child, double? padding,}) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    return Container(
-      padding: EdgeInsets.all(padding ?? defaultPadding,),
-      decoration: BoxDecoration(
-        color: themeProvider.isDarkMode ? backgroundColour0Dark : backgroundColour0Light,
-        borderRadius: BorderRadius.circular(20.0),
-        boxShadow: [
-          BoxShadow(
-            color: (themeProvider.isDarkMode ? blackColour : backgroundColour3Dark).withOpacity(0.25),
-            offset: Offset(0.0, 8.0,),
-            blurRadius: 12.0,
-          ),
-        ],
-      ),
-      child: child ?? Container(),
-    );
-  }*/
-
- /* Widget elevatedSwitch() {
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    return ElevatingButton(
-      padding: defaultPadding * 0.5,
+  Widget navbar() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: defaultPadding, horizontal: defaultPadding,),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          GestureDetector(
-            child: Container(
-              decoration: BoxDecoration(
-                color: workPersonalController["work"]! ? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light) : null,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              padding: EdgeInsets.all(defaultPadding * 0.5,),
-              child: Icon(Icons.business_center),
-            ),
-            onTap: () {
-              workPersonalController["work"] = true;
-              workPersonalController["personal"] = false;
-              setState(() {});
-            },
+          ElevatingButton(child: ChangeThemeWidget()),
+          ElevatingSwitch(
+            initialState: workPersonalController,
+            firstChild: Icon(Icons.business_center),
+            firstAction: () => setState(() => workPersonalController = [true, false,]),
+            secondChild: Icon(Icons.person_rounded),
+            secondAction: () => setState(() => workPersonalController = [false, true,]),
           ),
-          SizedBox(width: defaultPadding * 0.5,),
-          GestureDetector(
-            child: Container(
-              decoration: BoxDecoration(
-                color: workPersonalController["personal"]! ? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light) : null,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              padding: EdgeInsets.all(defaultPadding * 0.5,),
-              child: Icon(Icons.person_rounded),
-            ),
-            onTap: () {
-              workPersonalController["personal"] = true;
-              workPersonalController["work"] = false;
-              setState(() {});
-            },
-          ),
+          ElevatingButton(child: Icon(Icons.menu_rounded)),
         ],
       ),
     );
-  }*/
+  }
 
   Widget workViewMobileBuild() {
     return SingleChildScrollView(
@@ -212,15 +182,52 @@ class _LandingPageState extends State<LandingPage> {
           children: [
             /// Padding from behind navbar
             SizedBox(height: 64.0,),
-            shoebox,
-            skills(),shoebox,
-            skills(),shoebox,
-            skills(),shoebox,
-            skills(),shoebox,
-            skills(),shoebox,
-            skills(),shoebox,
-            skills(),shoebox,
-            skills(),
+
+            /// Start of first view
+            SizedBox(
+              height: screenSize.height * 0.8,
+              child: Stack(
+                children: [
+                  // TODO: Top art goes here!
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Hi, I'm Joshua.", textAlign: TextAlign.center, style: Theme.of(context).textTheme.headline1,),
+                      shoebox,
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.person_pin_circle_rounded),
+                          SizedBox(width: defaultPadding * 0.5,),
+                          Text("Swansea, Wales", textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodyText2,),
+                        ],
+                      ),
+                      shoebox,
+                      Text("I am currently a Cyber Security Masters’ student, looking for a graduate job in the security industry.", textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodyText1,),
+                    ],
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: ElevatingButton(
+                      padding: defaultPadding * 0.5,
+                      child: Icon(Icons.expand_more_rounded, size: 40.0,),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: defaultPadding * 4,),
+
+            /// Start of second view
+            workCard(),shoebox,
+            workCard(),shoebox,
+            workCard(),shoebox,
+            workCard(),shoebox,
+            workCard(),shoebox,
+            workCard(),shoebox,
+            workCard(),shoebox,
+            fontsTest(),
           ],
         ),
       ),
@@ -268,7 +275,7 @@ class _LandingPageState extends State<LandingPage> {
             shoebox,
             experience(),
             shoebox,
-            skills(),
+            workCard(),
             shoebox,
             contact(),
           ],
@@ -279,6 +286,7 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
+    screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -288,23 +296,7 @@ class _LandingPageState extends State<LandingPage> {
               tablet:  workPersonalController[0] ? workViewMobileBuild() : personalViewMobileBuild(),
               desktop: desktopBuild(),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: defaultPadding, horizontal: defaultPadding,),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ElevatingButton(child: ChangeThemeWidget()),
-                  ElevatingSwitch(
-                    initialState: workPersonalController,
-                    firstChild: Icon(Icons.business_center),
-                    firstAction: () => setState(() => workPersonalController = [true, false,]),
-                    secondChild: Icon(Icons.person_rounded),
-                    secondAction: () => setState(() => workPersonalController = [false, true,]),
-                  ),
-                  ElevatingButton(child: Icon(Icons.menu_rounded)),
-                ],
-              ),
-            ),
+            navbar(),
           ],
         ),
       ),
