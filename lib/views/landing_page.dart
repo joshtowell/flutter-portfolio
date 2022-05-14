@@ -5,8 +5,10 @@ import 'package:flutter_portfolio/components/change_theme_widget.dart';
 import 'package:flutter_portfolio/components/wide_card.dart';
 import 'package:flutter_portfolio/constants.dart';
 import 'package:flutter_portfolio/controllers/responsive.dart';
+import 'package:provider/provider.dart';
 
 import '../controllers/app_routes.dart';
+import '../controllers/app_themes.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -17,6 +19,7 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   bool isLightMode = false;
+  Map<String, bool> workPersonalController = {"work": true, "personal": false,};
 
   Widget fontsTest() {
     return Column(
@@ -140,14 +143,83 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
+  Widget elevatedButton({Widget? child, double? padding,}) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return Container(
+      padding: EdgeInsets.all(padding ?? defaultPadding,),
+      decoration: BoxDecoration(
+        color: themeProvider.isDarkMode ? backgroundColour0Dark : backgroundColour0Light,
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: [
+          BoxShadow(
+            color: (themeProvider.isDarkMode ? blackColour : backgroundColour3Dark).withOpacity(0.25),
+            offset: Offset(0.0, 8.0,),
+            blurRadius: 12.0,
+          ),
+        ],
+      ),
+      child: child ?? Container(),
+    );
+  }
+
+  Widget elevatedSwitch() {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return elevatedButton(
+      padding: defaultPadding * 0.5,
+      child: Row(
+        children: [
+          GestureDetector(
+            child: Container(
+              decoration: BoxDecoration(
+                color: workPersonalController!["work"]! ? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light) : null,
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              padding: EdgeInsets.all(defaultPadding * 0.5,),
+              child: Icon(Icons.business_center),
+            ),
+            onTap: () {
+              workPersonalController["work"] = true;
+              workPersonalController["personal"] = false;
+              setState(() {});
+            },
+          ),
+          SizedBox(width: defaultPadding * 0.5,),
+          GestureDetector(
+            child: Container(
+              decoration: BoxDecoration(
+                color: workPersonalController!["personal"]! ? (themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light) : null,
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              padding: EdgeInsets.all(defaultPadding * 0.5,),
+              child: Icon(Icons.person_rounded),
+            ),
+            onTap: () {
+              workPersonalController["personal"] = true;
+              workPersonalController["work"] = false;
+              setState(() {});
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget mobileBuild() {
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
         child: Column(
           children: [
-            ChangeThemeWidget(),
+            /// Padding from behind navbar
+            SizedBox(height: 64.0,),
             shoebox,
+            contact(),shoebox,
+            contact(),shoebox,
+            contact(),shoebox,
+            contact(),shoebox,
+            contact(),shoebox,
+            contact(),shoebox,
+            contact(),shoebox,
             contact(),
           ],
         ),
@@ -186,10 +258,25 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Responsive(
-          mobile: mobileBuild(),
-          tablet: mobileBuild(),
-          desktop: desktopBuild(),
+        child: Stack(
+          children: [
+            Responsive(
+              mobile: mobileBuild(),
+              tablet: mobileBuild(),
+              desktop: desktopBuild(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: defaultPadding, horizontal: defaultPadding,),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  elevatedButton(child: ChangeThemeWidget()),
+                  elevatedSwitch(),
+                  elevatedButton(child: Icon(Icons.menu_rounded)),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

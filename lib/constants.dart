@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'controllers/app_routes.dart';
 
 /// # COLOURS
 
@@ -67,4 +66,4 @@ TextStyle? button (context) => Theme.of(context).textTheme.button;
 /// As font size decreases, line height should increase (fontSize - lineHeight = greater than previous number)
 
 /// # MINI WIDGETS
-const Widget shoebox = SizedBox(height: defaultPadding,);
+const Widget shoebox = SizedBox(height: defaultPadding, width: defaultPadding,);
