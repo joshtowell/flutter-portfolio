@@ -7,7 +7,7 @@ import 'package:flutter_portfolio/constants.dart';
 import 'package:flutter_portfolio/controllers/responsive.dart';
 
 import '../components/elevating_button.dart';
-import '../components/elevating_swtich.dart';
+import '../components/elevating_switch.dart';
 import '../controllers/app_routes.dart';
 
 class LandingPage extends StatefulWidget {
