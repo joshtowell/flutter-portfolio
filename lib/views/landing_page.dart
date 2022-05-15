@@ -249,6 +249,53 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
+  Widget qualificationCard({
+    required Widget icon,
+    required String institutionName,
+    required String qualificationTitle,
+    required String issueDate,
+    required String qualificationSummary,
+    EdgeInsetsGeometry? padding,
+    bool isExpanded = false,
+  }) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return WideCard(
+      padding: padding,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          ElevatingButton(
+            hasShadow: false,
+            padding: defaultPadding * 0.5,
+            colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
+            child: icon,
+          ),
+          SizedBox(height: defaultPadding * 1.5,),
+          Text(institutionName, textAlign: TextAlign.center, style: bodyText1(context),),
+          SizedBox(height: defaultPadding * 0.25,),
+          Text(qualificationTitle, textAlign: TextAlign.center, style: headline2(context),),
+          SizedBox(height: defaultPadding * 0.25,),
+          Text(issueDate, textAlign: TextAlign.center, style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
+          // shoebox,
+          GestureDetector(
+            child: isExpanded
+              ? Padding(
+                  padding: const EdgeInsets.only(top: defaultPadding + 8.0,),
+                  child: Text(qualificationSummary, textAlign: TextAlign.center, style: bodyText1(context),),
+              )
+              : Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4.0,),
+                  child: Text("...", textAlign: TextAlign.center, style: headline2(context)?.copyWith(color: backgroundColour3Light),),
+              ),
+            onTap: () => setState(() {
+              isExpanded = !isExpanded;
+            }),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget workViewCards() {
     return Column(
       children: [
@@ -257,9 +304,17 @@ class _LandingPageState extends State<LandingPage> {
           icon: Image.asset("assets/images/pr_logo_small.png", width: 40.0, height: 40.0,),
           companyName: "Probably Rational Ltd.",
           jobTitle: "Software Engineer",
-          duration: "3 years",
+          duration: "2 yrs, 8 mos",
           jobSummary: "Build and develop efficient applications based on specified requirements set by the client.",
           image: Image.asset("assets/images/ryb_mock_cropped.png"),
+        ),
+        SizedBox(height: defaultPadding * 3,),
+        educationCard(
+          icon: Image.asset("assets/images/swansea_university_logo_crest.png", width: 40.0, height: 40.0,),
+          institutionName: "Swansea University",
+          qualificationTitle: "MSc Cyber Security",
+          dates: "2021 - 2022",
+          courseSummary: "A course covering critical modern technology issues from the security and privacy of personal data to cyberterrorism, cybercrime and mobile security.",
         ),
         SizedBox(height: defaultPadding * 3,),
         educationCard(
@@ -268,6 +323,17 @@ class _LandingPageState extends State<LandingPage> {
           qualificationTitle: "BSc (Hons) Computer Science",
           dates: "2018 - 2021",
           courseSummary: "A 3 year course introducing essential Computer Science concepts and developing complex skills related to Cloud Computing, IoT, Machine Learning, Cyber Security and more.",
+        ),
+        SizedBox(height: defaultPadding * 3,),
+        qualificationCard(
+          icon: Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Image.asset("assets/images/ms_logo.png", width: 34.0, height: 34.0,),
+          ),
+          institutionName: "Microsoft",
+          qualificationTitle: "MTA: Security Fundamentals",
+          issueDate: "Certified 2020",
+          qualificationSummary: "Experience with Windows Server, Windows-based networking, Active Directory, anti-malware products, firewalls, network topologies and devices, and network ports.",
         ),
         SizedBox(height: defaultPadding * 3,),
       ],
@@ -287,11 +353,10 @@ class _LandingPageState extends State<LandingPage> {
         ),
         SizedBox(height: defaultPadding * 3,),
         workCard(
-          padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
           icon: Image.asset("assets/images/really_wild_logo.png", width: 40.0, height: 40.0,),
           companyName: "Really Wild Education",
           jobTitle: "Trainee Instructor",
-          duration: "1 year, 3 months",
+          duration: "1 yr, 3 mos",
           jobSummary: "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment.",
         ),
         SizedBox(height: defaultPadding * 3,),
