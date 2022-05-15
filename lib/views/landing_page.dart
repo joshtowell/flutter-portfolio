@@ -125,10 +125,24 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Widget workCard() {
+  Widget contact() {
+    return WideCard(
+      child: Text("Contact me here!", style: headline2(context),),
+    );
+  }
+
+  Widget workCard({
+    required Widget icon,
+    required String companyName,
+    required jobTitle,
+    required duration,
+    required jobSummary,
+    Widget? image,
+    EdgeInsetsGeometry? padding,
+  }) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return WideCard(
-      padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+      padding: padding,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -139,27 +153,21 @@ class _LandingPageState extends State<LandingPage> {
                 hasShadow: false,
                 padding: defaultPadding * 0.5,
                 colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
-                child: Image.asset("assets/images/pr_logo_small.png", width: 40.0, height: 40.0,),
+                child: icon,
               ),
               Icon(Icons.chevron_right_rounded, size: 40.0,)
             ],
           ),
           shoebox,
-          Text("Probably Rational Ltd.", style: headline1(context),),
+          Text(companyName, style: headline1(context),),
           SizedBox(height: defaultPadding * 0.5,),
-          Text("Software Engineer • 3 years", style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
+          Text("$jobTitle • $duration", style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
           shoebox,
-          Text("Build and develop efficient applications based on specified requirements set by the client.", style: bodyText1(context),),
+          Text(jobSummary, style: bodyText1(context),),
           SizedBox(height: defaultPadding * 2,),
-          Image.asset("assets/images/ryb_mock_cropped.png"),
+          image ?? Container(),
         ],
       ),
-    );
-  }
-
-  Widget contact() {
-    return WideCard(
-      child: Text("Contact me here!", style: headline2(context),),
     );
   }
 
@@ -186,12 +194,16 @@ class _LandingPageState extends State<LandingPage> {
   Widget workViewCards() {
     return Column(
       children: [
-        workCard(),
-        SizedBox(height: defaultPadding * 2,),
-        workCard(),
-        SizedBox(height: defaultPadding * 2,),
-        workCard(),
-        SizedBox(height: defaultPadding * 2,),
+        workCard(
+          padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+          icon: Image.asset("assets/images/pr_logo_small.png", width: 40.0, height: 40.0,),
+          companyName: "Probably Rational Ltd.",
+          jobTitle: "Software Engineer",
+          duration: "3 years",
+          jobSummary: "Build and develop efficient applications based on specified requirements set by the client.",
+          image: Image.asset("assets/images/ryb_mock_cropped.png"),
+        ),
+        SizedBox(height: defaultPadding * 3,),
         fontsTest(),
       ],
     );
@@ -300,7 +312,10 @@ class _LandingPageState extends State<LandingPage> {
             SizedBox(height: defaultPadding * 4,),
 
             /// Start of second view
-            workPersonalController[0] ? workViewCards() : personalViewCards(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: defaultPadding,),
+              child: workPersonalController[0] ? workViewCards() : personalViewCards(),
+            ),
           ],
         ),
       ),
@@ -324,8 +339,6 @@ class _LandingPageState extends State<LandingPage> {
             qualifications(),
             shoebox,
             experience(),
-            shoebox,
-            workCard(),
             shoebox,
             contact(),
           ],
