@@ -27,10 +27,10 @@ class AppThemes {
     ),
     headline2: GoogleFonts.montserrat(
       textStyle: const TextStyle(
-        /// Mobile:
+        /// Mobile: 26.0
         /// Desktop: 36.0
-        fontSize: 36.0,
-        fontWeight: FontWeight.bold,
+        fontSize: 26.0,
+        fontWeight: FontWeight.w600,
       ),
     ),
     subtitle1: GoogleFonts.sora(

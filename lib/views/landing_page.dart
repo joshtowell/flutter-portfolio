@@ -134,9 +134,9 @@ class _LandingPageState extends State<LandingPage> {
   Widget workCard({
     required Widget icon,
     required String companyName,
-    required jobTitle,
-    required duration,
-    required jobSummary,
+    required String jobTitle,
+    required String duration,
+    required String jobSummary,
     Widget? image,
     EdgeInsetsGeometry? padding,
   }) {
@@ -160,14 +160,142 @@ class _LandingPageState extends State<LandingPage> {
           ),
           shoebox,
           Text(companyName, style: headline1(context),),
-          SizedBox(height: defaultPadding * 0.5,),
+          SizedBox(height: defaultPadding * 0.25,),
           Text("$jobTitle • $duration", style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
           shoebox,
           Text(jobSummary, style: bodyText1(context),),
           SizedBox(height: defaultPadding * 2,),
-          image ?? Container(),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: image ?? Container(),
+          ),
         ],
       ),
+    );
+  }
+
+  Widget projectCard({
+    required Widget icon,
+    required String projectName,
+    required String projectCategory,
+    required String projectSummary,
+    Widget? image,
+    EdgeInsetsGeometry? padding,
+  }) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return WideCard(
+      padding: padding,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ElevatingButton(
+                hasShadow: false,
+                padding: defaultPadding * 0.5,
+                colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
+                child: icon,
+              ),
+              Icon(Icons.chevron_right_rounded, size: 40.0,)
+            ],
+          ),
+          shoebox,
+          Text(projectName, style: headline1(context),),
+          SizedBox(height: defaultPadding * 0.25,),
+          Text(projectCategory, style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
+          shoebox,
+          Text(projectSummary, style: bodyText1(context),),
+          SizedBox(height: defaultPadding * 2,),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: image ?? Container(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget educationCard({
+    required Widget icon,
+    required String institutionName,
+    required String qualificationTitle,
+    required String dates,
+    required String courseSummary,
+    EdgeInsetsGeometry? padding,
+  }) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return WideCard(
+      padding: padding,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          ElevatingButton(
+            hasShadow: false,
+            padding: defaultPadding * 0.5,
+            colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
+            child: icon,
+          ),
+          SizedBox(height: defaultPadding * 1.5,),
+          Text(institutionName, textAlign: TextAlign.center, style: bodyText1(context),),
+          SizedBox(height: defaultPadding * 0.25,),
+          Text(qualificationTitle, textAlign: TextAlign.center, style: headline2(context),),
+          SizedBox(height: defaultPadding * 0.25,),
+          Text(dates, textAlign: TextAlign.center, style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
+          SizedBox(height: defaultPadding * 1.5,),
+          Text(courseSummary, textAlign: TextAlign.center, style: bodyText1(context),),
+        ],
+      ),
+    );
+  }
+
+  Widget workViewCards() {
+    return Column(
+      children: [
+        workCard(
+          padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+          icon: Image.asset("assets/images/pr_logo_small.png", width: 40.0, height: 40.0,),
+          companyName: "Probably Rational Ltd.",
+          jobTitle: "Software Engineer",
+          duration: "3 years",
+          jobSummary: "Build and develop efficient applications based on specified requirements set by the client.",
+          image: Image.asset("assets/images/ryb_mock_cropped.png"),
+        ),
+        SizedBox(height: defaultPadding * 3,),
+        educationCard(
+          icon: Image.asset("assets/images/uol_logo_crest.png", width: 40.0, height: 40.0,),
+          institutionName: "University of Lincoln",
+          qualificationTitle: "BSc (Hons) Computer Science",
+          dates: "2018 - 2021",
+          courseSummary: "A 3 year course introducing essential Computer Science concepts and developing complex skills related to Cloud Computing, IoT, Machine Learning, Cyber Security and more.",
+        ),
+        SizedBox(height: defaultPadding * 3,),
+      ],
+    );
+  }
+
+  Widget personalViewCards() {
+    return Column(
+      children: [
+        projectCard(
+          padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+          icon: Image.asset("assets/images/takeaway_coffee_icon.png", width: 40.0, height: 40.0,),
+          projectName: "Coffee App Inc.",
+          projectCategory: "Personal Project",
+          projectSummary: "Reminders to drink your coffee and remembers where you left the it. Set timers for boiling and brewing, so you never waste time or coffee again!",
+          image: Image.asset("assets/images/coffee_app_mocks_cropped.png"),
+        ),
+        SizedBox(height: defaultPadding * 3,),
+        workCard(
+          padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+          icon: Image.asset("assets/images/really_wild_logo.png", width: 40.0, height: 40.0,),
+          companyName: "Really Wild Education",
+          jobTitle: "Trainee Instructor",
+          duration: "1 year, 3 months",
+          jobSummary: "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment.",
+        ),
+        SizedBox(height: defaultPadding * 3,),
+      ],
     );
   }
 
@@ -188,41 +316,6 @@ class _LandingPageState extends State<LandingPage> {
           ElevatingButton(child: Icon(Icons.menu_rounded)),
         ],
       ),
-    );
-  }
-
-  Widget workViewCards() {
-    return Column(
-      children: [
-        workCard(
-          padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
-          icon: Image.asset("assets/images/pr_logo_small.png", width: 40.0, height: 40.0,),
-          companyName: "Probably Rational Ltd.",
-          jobTitle: "Software Engineer",
-          duration: "3 years",
-          jobSummary: "Build and develop efficient applications based on specified requirements set by the client.",
-          image: Image.asset("assets/images/ryb_mock_cropped.png"),
-        ),
-        SizedBox(height: defaultPadding * 3,),
-        fontsTest(),
-      ],
-    );
-  }
-
-  Widget personalViewCards() {
-    return Column(
-      children: [
-        workCard(
-          padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
-          icon: Image.asset("assets/images/really_wild_logo.png", width: 40.0, height: 40.0,),
-          companyName: "Really Wild Education",
-          jobTitle: "Trainee Instructor",
-          duration: "1 year, 3 months",
-          jobSummary: "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment.",
-        ),
-        SizedBox(height: defaultPadding * 3,),
-        fontsTest(),
-      ],
     );
   }
 
