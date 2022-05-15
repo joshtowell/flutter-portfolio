@@ -33,20 +33,20 @@ class AppThemes {
         fontWeight: FontWeight.w600,
       ),
     ),
-    subtitle1: GoogleFonts.sora(
+    subtitle1: GoogleFonts.montserrat(
       textStyle: const TextStyle(
-        /// Mobile:
+        /// Mobile: 18.0
         /// Desktop: 24.0
-        fontSize: 24.0,
-        fontWeight: FontWeight.bold,
+        fontSize: 18.0,
+        fontWeight: FontWeight.w800,
       ),
     ),
-    subtitle2: GoogleFonts.sora(
+    subtitle2: GoogleFonts.montserrat(
       textStyle: const TextStyle(
-        /// Mobile:
-        /// Desktop: 20.0
-        fontSize: 20.0,
-        fontWeight: FontWeight.normal,
+        /// Mobile: 18.0
+        /// Desktop: 24.0
+        fontSize: 18.0,
+        fontWeight: FontWeight.w300,
       ),
     ),
     bodyText1: GoogleFonts.montserrat(

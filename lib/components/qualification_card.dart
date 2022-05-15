@@ -49,7 +49,7 @@ class _QualificationCardState extends State<QualificationCard> {
         children: [
           ElevatingButton(
             hasShadow: false,
-            padding: defaultPadding * 0.5,
+            padding: const EdgeInsets.all(defaultPadding * 0.5,),
             colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
             child: widget.icon,
           ),

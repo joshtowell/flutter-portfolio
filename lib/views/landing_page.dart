@@ -25,6 +25,7 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   Size screenSize = Size(0.0, 0.0);
   bool isLightMode = false;
+  bool isMenuOpen = false;
   List <bool> workPersonalController = [true, false,];
 
   Widget fontsTest() {
@@ -182,21 +183,98 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
+  Widget highlightingButton({
+    required String text,
+    required LinearGradient highlightGradient,
+    required bool isSelected,
+    required Function() tapAction,
+  }) {
+    return GestureDetector(
+      child: Container(
+        padding: EdgeInsets.all(defaultPadding * 0.5,),
+        color: Colors.transparent,
+        child: isSelected
+            ? ShaderMask(
+              blendMode: BlendMode.srcIn,
+              shaderCallback: (bounds) {
+                return highlightGradient.createShader(bounds);
+              },
+              child: Text(text, style: subtitle1(context)?.copyWith(fontWeight: FontWeight.w800,),),
+            )
+            : Text(text, style: subtitle2(context)?.copyWith(fontWeight: FontWeight.w300,),),
+      ),
+      onTap: tapAction,
+    );
+  }
+
   Widget navbar() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: defaultPadding, horizontal: defaultPadding,),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          ElevatingButton(child: ChangeThemeWidget()),
-          ElevatingSwitch(
-            initialState: workPersonalController,
-            firstChild: Icon(Icons.business_center),
-            firstAction: () => setState(() => workPersonalController = [true, false,]),
-            secondChild: Icon(Icons.person_rounded),
-            secondAction: () => setState(() => workPersonalController = [false, true,]),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ElevatingButton(
+                child: ChangeThemeWidget(disableTap: true,),
+                tapAction: () {
+                  final provider = Provider.of<ThemeProvider>(context, listen: false,);
+                  provider.toggleTheme();
+                },
+              ),
+              ElevatingSwitch(
+                initialState: workPersonalController,
+                firstChild: Icon(Icons.business_center),
+                firstAction: () => setState(() => workPersonalController = [true, false,]),
+                secondChild: Icon(Icons.person_rounded),
+                secondAction: () => setState(() => workPersonalController = [false, true,]),
+              ),
+              ElevatingButton(
+                child: Icon(Icons.menu_rounded),
+                tapAction: () => setState(() => isMenuOpen = !isMenuOpen),
+              ),
+            ],
           ),
-          ElevatingButton(child: Icon(Icons.menu_rounded)),
+          isMenuOpen
+            ? Column(
+              children: [
+                SizedBox(height: defaultPadding * 0.5,),
+                ElevatingButton(
+                  padding: const EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding * 3, defaultPadding,),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      highlightingButton(
+                        text: "About Me",
+                        highlightGradient: purpleHighlightGradient,
+                        isSelected: false,    // TODO: Create 'About Me' page and controller
+                        tapAction: () => null,
+                      ),
+                      highlightingButton(
+                        text: "Work",
+                        highlightGradient: purpleHighlightGradient,
+                        isSelected: workPersonalController[0],
+                        tapAction: () => setState(() {
+                          workPersonalController[0] = true;
+                          workPersonalController[1] = false;
+                        }),
+                      ),
+                      highlightingButton(
+                        text: "Personal",
+                        highlightGradient: purpleHighlightGradient,
+                        isSelected: workPersonalController[1],
+                        tapAction: () => setState(() {
+                          workPersonalController[0] = false;
+                          workPersonalController[1] = true;
+                        }),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
+            : Container(),
         ],
       ),
     );
@@ -280,7 +358,7 @@ class _LandingPageState extends State<LandingPage> {
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: ElevatingButton(
-                      padding: defaultPadding * 0.5,
+                      padding: EdgeInsets.all(defaultPadding * 0.5,),
                       child: Icon(Icons.expand_more_rounded, size: 40.0,),
                     ),
                   ),
@@ -322,7 +400,7 @@ class _LandingPageState extends State<LandingPage> {
           children: [
             Responsive(
               mobile: mobileBuild(),
-              tablet:  mobileBuild(),
+              tablet: mobileBuild(),
               desktop: desktopBuild(),
             ),
             navbar(),

@@ -37,7 +37,7 @@ class ProjectCard extends StatelessWidget {
             children: [
               ElevatingButton(
                 hasShadow: false,
-                padding: defaultPadding * 0.5,
+                padding: const EdgeInsets.all(defaultPadding * 0.5,),
                 colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
                 child: icon,
               ),

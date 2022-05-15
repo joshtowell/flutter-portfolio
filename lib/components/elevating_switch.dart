@@ -52,7 +52,7 @@ class _ElevatingSwitchState extends State<ElevatingSwitch> {
   @override
   Widget build(BuildContext context) {
     return ElevatingButton(
-      padding: defaultPadding * 0.5,
+      padding: const EdgeInsets.all(defaultPadding * 0.5,),
       child: Row(
         children: [
           highlightBox(
