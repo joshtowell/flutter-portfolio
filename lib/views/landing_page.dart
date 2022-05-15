@@ -212,14 +212,16 @@ class _LandingPageState extends State<LandingPage> {
   Widget personalViewCards() {
     return Column(
       children: [
-        contact(),shoebox,
-        contact(),shoebox,
-        contact(),shoebox,
-        contact(),shoebox,
-        contact(),shoebox,
-        contact(),shoebox,
-        contact(),shoebox,
-        contact(),
+        workCard(
+          padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+          icon: Image.asset("assets/images/really_wild_logo.png", width: 40.0, height: 40.0,),
+          companyName: "Really Wild Education",
+          jobTitle: "Trainee Instructor",
+          duration: "1 year, 3 months",
+          jobSummary: "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment.",
+        ),
+        SizedBox(height: defaultPadding * 3,),
+        fontsTest(),
       ],
     );
   }
