@@ -1,12 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/components/change_theme_widget.dart';
-import 'package:flutter_portfolio/components/wide_card.dart';
 import 'package:flutter_portfolio/constants.dart';
 import 'package:flutter_portfolio/controllers/responsive.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../components/education_card.dart';
