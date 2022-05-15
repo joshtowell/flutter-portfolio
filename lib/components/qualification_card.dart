@@ -61,15 +61,17 @@ class _QualificationCardState extends State<QualificationCard> {
           Text(widget.issueDate, textAlign: TextAlign.center, style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
           // shoebox,
           GestureDetector(
-            child: isExpanded
+            child: isExpanded && widget.qualificationSummary.isNotEmpty
               ? Padding(
                   padding: const EdgeInsets.only(top: defaultPadding + 8.0,),
                   child: Text(widget.qualificationSummary, textAlign: TextAlign.center, style: bodyText1(context),),
                 )
-              : Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: defaultPadding * 2,),
-                  child: Text("...", textAlign: TextAlign.center, style: headline2(context)?.copyWith(color: backgroundColour3Light),),
-                ),
+              : widget.qualificationSummary.isNotEmpty
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: defaultPadding * 2,),
+                    child: Text("...", textAlign: TextAlign.center, style: headline2(context)?.copyWith(color: backgroundColour3Light),),
+                  )
+                : Container(),
             onTap: () => setState(() => isExpanded = !isExpanded),
           ),
         ],
