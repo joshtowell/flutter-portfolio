@@ -101,7 +101,7 @@ class _LandingPageState extends State<LandingPage> {
           institutionName: "Microsoft",
           qualificationTitle: "MTC: Security, Compliance and Identity Fundamentals",
           issueDate: "Certified 2021",
-          qualificationSummary: "",
+          qualificationSummary: "Ability to describe the following: concepts of security, compliance, and identity; capabilities of Microsoft identity and access management solutions; capabilities of Microsoft Security solutions; and capabilities of Microsoft compliance solutions.",
         ),
         SizedBox(height: defaultPadding * 3,),
         QualificationCard(
@@ -112,7 +112,7 @@ class _LandingPageState extends State<LandingPage> {
           institutionName: "Microsoft",
           qualificationTitle: "MTC: Azure AI Fundamentals",
           issueDate: "Certified 2021",
-          qualificationSummary: "",
+          qualificationSummary: "Demonstrate understanding of: AI workloads and considerations; fundamental principles of machine learning on Azure; features of computer vision workloads on Azure; and features of Natural Language Processing (NLP) workloads on Azure.",
         ),
         SizedBox(height: defaultPadding * 3,),
         QualificationCard(
@@ -134,7 +134,7 @@ class _LandingPageState extends State<LandingPage> {
           institutionName: "Microsoft",
           qualificationTitle: "MTA: Networking Fundamentals",
           issueDate: "Certified 2020",
-          qualificationSummary: "",
+          qualificationSummary: "Experience with Windows Server, Windows-based networking, network management tools, DNS, TCP/IP, names resolution process, and network protocols and topologies.",
         ),
         SizedBox(height: defaultPadding * 3,),
         QualificationCard(
@@ -145,7 +145,7 @@ class _LandingPageState extends State<LandingPage> {
           institutionName: "Microsoft",
           qualificationTitle: "MTC: Azure Fundamentals",
           issueDate: "Certified 2020",
-          qualificationSummary: "",
+          qualificationSummary: "Knowledge of cloud concepts, Azure services, Azure workloads, security and privacy in Azure, as well as Azure pricing and support. Understanding of cloud concepts such as networking, storage, compute, application support, and application development.",
         ),
         SizedBox(height: defaultPadding * 3,),
       ],
