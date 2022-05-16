@@ -9,6 +9,9 @@ const Color blackColour = Color(0xFF000000);
 const Color purpleHighlightColour = Color(0xFF4444BB);
 const Color pinkHighlightColour = Color(0xFFDF56DA);
 
+const Color linkedInColour = Color(0xFF0A66C2);
+const Color githubColour = Color(0xFF0D2636);
+
 const LinearGradient purpleHighlightGradient = LinearGradient(colors: [pinkHighlightColour, Color(0xFF5050D4),],);
 const LinearGradient greyHighlightGradient = LinearGradient(colors: [backgroundColour0Light, backgroundColour0Dark,],);
 

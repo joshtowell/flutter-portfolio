@@ -80,6 +80,9 @@ flutter:
     - assets/images/coffee_app_mocks_cropped.png
     - assets/svgs/personal_art.svg
     - assets/svgs/work_art.svg
+    - assets/svgs/linkedin_icon.svg
+    - assets/svgs/github1_icon.svg
+    - assets/svgs/youtube_icon.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

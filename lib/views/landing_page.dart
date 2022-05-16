@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/components/change_theme_widget.dart';
 import 'package:flutter_portfolio/constants.dart';
 import 'package:flutter_portfolio/controllers/responsive.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 import '../components/education_card.dart';
@@ -208,6 +209,70 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
+  Widget menu() {
+    return ElevatingButton(
+      padding: const EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding * 2, defaultPadding,),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          highlightingButton(
+            text: "About Me",
+            highlightGradient: purpleHighlightGradient,
+            isSelected: false,    // TODO: Create 'About Me' page and controller
+            tapAction: () => null,
+          ),
+          highlightingButton(
+            text: "Work",
+            highlightGradient: purpleHighlightGradient,
+            isSelected: workPersonalController[0],
+            tapAction: () => setState(() {
+              workPersonalController[0] = true;
+              workPersonalController[1] = false;
+            }),
+          ),
+          highlightingButton(
+            text: "Personal",
+            highlightGradient: purpleHighlightGradient,
+            isSelected: workPersonalController[1],
+            tapAction: () => setState(() {
+              workPersonalController[0] = false;
+              workPersonalController[1] = true;
+            }),
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              GestureDetector(
+                child: Container(
+                  padding: EdgeInsets.all(defaultPadding * 0.4,),
+                  color: Colors.transparent,
+                  child: SvgPicture.asset("assets/svgs/linkedin_icon.svg", color: linkedInColour, colorBlendMode: BlendMode.srcIn, width: 24.0, height: 24.0,),
+                ),
+                // onTap: tapAction,    // TODO: Add OpenURL plugin for opening external webpages
+              ),
+              GestureDetector(
+                child: Container(
+                  padding: EdgeInsets.all(defaultPadding * 0.4,),
+                  color: Colors.transparent,
+                  child: SvgPicture.asset("assets/svgs/github1_icon.svg", color: githubColour, colorBlendMode: BlendMode.srcIn, width: 24.0, height: 24.0,),
+                ),
+                // onTap: tapAction,    // TODO: Add OpenURL plugin for opening external webpages
+              ),
+              GestureDetector(
+                child: Container(
+                  padding: EdgeInsets.all(defaultPadding * 0.5,),
+                  color: Colors.transparent,
+                  child: Icon(Icons.description, color: purpleHighlightColour, size: 22.0,),
+                ),
+                // onTap: tapAction,    // TODO: Add OpenURL plugin for opening external webpages
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget navbar() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: defaultPadding, horizontal: defaultPadding,),
@@ -248,38 +313,7 @@ class _LandingPageState extends State<LandingPage> {
             ? Column(
               children: [
                 SizedBox(height: defaultPadding * 0.5,),
-                ElevatingButton(
-                  padding: const EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding * 3, defaultPadding,),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      highlightingButton(
-                        text: "About Me",
-                        highlightGradient: purpleHighlightGradient,
-                        isSelected: false,    // TODO: Create 'About Me' page and controller
-                        tapAction: () => null,
-                      ),
-                      highlightingButton(
-                        text: "Work",
-                        highlightGradient: purpleHighlightGradient,
-                        isSelected: workPersonalController[0],
-                        tapAction: () => setState(() {
-                          workPersonalController[0] = true;
-                          workPersonalController[1] = false;
-                        }),
-                      ),
-                      highlightingButton(
-                        text: "Personal",
-                        highlightGradient: purpleHighlightGradient,
-                        isSelected: workPersonalController[1],
-                        tapAction: () => setState(() {
-                          workPersonalController[0] = false;
-                          workPersonalController[1] = true;
-                        }),
-                      ),
-                    ],
-                  ),
-                ),
+                menu(),
               ],
             )
             : Container(),
