@@ -64,6 +64,7 @@ class _LandingPageState extends State<LandingPage> {
   }
 
   Widget workViewCards() {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Column(
       children: [
         WorkCard(
@@ -77,7 +78,7 @@ class _LandingPageState extends State<LandingPage> {
         ),
         SizedBox(height: defaultPadding * 3,),
         EducationCard(
-          icon: Image.asset("assets/images/swansea_university_logo_crest.png", width: 40.0, height: 40.0,),
+          icon: Image.asset(themeProvider.isDarkMode ? "assets/images/swansea_university_logo_crest_white.png" : "assets/images/swansea_university_logo_crest.png", width: 40.0, height: 40.0,),
           institutionName: "Swansea University",
           qualificationTitle: "MSc Cyber Security",
           dates: "2021 - 2022",

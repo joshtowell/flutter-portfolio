@@ -62,13 +62,15 @@ class _QualificationCardState extends State<QualificationCard> {
           // shoebox,
           GestureDetector(
             child: isExpanded && widget.qualificationSummary.isNotEmpty
-              ? Padding(
+              ? Container(
                   padding: const EdgeInsets.only(top: defaultPadding + 8.0,),
+                  color: Colors.transparent,
                   child: Text(widget.qualificationSummary, textAlign: TextAlign.center, style: bodyText1(context),),
                 )
               : widget.qualificationSummary.isNotEmpty
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: defaultPadding * 2,),
+                ? Container(
+                    padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: defaultPadding * 4,),
+                    color: Colors.transparent,
                     child: Text("...", textAlign: TextAlign.center, style: headline2(context)?.copyWith(color: backgroundColour3Light),),
                   )
                 : Container(),
