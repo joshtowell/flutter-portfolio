@@ -221,14 +221,21 @@ class _LandingPageState extends State<LandingPage> {
                 tapAction: () {
                   final provider = Provider.of<ThemeProvider>(context, listen: false,);
                   provider.toggleTheme();
+                  if (isMenuOpen) setState(() => isMenuOpen = false);
                 },
               ),
               ElevatingSwitch(
                 initialState: workPersonalController,
                 firstChild: Icon(Icons.business_center),
-                firstAction: () => setState(() => workPersonalController = [true, false,]),
+                firstAction: () => setState(() {
+                  workPersonalController = [true, false,];
+                  if (isMenuOpen) isMenuOpen = false;
+                }),
                 secondChild: Icon(Icons.person_rounded),
-                secondAction: () => setState(() => workPersonalController = [false, true,]),
+                secondAction: () => setState(() {
+                  workPersonalController = [false, true,];
+                  if (isMenuOpen) isMenuOpen = false;
+                }),
               ),
               ElevatingButton(
                 child: Icon(Icons.menu_rounded),
@@ -398,10 +405,15 @@ class _LandingPageState extends State<LandingPage> {
       body: SafeArea(
         child: Stack(
           children: [
-            Responsive(
-              mobile: mobileBuild(),
-              tablet: mobileBuild(),
-              desktop: desktopBuild(),
+            GestureDetector(
+              child: Responsive(
+                mobile: mobileBuild(),
+                tablet: mobileBuild(),
+                desktop: desktopBuild(),
+              ),
+              onTap: () {
+                if (isMenuOpen) setState(() => isMenuOpen = false);
+              },
             ),
             navbar(),
           ],
