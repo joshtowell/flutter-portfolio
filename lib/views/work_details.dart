@@ -50,7 +50,7 @@ class _WorkDetailsState extends State<WorkDetails> {
                     ),
                   ],
                 )
-                : SizedBox(height: 110.0, width: screenSize.width,),
+                : SizedBox(height: 100.0, width: screenSize.width,),
           ),
           /// Icon, titles and summary
           Padding(

@@ -169,7 +169,7 @@ class _LandingPageState extends State<LandingPage> {
           courseSummary: "A six week mentorship programme for 18-25 year olds looking to develop their skills in starting a business and property investment. Talks from +30 mentors who are experts and successful in their fields.",
         ),
         SizedBox(height: defaultPadding * 3,),
-        // WorkCard(workObject: _workObjectController.list.where((workObject) => workObject.companyName == "Really Wild Education").first,),
+        WorkCard(workObject: _workObjectController.list.where((workObject) => workObject.companyName == "Really Wild Education").first,),
         SizedBox(height: defaultPadding * 3,),
       ],
     );
