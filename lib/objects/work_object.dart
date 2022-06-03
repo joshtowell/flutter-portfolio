@@ -7,6 +7,7 @@ class WorkObject {
   final String duration;
   final String jobSummary;
   final String? image;
+  final String? roleSummary;
 
   WorkObject({
     required this.icon,
@@ -15,6 +16,7 @@ class WorkObject {
     required this.duration,
     required this.jobSummary,
     this.image,
+    this.roleSummary,
   });
 
   WorkObject.fromJson(Map<String, dynamic> json)
@@ -23,7 +25,9 @@ class WorkObject {
         jobTitle = json['jobTitle'],
         duration = json['duration'],
         jobSummary = json['jobSummary'],
-        image = json['image'];
+        image = json['image'],
+        roleSummary = json['roleSummary']
+  ;
 
   Map<String, dynamic> toJson() => {
     'icon': icon,
@@ -32,9 +36,10 @@ class WorkObject {
     'duration': duration,
     'jobSummary': jobSummary,
     'image': image,
+    'roleSummary': roleSummary,
   };
 
-  
+
 
   Widget makeIcon() {
     return Image.asset(icon, width: 40.0, height: 40.0,);
