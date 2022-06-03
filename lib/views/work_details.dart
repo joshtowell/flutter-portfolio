@@ -31,6 +31,14 @@ class _WorkDetailsState extends State<WorkDetails> {
     return _list;
   }
 
+  List<Widget> generateInvolvementList() {
+    List<Widget> _list = [];
+    widget.workObject.involvementList?.forEach((key, value) {
+      _list.add(widget.workObject.makeInvolvementItem(context: context, key: key,));
+    });
+    return _list;
+  }
+
   Widget mobileBuild() {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return SingleChildScrollView(
@@ -121,6 +129,23 @@ class _WorkDetailsState extends State<WorkDetails> {
             ),
           ),
           const SizedBox(height: defaultPadding * 2,),
+          /// Project involvement
+          Visibility(
+            visible: widget.workObject.keyResponsibilities != null,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Project Involvement", style: subtitle1(context),),
+                  shoebox,
+                  Column(
+                    children: generateInvolvementList(),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

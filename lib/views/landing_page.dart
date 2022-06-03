@@ -71,7 +71,10 @@ class _LandingPageState extends State<LandingPage> {
       children: [
         Visibility(
           visible: _workObjectController.list.isNotEmpty,
-          child: WorkCard(workObject: _workObjectController.list.where((workObject) => workObject.companyName == "Probably Rational Ltd.").first,),
+          child: WorkCard(
+            workObject: _workObjectController.list.where((workObject) => workObject.companyName == "Probably Rational Ltd.").first,
+            padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+          ),
         ),
         SizedBox(height: defaultPadding * 3,),
         EducationCard(

@@ -83,6 +83,7 @@ flutter:
     - assets/images/ryb_mock_cropped.png
     - assets/images/coffee_app_mocks_cropped.png
     - assets/images/pr_coffee_coding.jpg
+    - assets/images/ryb_mock_full.png
     - assets/svgs/personal_art.svg
     - assets/svgs/work_art.svg
     - assets/svgs/linkedin_icon.svg
