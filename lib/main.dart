@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/controllers/work_personal_controller.dart';
+import 'package:flutter_portfolio/objects/work_object.dart';
+import 'package:flutter_portfolio/views/work_details.dart';
 import 'package:provider/provider.dart';
 
 import 'controllers/app_routes.dart';
@@ -26,6 +28,9 @@ class MyApp extends StatelessWidget {
         return buildRoute(const LandingPage(), settings: settings,);
       case AppRoutes.projects:
         return buildRoute(const ProjectsPage(), settings: settings,);
+      case AppRoutes.workDetails:
+        final WorkObject args = settings.arguments as WorkObject;
+        return buildRoute(WorkDetails(workObject: args), settings: settings,);
       default:
         return null;
     }

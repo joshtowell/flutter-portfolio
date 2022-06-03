@@ -1,0 +1,19 @@
+{
+  "work": {
+    "probablyRational": {
+      "icon": "assets/images/pr_logo_small.png",
+      "companyName": "Probably Rational Ltd.",
+      "jobTitle": "Software Engineer",
+      "duration": "2 yrs, 8 mos",
+      "jobSummary": "Build and develop efficient applications based on specified requirements set by the client.",
+      "image": "assets/images/ryb_mock_cropped.png"
+    },
+    "reallyWild": {
+      "icon": "assets/images/really_wild_logo.png",
+      "companyName": "Really Wild Education",
+      "jobTitle": "Trainee Instructor",
+      "duration": "1 yr, 3 mos",
+      "jobSummary": "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment."
+    }
+  }
+}

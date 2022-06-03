@@ -14,6 +14,7 @@ import '../components/qualification_card.dart';
 import '../components/work_card.dart';
 import '../controllers/app_routes.dart';
 import '../controllers/app_themes.dart';
+import '../controllers/work_object_controller.dart';
 import '../controllers/work_personal_controller.dart';
 
 class LandingPage extends StatefulWidget {
@@ -26,6 +27,8 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   Size screenSize = Size(0.0, 0.0);
   bool isLightMode = false;
+
+  final WorkObjectController _workObjectController = WorkObjectController();
 
   Widget fontsTest() {
     return Column(
@@ -66,14 +69,9 @@ class _LandingPageState extends State<LandingPage> {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Column(
       children: [
-        WorkCard(
-          padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
-          icon: Image.asset("assets/images/pr_logo_small.png", width: 40.0, height: 40.0,),
-          companyName: "Probably Rational Ltd.",
-          jobTitle: "Software Engineer",
-          duration: "2 yrs, 8 mos",
-          jobSummary: "Build and develop efficient applications based on specified requirements set by the client.",
-          image: Image.asset("assets/images/ryb_mock_cropped.png"),
+        Visibility(
+          visible: _workObjectController.list.isNotEmpty,
+          child: WorkCard(workObject: _workObjectController.list.where((workObject) => workObject.companyName == "Probably Rational Ltd.").first,),
         ),
         SizedBox(height: defaultPadding * 3,),
         EducationCard(
@@ -171,13 +169,7 @@ class _LandingPageState extends State<LandingPage> {
           courseSummary: "A six week mentorship programme for 18-25 year olds looking to develop their skills in starting a business and property investment. Talks from +30 mentors who are experts and successful in their fields.",
         ),
         SizedBox(height: defaultPadding * 3,),
-        WorkCard(
-          icon: Image.asset("assets/images/really_wild_logo.png", width: 40.0, height: 40.0,),
-          companyName: "Really Wild Education",
-          jobTitle: "Trainee Instructor",
-          duration: "1 yr, 3 mos",
-          jobSummary: "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment.",
-        ),
+        // WorkCard(workObject: _workObjectController.list.where((workObject) => workObject.companyName == "Really Wild Education").first,),
         SizedBox(height: defaultPadding * 3,),
       ],
     );
@@ -293,6 +285,12 @@ class _LandingPageState extends State<LandingPage> {
         ),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _workObjectController.load(context);
   }
 
   @override
