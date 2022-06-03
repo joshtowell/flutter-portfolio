@@ -105,7 +105,7 @@ class _WorkDetailsState extends State<WorkDetails> {
           shoebox,
           /// Key responsibilities
           Visibility(
-            visible: widget.workObject.roleSummary != null,
+            visible: widget.workObject.keyResponsibilities != null,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
               child: Column(

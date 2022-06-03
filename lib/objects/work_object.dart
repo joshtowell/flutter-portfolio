@@ -91,7 +91,7 @@ class WorkObject {
                 visible: _icon != null,
                 child: Row(
                   children: [
-                    Icon(IconData(int.parse(_icon ?? '0xf06cb'), fontFamily: 'MaterialIcons',), size: 28.0,),
+                    Icon(IconData(int.parse(_icon ?? '0xf06cb'), fontFamily: 'MaterialIcons',), size: 24.0,),
                     shoebox,
                   ],
                 ),
