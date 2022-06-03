@@ -2,19 +2,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/components/change_theme_widget.dart';
+import 'package:flutter_portfolio/components/navbar.dart';
 import 'package:flutter_portfolio/constants.dart';
 import 'package:flutter_portfolio/controllers/responsive.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 import '../components/education_card.dart';
 import '../components/elevating_button.dart';
-import '../components/elevating_switch.dart';
 import '../components/project_card.dart';
 import '../components/qualification_card.dart';
 import '../components/work_card.dart';
 import '../controllers/app_routes.dart';
 import '../controllers/app_themes.dart';
+import '../controllers/work_personal_controller.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -26,8 +26,6 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   Size screenSize = Size(0.0, 0.0);
   bool isLightMode = false;
-  bool isMenuOpen = false;
-  List <bool> workPersonalController = [true, false,];
 
   Widget fontsTest() {
     return Column(
@@ -185,7 +183,7 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Widget highlightingButton({
+  /*Widget highlightingButton({
     required String text,
     required LinearGradient highlightGradient,
     required bool isSelected,
@@ -207,9 +205,9 @@ class _LandingPageState extends State<LandingPage> {
       ),
       onTap: tapAction,
     );
-  }
+  }*/
 
-  Widget menu() {
+  /*Widget menu() {
     return ElevatingButton(
       padding: const EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding * 2, defaultPadding,),
       child: Column(
@@ -271,9 +269,9 @@ class _LandingPageState extends State<LandingPage> {
         ],
       ),
     );
-  }
+  }*/
 
-  Widget navbar() {
+  /*Widget navbar() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: defaultPadding, horizontal: defaultPadding,),
       child: Column(
@@ -320,10 +318,11 @@ class _LandingPageState extends State<LandingPage> {
         ],
       ),
     );
-  }
+  }*/
 
   Widget mobileBuild() {
     final themeProvider = Provider.of<ThemeProvider>(context);
+    final workPersonalProvider = Provider.of<WorkPersonalProvider>(context);
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
@@ -344,7 +343,7 @@ class _LandingPageState extends State<LandingPage> {
                           child: Padding(
                             /// Temporary alignment adjustments until SVGs are ready
                             padding: const EdgeInsets.only(bottom: 32.0,),
-                            child: Image.asset(workPersonalController[0] ? "assets/images/work_art.png" : "assets/images/personal_art.png"),
+                            child: Image.asset(workPersonalProvider.isWork ? "assets/images/work_art.png" : "assets/images/personal_art.png"),
                           ),
                           // TODO: fix SVG opacity not obeying
                           /*ShaderMask(
@@ -377,7 +376,7 @@ class _LandingPageState extends State<LandingPage> {
                             "Swansea, Wales",
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.bodyText2?.copyWith(
-                              color: workPersonalController[0]
+                              color: workPersonalProvider.isWork
                                   ? (themeProvider.isDarkMode ? backgroundColour3Dark : backgroundColour3Light)
                                   : (themeProvider.isDarkMode ? pinkHighlightColour : purpleHighlightColour),
                             ),
@@ -388,7 +387,7 @@ class _LandingPageState extends State<LandingPage> {
                       SizedBox(
                         height: screenSize.width * 0.25,
                         child: Text(
-                          workPersonalController[0]
+                          workPersonalProvider.isWork
                               ? "I am currently a Cyber Security Masters’ student, looking for a graduate job in the Cyber Security industry."
                               : "An enthusiastic, independent and confident learner. Looking to develop my passion for UI/UX into an exciting freelance career.",
                           textAlign: TextAlign.center,
@@ -412,7 +411,7 @@ class _LandingPageState extends State<LandingPage> {
             /// Start of second view
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding,),
-              child: workPersonalController[0] ? workViewCards() : personalViewCards(),
+              child: workPersonalProvider.isWork ? workViewCards() : personalViewCards(),
             ),
           ],
         ),
@@ -436,6 +435,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     screenSize = MediaQuery.of(context).size;
+    final workPersonalProvider = Provider.of<WorkPersonalProvider>(context);
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -446,11 +446,11 @@ class _LandingPageState extends State<LandingPage> {
                 tablet: mobileBuild(),
                 desktop: desktopBuild(),
               ),
-              onTap: () {
+              /*onTap: () {
                 if (isMenuOpen) setState(() => isMenuOpen = false);
-              },
+              },*/
             ),
-            navbar(),
+            Navbar(),
           ],
         ),
       ),

@@ -42,6 +42,9 @@ dependencies:
   # Allow SVGs to be displayed
   flutter_svg: ^1.0.3
 
+  # Storing data locally (non-encrypted)
+  shared_preferences: ^2.0.15
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
