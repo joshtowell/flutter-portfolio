@@ -140,14 +140,12 @@ class _NavbarState extends State<Navbar> {
                 firstAction: () => setState(() {
                   final provider = Provider.of<WorkPersonalProvider>(context, listen: false,);
                   provider.setWork();
-                  // workPersonalController = [true, false,];
                   if (isMenuOpen) isMenuOpen = false;
                 }),
                 secondChild: const Icon(Icons.person_rounded),
                 secondAction: () => setState(() {
                   final provider = Provider.of<WorkPersonalProvider>(context, listen: false,);
                   provider.setPersonal();
-                  // workPersonalController = [false, true,];
                   if (isMenuOpen) isMenuOpen = false;
                 }),
               ),
