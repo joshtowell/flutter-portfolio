@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../components/elevating_button.dart';
 import '../components/navbar.dart';
 import '../constants.dart';
 import '../controllers/app_themes.dart';
@@ -115,6 +116,16 @@ class _WorkDetailsState extends State<WorkDetails> {
                   },*/
             ),
             const Navbar(),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: defaultPadding, bottom: defaultPadding,),
+                child: ElevatingButton(
+                  child: const Icon(Icons.arrow_back,),
+                  tapAction: () => Navigator.pop(context),
+                ),
+              ),
+            ),
           ],
         ),
       ),
