@@ -34,6 +34,8 @@ class WorkObject {
     'image': image,
   };
 
+  
+
   Widget makeIcon() {
     return Image.asset(icon, width: 40.0, height: 40.0,);
   }

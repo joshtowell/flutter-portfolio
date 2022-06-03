@@ -264,9 +264,29 @@ class _LandingPageState extends State<LandingPage> {
             SizedBox(height: defaultPadding * 4,),
 
             /// Start of second view
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: defaultPadding,),
-              child: workPersonalProvider.isWork ? workViewCards() : personalViewCards(),
+            FutureBuilder(
+              future: loadCardData(),
+              builder: (context, snapshot) {
+                /// Future hasn't finished yet, return a placeholder
+                if (snapshot.connectionState != ConnectionState.done) {
+                  return Center(
+                    child: Column(
+                      children: const [
+                        SizedBox(
+                          height: 24.0,
+                          width: 24.0,
+                          child: CircularProgressIndicator(color: purpleHighlightColour, strokeWidth: 4.0,),
+                        ),
+                        SizedBox(height: defaultPadding * 3,),
+                      ],
+                    ),
+                  );
+                }
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: defaultPadding,),
+                  child: workPersonalProvider.isWork ? workViewCards() : personalViewCards(),
+                );
+              },
             ),
           ],
         ),
@@ -287,16 +307,13 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  @override
-  void initState() {
-    super.initState();
-    _workObjectController.load(context);
+  Future<void> loadCardData() async {
+    await _workObjectController.load(context);
   }
 
   @override
   Widget build(BuildContext context) {
     screenSize = MediaQuery.of(context).size;
-    final workPersonalProvider = Provider.of<WorkPersonalProvider>(context);
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -308,8 +325,8 @@ class _LandingPageState extends State<LandingPage> {
                 desktop: desktopBuild(),
               ),
               /*onTap: () {
-                if (isMenuOpen) setState(() => isMenuOpen = false);
-              },*/
+                    if (isMenuOpen) setState(() => isMenuOpen = false);
+                  },*/
             ),
             Navbar(),
           ],
