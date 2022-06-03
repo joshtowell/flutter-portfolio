@@ -23,6 +23,14 @@ class WorkDetails extends StatefulWidget {
 class _WorkDetailsState extends State<WorkDetails> {
   Size screenSize = const Size(0.0, 0.0);
 
+  List<Widget> generateKeyResponsibilities() {
+    List<Widget> _list = [];
+    widget.workObject.keyResponsibilities?.forEach((key, value) {
+      _list.add(widget.workObject.makeResponsibilitiesItem(context: context, key: key,));
+    });
+    return _list;
+  }
+
   Widget mobileBuild() {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return SingleChildScrollView(
@@ -81,14 +89,38 @@ class _WorkDetailsState extends State<WorkDetails> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Role Summary", style: subtitle1(context),),
-                  const SizedBox(height: defaultPadding * 0.5,),
+                  shoebox,
                   Text(widget.workObject.roleSummary ?? '', style: bodyText1(context),),
                 ],
               ),
             ),
           ),
+          shoebox,
+          /// Feature image 1
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: defaultPadding,),
+            color: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
+            child: widget.workObject.makeFeatureImage1(),
+          ),
+          shoebox,
+          /// Key responsibilities
+          Visibility(
+            visible: widget.workObject.roleSummary != null,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Key Responsibilities", style: subtitle1(context),),
+                  shoebox,
+                  Column(
+                    children: generateKeyResponsibilities(),
+                  ),
+                ],
+              ),
+            ),
+          ),
           const SizedBox(height: defaultPadding * 2,),
-          widget.workObject.makeImage(),
         ],
       ),
     );
