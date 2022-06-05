@@ -313,6 +313,7 @@ class _LandingPageState extends State<LandingPage> {
 
   Future<void> loadCardData() async {
     await _workObjectController.load(context);
+    await _projectObjectController.load(context);
   }
 
   @override

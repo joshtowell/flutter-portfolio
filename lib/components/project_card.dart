@@ -53,7 +53,7 @@ class ProjectCard extends StatelessWidget {
       ),
       tapAction: () async {
         final args = projectObject;
-        await Navigator.pushNamed(context, AppRoutes.workDetails, arguments: args,);
+        await Navigator.pushNamed(context, AppRoutes.projectDetails, arguments: args,);
       },
     );
   }

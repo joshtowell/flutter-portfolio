@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/controllers/work_personal_controller.dart';
 import 'package:flutter_portfolio/objects/work_object.dart';
+import 'package:flutter_portfolio/views/project_details.dart';
 import 'package:flutter_portfolio/views/work_details.dart';
 import 'package:provider/provider.dart';
 
 import 'controllers/app_routes.dart';
 import 'controllers/app_themes.dart';
 import 'controllers/settings_controller.dart';
+import 'objects/project_object.dart';
 import 'views/landing_page.dart';
 import 'views/projects_page.dart';
 
@@ -31,6 +33,9 @@ class MyApp extends StatelessWidget {
       case AppRoutes.workDetails:
         final WorkObject args = settings.arguments as WorkObject;
         return buildRoute(WorkDetails(workObject: args), settings: settings,);
+      case AppRoutes.projectDetails:
+        final ProjectObject args = settings.arguments as ProjectObject;
+        return buildRoute(ProjectDetails(projectObject: args), settings: settings,);
       default:
         return null;
     }
