@@ -94,7 +94,7 @@ class _NavbarState extends State<Navbar> {
           highlightingButton(
             text: "Contact Me",
             highlightGradient: purpleHighlightGradient,
-            isSelected: false,
+            isSelected: false,    // TODO: Add temporary highlight with local variable and change to conditionals
             tapAction: () => _launchMailTo(),
           ),
           /*Row(
