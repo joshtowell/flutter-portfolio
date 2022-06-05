@@ -6,35 +6,35 @@ import '../components/navbar.dart';
 import '../constants.dart';
 import '../controllers/app_themes.dart';
 import '../controllers/responsive.dart';
-import '../objects/work_object.dart';
+import '../objects/project_object.dart';
 
-class WorkDetails extends StatefulWidget {
-  final WorkObject workObject;
+class ProjectDetails extends StatefulWidget {
+  final ProjectObject projectObject;
 
-  const WorkDetails({
-    required this.workObject,
+  const ProjectDetails({
+    required this.projectObject,
     Key? key,
   }) : super(key: key);
 
   @override
-  State<WorkDetails> createState() => _WorkDetailsState();
+  State<ProjectDetails> createState() => _ProjectDetailsState();
 }
 
-class _WorkDetailsState extends State<WorkDetails> {
+class _ProjectDetailsState extends State<ProjectDetails> {
   Size screenSize = const Size(0.0, 0.0);
 
-  List<Widget> generateKeyResponsibilities() {
+  List<Widget> generateUserStories() {
     List<Widget> _list = [];
-    widget.workObject.keyResponsibilities?.forEach((key, value) {
-      _list.add(widget.workObject.makeResponsibilitiesItem(context: context, key: key,));
+    widget.projectObject.userStories?.forEach((key, value) {
+      _list.add(widget.projectObject.makeUserStoriesItem(context: context, key: key,));
     });
     return _list;
   }
 
-  List<Widget> generateInvolvementList() {
+  List<Widget> generateProcessList() {
     List<Widget> _list = [];
-    widget.workObject.involvementList?.forEach((key, value) {
-      _list.add(widget.workObject.makeInvolvementItem(context: context, key: key,));
+    widget.projectObject.processList?.forEach((key, value) {
+      _list.add(widget.projectObject.makeProcessItem(context: context, key: key,));
     });
     return _list;
   }
@@ -54,7 +54,7 @@ class _WorkDetailsState extends State<WorkDetails> {
                 bottomRight: Radius.circular(36.0),
               ),
             ),
-            child: widget.workObject.image != null
+            child: widget.projectObject.image != null
                 ? Column(
                   children: [
                     /// Padding from behind navbar
@@ -62,7 +62,7 @@ class _WorkDetailsState extends State<WorkDetails> {
                     Container(
                       height: screenSize.height * 0.2,
                       alignment: Alignment.bottomCenter,
-                      child: Image.asset(widget.workObject.image ?? '', fit: BoxFit.fitHeight,),
+                      child: Image.asset(widget.projectObject.image ?? '', fit: BoxFit.fitHeight,),
                     ),
                   ],
                 )
@@ -78,27 +78,27 @@ class _WorkDetailsState extends State<WorkDetails> {
                   height: 72.0,
                   width: 72.0,
                   padding: const EdgeInsets.all(defaultPadding * 0.5,),
-                  child: widget.workObject.makeIcon(),
+                  child: widget.projectObject.makeIcon(),
                 ),
-                Text(widget.workObject.companyName, textAlign: TextAlign.center, style: headline1(context),),
+                Text(widget.projectObject.projectName, textAlign: TextAlign.center, style: headline1(context),),
                 const SizedBox(height: defaultPadding * 0.5,),
-                Text("${widget.workObject.jobTitle} • ${widget.workObject.duration}", style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
+                Text(widget.projectObject.projectType, style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
                 const SizedBox(height: defaultPadding * 2,),
-                Text(widget.workObject.jobSummary, textAlign: TextAlign.center, style: bodyText1(context),),
+                Text(widget.projectObject.projectSummary, textAlign: TextAlign.center, style: bodyText1(context),),
               ],
             ),
           ),
           /// Role Summary
           Visibility(
-            visible: widget.workObject.roleSummary != null,
+            visible: widget.projectObject.projectMotivation != null,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Role Summary", style: subtitle1(context),),
+                  Text("Project Motivation", style: subtitle1(context),),
                   shoebox,
-                  Text(widget.workObject.roleSummary ?? '', style: bodyText1(context),),
+                  Text(widget.projectObject.projectMotivation ?? '', style: bodyText1(context),),
                 ],
               ),
             ),
@@ -108,21 +108,21 @@ class _WorkDetailsState extends State<WorkDetails> {
           Container(
             padding: const EdgeInsets.symmetric(vertical: defaultPadding,),
             color: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
-            child: widget.workObject.makeFeatureImage1(),
+            child: widget.projectObject.makeFeatureImage1(),
           ),
           shoebox,
           /// Key responsibilities
           Visibility(
-            visible: widget.workObject.keyResponsibilities != null,
+            visible: widget.projectObject.userStories != null,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Key Responsibilities", style: subtitle1(context),),
+                  Text("User Stories", style: subtitle1(context),),
                   shoebox,
                   Column(
-                    children: generateKeyResponsibilities(),
+                    children: generateUserStories(),
                   ),
                 ],
               ),
@@ -131,16 +131,16 @@ class _WorkDetailsState extends State<WorkDetails> {
           const SizedBox(height: defaultPadding * 2,),
           /// Project involvement
           Visibility(
-            visible: widget.workObject.involvementList != null,
+            visible: widget.projectObject.processList != null,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Project Involvement", style: subtitle1(context),),
+                  Text("Processes and Outcomes", style: subtitle1(context),),
                   shoebox,
                   Column(
-                    children: generateInvolvementList(),
+                    children: generateProcessList(),
                   ),
                 ],
               ),
