@@ -80,7 +80,7 @@ class _LandingPageState extends State<LandingPage> {
         ),
         SizedBox(height: defaultPadding * 3,),
         EducationCard(
-          icon: Image.asset(themeProvider.isDarkMode ? "assets/images/swansea_university_logo_crest_white.png" : "assets/images/swansea_university_logo_crest.png", width: 40.0, height: 40.0,),
+          icon: Image.asset(themeProvider.isDarkMode ? "assets/images/education/swansea_university_logo_crest_white.png" : "assets/images/education/swansea_university_logo_crest.png", width: 40.0, height: 40.0,),
           institutionName: "Swansea University",
           qualificationTitle: "MSc Cyber Security",
           dates: "2021 - 2022",
@@ -88,7 +88,7 @@ class _LandingPageState extends State<LandingPage> {
         ),
         SizedBox(height: defaultPadding * 3,),
         EducationCard(
-          icon: Image.asset("assets/images/uol_logo_crest.png", width: 40.0, height: 40.0,),
+          icon: Image.asset("assets/images/education/uol_logo_crest.png", width: 40.0, height: 40.0,),
           institutionName: "University of Lincoln",
           qualificationTitle: "BSc (Hons) Computer Science",
           dates: "2018 - 2021",
@@ -98,7 +98,7 @@ class _LandingPageState extends State<LandingPage> {
         QualificationCard(
           icon: Padding(
             padding: const EdgeInsets.all(3.0),
-            child: Image.asset("assets/images/ms_logo.png", width: 34.0, height: 34.0,),
+            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
           ),
           institutionName: "Microsoft",
           qualificationTitle: "MTC: Security, Compliance and Identity Fundamentals",
@@ -109,7 +109,7 @@ class _LandingPageState extends State<LandingPage> {
         QualificationCard(
           icon: Padding(
             padding: const EdgeInsets.all(3.0),
-            child: Image.asset("assets/images/ms_logo.png", width: 34.0, height: 34.0,),
+            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
           ),
           institutionName: "Microsoft",
           qualificationTitle: "MTC: Azure AI Fundamentals",
@@ -120,7 +120,7 @@ class _LandingPageState extends State<LandingPage> {
         QualificationCard(
           icon: Padding(
             padding: const EdgeInsets.all(3.0),
-            child: Image.asset("assets/images/ms_logo.png", width: 34.0, height: 34.0,),
+            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
           ),
           institutionName: "Microsoft",
           qualificationTitle: "MTA: Security Fundamentals",
@@ -131,7 +131,7 @@ class _LandingPageState extends State<LandingPage> {
         QualificationCard(
           icon: Padding(
             padding: const EdgeInsets.all(3.0),
-            child: Image.asset("assets/images/ms_logo.png", width: 34.0, height: 34.0,),
+            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
           ),
           institutionName: "Microsoft",
           qualificationTitle: "MTA: Networking Fundamentals",
@@ -142,7 +142,7 @@ class _LandingPageState extends State<LandingPage> {
         QualificationCard(
           icon: Padding(
             padding: const EdgeInsets.all(3.0),
-            child: Image.asset("assets/images/ms_logo.png", width: 34.0, height: 34.0,),
+            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
           ),
           institutionName: "Microsoft",
           qualificationTitle: "MTC: Azure Fundamentals",
@@ -166,7 +166,7 @@ class _LandingPageState extends State<LandingPage> {
         ),
         SizedBox(height: defaultPadding * 3,),
         EducationCard(
-          icon: Image.asset("assets/images/the_mentor_circle_logo.png", width: 40.0, height: 40.0,),
+          icon: Image.asset("assets/images/education/the_mentor_circle_logo.png", width: 40.0, height: 40.0,),
           institutionName: "The Mentor Circle",
           qualificationTitle: "Self-motivated Mentee",
           dates: "2020",

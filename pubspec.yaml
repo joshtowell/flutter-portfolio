@@ -69,26 +69,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/experience_data.json
-    - assets/images/pr_logo_small.png
-    - assets/images/really_wild_logo.png
-    - assets/images/takeaway_coffee_icon.png
-    - assets/images/uol_logo_crest.png
-    - assets/images/swansea_university_logo_crest.png
-    - assets/images/swansea_university_logo_crest_white.png
-    - assets/images/ms_logo.png
-    - assets/images/the_mentor_circle_logo.png
-    - assets/images/personal_art.png
-    - assets/images/work_art.png
-    - assets/images/ryb_mock_cropped.png
-    - assets/images/coffee_app_mocks_cropped.png
-    - assets/images/pr_coffee_coding.jpg
-    - assets/images/ryb_mock_full.png
-    - assets/svgs/personal_art.svg
-    - assets/svgs/work_art.svg
-    - assets/svgs/linkedin_icon.svg
-    - assets/svgs/github1_icon.svg
-    - assets/svgs/youtube_icon.svg
+    - assets/
+    - assets/images/
+    - assets/images/education/
+    - assets/images/project/
+    - assets/images/qualification/
+    - assets/images/work/
+    - assets/svgs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
