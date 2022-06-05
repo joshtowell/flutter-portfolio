@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/constants.dart';
-import 'package:provider/provider.dart';
-
-import '../controllers/app_themes.dart';
 
 class ProjectObject {
   final String icon;
@@ -97,7 +94,6 @@ class ProjectObject {
     String? _summary = processList![key]['summary'];
     String? _image = processList![key]['image'];
     String? _results = processList![key]['results'];
-    final themeProvider = Provider.of<ThemeProvider>(context);
     return Visibility(
       visible: (_title?.isNotEmpty ?? false) && (_summary?.isNotEmpty ?? false),
       child: Column(
