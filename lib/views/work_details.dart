@@ -54,7 +54,7 @@ class _WorkDetailsState extends State<WorkDetails> {
                 bottomRight: Radius.circular(36.0),
               ),
             ),
-            child: widget.workObject.image != null
+            child: (widget.workObject.image?.isNotEmpty ?? false)
                 ? Column(
                   children: [
                     /// Padding from behind navbar
@@ -90,7 +90,7 @@ class _WorkDetailsState extends State<WorkDetails> {
           ),
           /// Role Summary
           Visibility(
-            visible: widget.workObject.roleSummary != null,
+            visible: widget.workObject.roleSummary?.isNotEmpty ?? false,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
               child: Column(
@@ -99,21 +99,28 @@ class _WorkDetailsState extends State<WorkDetails> {
                   Text("Role Summary", style: subtitle1(context),),
                   shoebox,
                   Text(widget.workObject.roleSummary ?? '', style: bodyText1(context),),
+                  shoebox,
                 ],
               ),
             ),
           ),
-          shoebox,
           /// Feature image 1
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: defaultPadding,),
-            color: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
-            child: widget.workObject.makeFeatureImage1(),
+          Visibility(
+            visible: widget.workObject.featureImage1?.isNotEmpty ?? false,
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: defaultPadding,),
+                  color: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
+                  child: widget.workObject.makeFeatureImage1(),
+                ),
+                shoebox,
+              ],
+            ),
           ),
-          shoebox,
           /// Key responsibilities
           Visibility(
-            visible: widget.workObject.keyResponsibilities != null,
+            visible: widget.workObject.keyResponsibilities?.isNotEmpty ?? false,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
               child: Column(
@@ -131,7 +138,7 @@ class _WorkDetailsState extends State<WorkDetails> {
           const SizedBox(height: defaultPadding * 2,),
           /// Project involvement
           Visibility(
-            visible: widget.workObject.involvementList != null,
+            visible: widget.workObject.involvementList?.isNotEmpty ?? false,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
               child: Column(
@@ -146,6 +153,8 @@ class _WorkDetailsState extends State<WorkDetails> {
               ),
             ),
           ),
+          /// Padding from behind back button
+          const SizedBox(height: defaultPadding * 3,),
         ],
       ),
     );

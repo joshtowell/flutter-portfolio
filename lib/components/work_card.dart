@@ -44,10 +44,17 @@ class WorkCard extends StatelessWidget {
           Text("${workObject.jobTitle} • ${workObject.duration}", style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
           shoebox,
           Text(workObject.jobSummary, style: bodyText1(context),),
-          const SizedBox(height: defaultPadding * 2,),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: workObject.makeImage(),
+          Visibility(
+            visible: workObject.image?.isNotEmpty ?? false,
+            child: Column(
+              children: [
+                const SizedBox(height: defaultPadding * 2,),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: workObject.makeImage(),
+                ),
+              ],
+            ),
           ),
         ],
       ),

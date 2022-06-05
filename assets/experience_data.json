@@ -39,10 +39,15 @@
           "title": "Equal Employer",
           "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
           "involvement": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
+          "image": "",
           "url": "https://equalemployer.com/"
         },
         "golfLadder": {
-          "title": "Golf Ladder"
+          "title": "Golf Ladder",
+          "summary": "",
+          "involvement": "",
+          "image": "",
+          "url": ""
         }
       }
     },
@@ -51,7 +56,12 @@
       "companyName": "Really Wild Education",
       "jobTitle": "Trainee Instructor",
       "duration": "1 yr, 3 mos",
-      "jobSummary": "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment."
+      "jobSummary": "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment.",
+      "image": "",
+      "roleSummary": "",
+      "featureImage1": "",
+      "keyResponsibilities": {},
+      "involvementList": {}
     }
   },
   "project": {
@@ -86,13 +96,13 @@
           "title": "User Analysis",
           "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
           "results": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
-          "image": "assets/images/work/ryb_mock_full.png"
+          "image": ""
         },
         "adaptiveInterface": {
           "title": "Adaptive Interface",
           "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
           "results": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
-          "image": "assets/images/work/ryb_mock_full.png"
+          "image": ""
         }
       }
     }

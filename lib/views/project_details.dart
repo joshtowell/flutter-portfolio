@@ -54,7 +54,7 @@ class _ProjectDetailsState extends State<ProjectDetails> {
                 bottomRight: Radius.circular(36.0),
               ),
             ),
-            child: widget.projectObject.image != null
+            child: (widget.projectObject.image?.isNotEmpty ?? false)
                 ? Column(
                   children: [
                     /// Padding from behind navbar
@@ -90,7 +90,7 @@ class _ProjectDetailsState extends State<ProjectDetails> {
           ),
           /// Role Summary
           Visibility(
-            visible: widget.projectObject.projectMotivation != null,
+            visible: widget.projectObject.projectMotivation?.isNotEmpty ?? false,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
               child: Column(
@@ -105,15 +105,22 @@ class _ProjectDetailsState extends State<ProjectDetails> {
           ),
           shoebox,
           /// Feature image 1
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: defaultPadding,),
-            color: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
-            child: widget.projectObject.makeFeatureImage1(),
+          Visibility(
+            visible: widget.projectObject.featureImage1?.isNotEmpty ?? false,
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: defaultPadding,),
+                  color: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
+                  child: widget.projectObject.makeFeatureImage1(),
+                ),
+                shoebox,
+              ],
+            ),
           ),
-          shoebox,
           /// Key responsibilities
           Visibility(
-            visible: widget.projectObject.userStories != null,
+            visible: widget.projectObject.userStories?.isNotEmpty ?? false,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
               child: Column(
@@ -131,7 +138,7 @@ class _ProjectDetailsState extends State<ProjectDetails> {
           const SizedBox(height: defaultPadding * 2,),
           /// Project involvement
           Visibility(
-            visible: widget.projectObject.processList != null,
+            visible: widget.projectObject.processList?.isNotEmpty ?? false,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding * 3, vertical: defaultPadding,),
               child: Column(
@@ -146,6 +153,8 @@ class _ProjectDetailsState extends State<ProjectDetails> {
               ),
             ),
           ),
+          /// Padding from behind back button
+          const SizedBox(height: defaultPadding * 3,),
         ],
       ),
     );

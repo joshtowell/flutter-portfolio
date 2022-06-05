@@ -71,7 +71,7 @@ class WorkObject {
     String? _icon = keyResponsibilities![key]['icon'];
     String? _text = keyResponsibilities![key]['text'];
     return Visibility(
-      visible: _text != null,
+      visible: _text?.isNotEmpty ?? false,
       child: Column(
         children: [
           Row(
@@ -79,7 +79,7 @@ class WorkObject {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Visibility(
-                visible: _icon != null,
+                visible: _icon?.isNotEmpty ?? false,
                 child: Row(
                   children: [
                     Icon(IconData(int.parse(_icon ?? '0xf06cb'), fontFamily: 'MaterialIcons',), size: 24.0,),
@@ -104,12 +104,12 @@ class WorkObject {
     String? _url = involvementList![key]['url'];
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Visibility(
-      visible: _title != null && _summary != null,
+      visible: (_title?.isNotEmpty ?? false) && (_summary?.isNotEmpty ?? false),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Visibility(
-            visible: _title != null,
+            visible: _title?.isNotEmpty ?? false,
             child: Column(
               children: [
                 Row(
@@ -128,7 +128,7 @@ class WorkObject {
             ),
           ),
           Visibility(
-            visible: _summary != null,
+            visible: _summary?.isNotEmpty ?? false,
             child: Column(
               children: [
                 Row(
@@ -141,7 +141,7 @@ class WorkObject {
             ),
           ),
           Visibility(
-            visible: _image != null,
+            visible: _image?.isNotEmpty ?? false,
             child: Column(
               children: [
                 const SizedBox(height: defaultPadding * 0.5,),
@@ -154,7 +154,7 @@ class WorkObject {
             ),
           ),
           Visibility(
-            visible: _involvement != null,
+            visible: _involvement?.isNotEmpty ?? false,
             child: Column(
               children: [
                 Row(
