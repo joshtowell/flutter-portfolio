@@ -4,55 +4,51 @@ import 'package:provider/provider.dart';
 
 import '../controllers/app_themes.dart';
 
-class WorkObject {
+class ProjectObject {
   final String icon;
-  final String companyName;
-  final String jobTitle;
-  final String duration;
-  final String jobSummary;
+  final String projectName;
+  final String projectType;
+  final String projectSummary;
   final String? image;
-  final String? roleSummary;
+  final String? projectMotivation;
   final String? featureImage1;
-  final Map<String, dynamic>? keyResponsibilities;
-  final Map<String, dynamic>? involvementList;
+  final Map<String, dynamic>? userStories;
+  final Map<String, dynamic>? processList;
 
-  WorkObject({
+  ProjectObject({
     required this.icon,
-    required this.companyName,
-    required this.jobTitle,
-    required this.duration,
-    required this.jobSummary,
+    required this.projectName,
+    required this.projectType,
+    required this.projectSummary,
     this.image,
-    this.roleSummary,
+    this.projectMotivation,
     this.featureImage1,
-    this.keyResponsibilities,
-    this.involvementList,
+    this.userStories,
+    this.processList,
   });
 
-  WorkObject.fromJson(Map<String, dynamic> json)
+  ProjectObject.fromJson(Map<String, dynamic> json)
       : icon = json['icon'],
-        companyName = json['companyName'],
-        jobTitle = json['jobTitle'],
-        duration = json['duration'],
-        jobSummary = json['jobSummary'],
+        projectName = json['projectName'],
+        projectType = json['projectType'],
+        projectSummary = json['projectSummary'],
         image = json['image'],
-        roleSummary = json['roleSummary'],
+        projectMotivation = json['projectMotivation'],
         featureImage1 = json['featureImage1'],
-        keyResponsibilities = json['keyResponsibilities'],
-        involvementList = json['involvementList']
+        userStories = json['userStories'],
+        processList = json['processList']
   ;
 
   Map<String, dynamic> toJson() => {
     'icon': icon,
-    'companyName': companyName,
-    'jobTitle': jobTitle,
-    'duration': duration,
-    'jobSummary': jobSummary,
+    'projectName': projectName,
+    'projectType': projectType,
+    'projectSummary': projectSummary,
     'image': image,
-    'roleSummary': roleSummary,
+    'projectMotivation': projectMotivation,
     'featureImage1': featureImage1,
-    'keyResponsibilities': keyResponsibilities,
-    'involvementList': involvementList,
+    'userStories': userStories,
+    'processList': processList,
   };
 
   Widget makeIcon() {
@@ -67,9 +63,9 @@ class WorkObject {
     return featureImage1 != null ? Image.asset(featureImage1 ?? '',) : Container();
   }
 
-  Widget makeResponsibilitiesItem({required BuildContext context, required String key}) {
-    String? _icon = keyResponsibilities![key]['icon'];
-    String? _text = keyResponsibilities![key]['text'];
+  Widget makeUserStoriesItem({required BuildContext context, required String key}) {
+    String? _icon = userStories![key]['icon'];
+    String? _text = userStories![key]['text'];
     return Visibility(
       visible: _text != null,
       child: Column(
@@ -96,12 +92,11 @@ class WorkObject {
     );
   }
 
-  Widget makeInvolvementItem({required BuildContext context, required String key}) {
-    String? _title = involvementList![key]['title'];
-    String? _summary = involvementList![key]['summary'];
-    String? _image = involvementList![key]['image'];
-    String? _involvement = involvementList![key]['involvement'];
-    String? _url = involvementList![key]['url'];
+  Widget makeProcessItem({required BuildContext context, required String key}) {
+    String? _title = processList![key]['title'];
+    String? _summary = processList![key]['summary'];
+    String? _image = processList![key]['image'];
+    String? _results = processList![key]['results'];
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Visibility(
       visible: _title != null && _summary != null,
@@ -112,17 +107,7 @@ class WorkObject {
             visible: _title != null,
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(_title ?? '', style: bodyText1(context)?.copyWith(fontWeight: FontWeight.bold,),),
-                    _url != null
-                      ? GestureDetector(
-                        child: Icon(Icons.language_rounded, size: 20.0, color: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,),
-                        // onTap: () => ,   // TODO: add link to open url
-                      ) : Container(),
-                  ],
-                ),
+                Text(_title ?? '', style: bodyText1(context)?.copyWith(fontWeight: FontWeight.bold,),),
                 shoebox,
               ],
             ),
@@ -154,12 +139,12 @@ class WorkObject {
             ),
           ),
           Visibility(
-            visible: _involvement != null,
+            visible: _results != null,
             child: Column(
               children: [
                 Row(
                   children: [
-                    Flexible(child: Text(_involvement ?? '', style: bodyText1(context),)),
+                    Flexible(child: Text(_results ?? '', style: bodyText1(context),)),
                   ],
                 ),
                 shoebox,
