@@ -50,12 +50,12 @@ class _NavbarState extends State<Navbar> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          highlightingButton(
+          /*highlightingButton(
             text: "About Me",
             highlightGradient: purpleHighlightGradient,
             isSelected: false,    // TODO: Create 'About Me' page and controller
             tapAction: () => null,
-          ),
+          ),*/
           highlightingButton(
             text: "Work",
             highlightGradient: purpleHighlightGradient,
@@ -74,7 +74,7 @@ class _NavbarState extends State<Navbar> {
               provider.setPersonal();
             }),
           ),
-          Row(
+          /*Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               GestureDetector(
@@ -102,7 +102,7 @@ class _NavbarState extends State<Navbar> {
                 // onTap: tapAction,    // TODO: Add OpenURL plugin for opening external webpages
               ),
             ],
-          ),
+          ),*/
         ],
       ),
     );
