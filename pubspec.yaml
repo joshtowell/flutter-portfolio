@@ -45,6 +45,9 @@ dependencies:
   # Storing data locally (non-encrypted)
   shared_preferences: ^2.0.15
 
+  # Allow external links to be opened
+  url_launcher: ^6.1.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

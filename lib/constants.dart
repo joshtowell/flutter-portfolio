@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// # VALUES
+
+const String contactEmail = "jntowell@hotmail.com";
+
 
 /// # COLOURS
 

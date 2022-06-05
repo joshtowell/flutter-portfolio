@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_portfolio/controllers/work_personal_controller.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
 import '../controllers/app_themes.dart';
@@ -18,6 +20,21 @@ class Navbar extends StatefulWidget {
 
 class _NavbarState extends State<Navbar> {
   bool isMenuOpen = false;
+
+  void _launchMailTo() async {
+    try {
+      await launchUrl(Uri(
+        scheme: 'mailto',
+        path: contactEmail,
+        queryParameters: {'subject': "👋 Hello, let's talk!"},
+      ));
+    } catch (e) {
+      await Clipboard.setData(const ClipboardData(text: contactEmail));   // TODO: Add snackbar for user confirmation of copy to clipboard
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
 
   Widget highlightingButton({
     required String text,
@@ -73,6 +90,12 @@ class _NavbarState extends State<Navbar> {
               final provider = Provider.of<WorkPersonalProvider>(context, listen: false,);
               provider.setPersonal();
             }),
+          ),
+          highlightingButton(
+            text: "Contact Me",
+            highlightGradient: purpleHighlightGradient,
+            isSelected: false,
+            tapAction: () => _launchMailTo(),
           ),
           /*Row(
             mainAxisSize: MainAxisSize.min,
