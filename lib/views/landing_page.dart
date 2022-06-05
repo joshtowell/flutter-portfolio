@@ -155,13 +155,12 @@ class _LandingPageState extends State<LandingPage> {
   Widget personalViewCards() {
     return Column(
       children: [
-        ProjectCard(
-          padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
-          icon: Image.asset("assets/images/takeaway_coffee_icon.png", width: 40.0, height: 40.0,),
-          projectName: "Coffee App Inc.",
-          projectCategory: "Personal Project",
-          projectSummary: "Reminders to drink your coffee and remembers where you left the it. Set timers for boiling and brewing, so you never waste time or coffee again!",
-          image: Image.asset("assets/images/coffee_app_mocks_cropped.png"),
+        Visibility(
+          visible: _workObjectController.list.isNotEmpty,
+          child: ProjectCard(
+            projectObject: _projectObjectController.list.where((projectObject) => projectObject.projectName == "Coffee App").first,
+            padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+          ),
         ),
         SizedBox(height: defaultPadding * 3,),
         EducationCard(
