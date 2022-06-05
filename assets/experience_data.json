@@ -38,7 +38,7 @@
         "equalEmployer": {
           "title": "Equal Employer",
           "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
-          "involvement": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",          "image": "assets/images/ryb_mock_full.png",
+          "involvement": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
           "url": "https://equalemployer.com/"
         },
         "golfLadder": {
