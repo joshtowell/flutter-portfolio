@@ -66,13 +66,13 @@
   },
   "project": {
     "coffeeApp": {
-      "icon": "assets/images/work/pr_logo_small.png",
+      "icon": "assets/images/project/takeaway_coffee_icon.png",
       "projectName": "Coffee App",
       "projectType": "Personal Project",
       "projectSummary": "Reminders to drink your coffee and remembers where you left it. Set timers for boiling and brewing so you never waste time or coffee again!",
-      "image": "assets/images/work/ryb_mock_cropped.png",
-      "projectMotivation": "As a Software Engineer, I take part in the consultation, design and implementation of mobile and web applications.\n\nMy responsibilities range from evaluating the initial requirements of the client, to ensuring that every user interaction is high quality.\n\nWorking as a small team, there are weekly delivery planning meetings and regular work and social interactions online and in-person.",
-      "featureImage1": "assets/images/work/pr_coffee_coding.jpg",
+      "image": "assets/images/project/coffee_app_mocks_cropped.png",
+      "projectMotivation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+      "featureImage1": "assets/images/project/coffee-cup-feature.jpg",
       "userStories": {
         "build": {
           "icon": "0xf5f3",
