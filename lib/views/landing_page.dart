@@ -14,6 +14,7 @@ import '../components/qualification_card.dart';
 import '../components/work_card.dart';
 import '../controllers/app_routes.dart';
 import '../controllers/app_themes.dart';
+import '../controllers/project_object_controller.dart';
 import '../controllers/work_object_controller.dart';
 import '../controllers/work_personal_controller.dart';
 
@@ -29,6 +30,7 @@ class _LandingPageState extends State<LandingPage> {
   bool isLightMode = false;
 
   final WorkObjectController _workObjectController = WorkObjectController();
+  final ProjectObjectController _projectObjectController = ProjectObjectController();
 
   Widget fontsTest() {
     return Column(
