@@ -53,5 +53,48 @@
       "duration": "1 yr, 3 mos",
       "jobSummary": "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment."
     }
+  },
+  "project": {
+    "coffeeApp": {
+      "icon": "assets/images/pr_logo_small.png",
+      "projectName": "Coffee App",
+      "projectType": "Personal Project",
+      "projectSummary": "Reminders to drink your coffee and remembers where you left it. Set timers for boiling and brewing so you never waste time or coffee again!",
+      "image": "assets/images/ryb_mock_cropped.png",
+      "projectMotivation": "As a Software Engineer, I take part in the consultation, design and implementation of mobile and web applications.\n\nMy responsibilities range from evaluating the initial requirements of the client, to ensuring that every user interaction is high quality.\n\nWorking as a small team, there are weekly delivery planning meetings and regular work and social interactions online and in-person.",
+      "featureImage1": "assets/images/pr_coffee_coding.jpg",
+      "userStories": {
+        "build": {
+          "icon": "0xf5f3",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "collaborate": {
+          "icon": "0xf7c8",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "engage": {
+          "icon": "0xf69c",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "critical": {
+          "icon": "0xf00c4",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        }
+      },
+      "processList": {
+        "userAnalysis": {
+          "title": "User Analysis",
+          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+          "results": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
+          "image": "assets/images/ryb_mock_full.png"
+        },
+        "adaptiveInterface": {
+          "title": "Adaptive Interface",
+          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+          "results": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
+          "image": "assets/images/ryb_mock_full.png"
+        }
+      }
+    }
   }
 }
