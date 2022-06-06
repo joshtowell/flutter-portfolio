@@ -30,16 +30,16 @@
       "involvementList": {
         "readYourBody": {
           "title": "Read Your Body",
-          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
-          "involvement": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
+          "summary": "Read Your Body is the non-profit app that tracks your cycles to understand your unique patterns. This helps women to avoid or achieve pregnancy, confirm ovulation, anticipate their periods and take charge of their health. The app is highly customisable allowing users to fine tune and use professional charting methods to meet their specific health needs.\n\nRead Your Body is very well maintained as improvements and new features are added regularly - requested and prioritised by users.",
+          "involvement": "I have seen this project through from it's small beginnings in October 2019, and co-lead the development of the Android/iOS app into it's second version release.\n\nMy involvement in delivering this project have been: UI consultation & development, problem solving & feature integration, bug bashing and team task management.\n\nWorking on this project for over 2 years has taught me so many great lessons in agile software development and team organisation. I can confidently take this experience and apply it to new clients and other team related fields.",
           "image": "assets/images/work/ryb_mock_full.png",
           "url": "https://www.readyourbody.info/"
         },
         "equalEmployer": {
           "title": "Equal Employer",
-          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
-          "involvement": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
-          "image": "",
+          "summary": "This project aims to remove the bias from employment. The Equal Employer web and mobile app provides a job board platform for candiates to apply through and for employers to recurit.\n\nEqual Employer support, certify, and recognise businesses as an 'Equal Employer' upon successfully achieving our standards. It enables businesses to demonstrate their commitment to equality and prevent bias in recruitment through the use of our independent auditing service.",
+          "involvement": "My main involvement has been to support new staff working on this project and ensure each task is completed and shipped to a high quality. I aim to minimise the disparity between the clients expectations and the finalised product, improving team efficiency and the best service to their users.\n\nWorking from it's infant stages, this application is under constant revision and requires me to manage it simultaneously amongst other live projects.",
+          "image": "assets/images/work/equal_employer_approved.png",
           "url": "https://equalemployer.com/"
         },
         "golfLadder": {
