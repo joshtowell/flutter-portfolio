@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_portfolio/controllers/work_personal_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:convert' show utf8;
 
 import '../constants.dart';
 import '../controllers/app_themes.dart';
@@ -23,9 +24,9 @@ class _NavbarState extends State<Navbar> {
   bool isMenuOpen = false;
 
   final SnackBar _copiedEmailSnackBar = SnackBar(
+    width: 300,
     behavior: SnackBarBehavior.floating,
     elevation: 5.0,
-    margin: const EdgeInsets.all(defaultPadding,),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
     backgroundColor: Colors.green,
     content: Row(
@@ -42,7 +43,8 @@ class _NavbarState extends State<Navbar> {
       await launchUrl(Uri(
         scheme: 'mailto',
         path: contactEmail,
-        queryParameters: {'subject': "👋 Hello, let's talk!"},
+        /// Switched from 'queryParameters' to 'query' to avoid UTF-8 mis-formatting on Windows
+        query: "subject=👋 Hello, let's talk!",
       ));
     } catch (e) {
       await Clipboard.setData(const ClipboardData(text: contactEmail));
@@ -111,7 +113,7 @@ class _NavbarState extends State<Navbar> {
           highlightingButton(
             text: "Contact Me",
             highlightGradient: purpleHighlightGradient,
-            isSelected: false,    // TODO: Add temporary highlight with local variable and change to conditionals
+            isSelected: false,
             tapAction: () => _launchMailTo(),
           ),
           /*Row(
