@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_portfolio/controllers/work_personal_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'dart:convert' show utf8;
 
 import '../constants.dart';
 import '../controllers/app_themes.dart';
