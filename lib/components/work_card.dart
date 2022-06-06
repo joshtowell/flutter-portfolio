@@ -97,6 +97,7 @@ class WorkCard extends StatelessWidget {
                     Text("${workObject.jobTitle} • ${workObject.duration}", style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
                     shoebox,
                     Text(workObject.jobSummary, style: bodyText1(context),),
+                    shoebox,
                   ],
                 ),
               ),
