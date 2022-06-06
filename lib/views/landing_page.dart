@@ -220,40 +220,45 @@ class _LandingPageState extends State<LandingPage> {
                       ],
                     ),
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text("Hi, I'm Joshua.", textAlign: TextAlign.center, style: Theme.of(context).textTheme.headline1,),
-                      shoebox,
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
+                  Center(
+                    child: Container(
+                      constraints: BoxConstraints(maxWidth: 500,),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon(Icons.person_pin_circle_rounded, size: 16.0, color: themeProvider.isDarkMode ? backgroundColour3Dark : backgroundColour3Light,),
-                          SizedBox(width: defaultPadding * 0.5,),
-                          Text(
-                            "Swansea, Wales",
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.bodyText2?.copyWith(
-                              color: workPersonalProvider.isWork
-                                  ? (themeProvider.isDarkMode ? backgroundColour3Dark : backgroundColour3Light)
-                                  : (themeProvider.isDarkMode ? pinkHighlightColour : purpleHighlightColour),
+                          Text("Hi, I'm Joshua.", textAlign: TextAlign.center, style: Theme.of(context).textTheme.headline1,),
+                          shoebox,
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.person_pin_circle_rounded, size: 16.0, color: themeProvider.isDarkMode ? backgroundColour3Dark : backgroundColour3Light,),
+                              SizedBox(width: defaultPadding * 0.5,),
+                              Text(
+                                "Swansea, Wales",
+                                textAlign: TextAlign.center,
+                                style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                                  color: workPersonalProvider.isWork
+                                      ? (themeProvider.isDarkMode ? backgroundColour3Dark : backgroundColour3Light)
+                                      : (themeProvider.isDarkMode ? pinkHighlightColour : purpleHighlightColour),
+                                ),
+                              ),
+                            ],
+                          ),
+                          shoebox,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: defaultPadding,),
+                            child: Text(
+                              workPersonalProvider.isWork
+                                  ? "I am currently a Cyber Security Masters’ student, looking for a graduate job in the Cyber Security industry."
+                                  : "An enthusiastic, independent and confident learner. Looking to develop my passion for UI/UX into an exciting freelance career.",
+                              textAlign: TextAlign.center,
+                              style: bodyText1(context),
                             ),
                           ),
                         ],
                       ),
-                      shoebox,
-                      SizedBox(
-                        height: screenSize.width * 0.25,
-                        child: Text(
-                          workPersonalProvider.isWork
-                              ? "I am currently a Cyber Security Masters’ student, looking for a graduate job in the Cyber Security industry."
-                              : "An enthusiastic, independent and confident learner. Looking to develop my passion for UI/UX into an exciting freelance career.",
-                          textAlign: TextAlign.center,
-                          style: bodyText1(context),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                   Align(
                     alignment: Alignment.bottomCenter,

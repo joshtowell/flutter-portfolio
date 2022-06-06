@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/controllers/responsive.dart';
 import 'package:provider/provider.dart';
 
 import '../constants.dart';
@@ -19,22 +20,25 @@ class WideCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
-    return GestureDetector(
-      child: Row(
-        children: [
-          Expanded(
-            child: Container(
-              padding: padding ?? const EdgeInsets.all(defaultPadding,),
-              decoration: BoxDecoration(
-                color: themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light,
-                borderRadius: BorderRadius.circular(20.0),
+    return Container(
+      constraints: BoxConstraints(maxWidth: Responsive.isMobile(context) ? 400 : 600,),
+      child: GestureDetector(
+        child: Row(
+          children: [
+            Expanded(
+              child: Container(
+                padding: padding ?? const EdgeInsets.all(defaultPadding,),
+                decoration: BoxDecoration(
+                  color: themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light,
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: child,
               ),
-              child: child,
             ),
-          ),
-        ],
+          ],
+        ),
+        onTap: tapAction,
       ),
-      onTap: tapAction,
     );
   }
 }
