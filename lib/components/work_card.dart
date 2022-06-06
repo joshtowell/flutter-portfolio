@@ -92,7 +92,7 @@ class WorkCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(workObject.companyName, style: headline1(context),),
+                    Text(workObject.companyName, style: Responsive.isTablet(context) ? headline1(context) : headline2(context)?.copyWith(fontSize: 38.0,),),
                     const SizedBox(height: defaultPadding * 0.25,),
                     Text("${workObject.jobTitle} • ${workObject.duration}", style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
                     shoebox,

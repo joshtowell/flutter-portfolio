@@ -21,7 +21,7 @@ class WideCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Container(
-      constraints: BoxConstraints(maxWidth: Responsive.isMobile(context) ? 400 : 600,),
+      constraints: BoxConstraints(maxWidth: Responsive.isMobile(context) ? 400 : (Responsive.isTablet(context) ? 600 : 800),),
       child: GestureDetector(
         child: Row(
           children: [

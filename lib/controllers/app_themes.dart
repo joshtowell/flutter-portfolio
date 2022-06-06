@@ -67,7 +67,7 @@ class AppThemes {
     ),
     button: GoogleFonts.montserrat(
       textStyle: const TextStyle(
-        /// Mobile:
+        /// Mobile: 16.0
         /// Desktop: 16.0
         fontSize: 16.0,
         fontWeight: FontWeight.bold,

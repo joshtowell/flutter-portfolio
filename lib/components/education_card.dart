@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 
 import '../constants.dart';
 import '../controllers/app_themes.dart';
-import '../controllers/responsive.dart';
 import 'elevating_button.dart';
 
 class EducationCard extends StatelessWidget {

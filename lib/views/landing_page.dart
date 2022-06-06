@@ -96,7 +96,7 @@ class _LandingPageState extends State<LandingPage> {
         ),
         SizedBox(height: defaultPadding * 3,),
         Container(
-          constraints: BoxConstraints(maxWidth: Responsive.isMobile(context) ? 400 : 600,),
+          constraints: BoxConstraints(maxWidth: Responsive.isMobile(context) ? 400 : (Responsive.isTablet(context) ? 600 : 800),),
           child: Responsive.isMobile(context)
             /// Mobile (columnar view)
             ? Column(
@@ -288,7 +288,7 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Widget mobileBuild() {
+  Widget allBuild() {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final workPersonalProvider = Provider.of<WorkPersonalProvider>(context);
     return SingleChildScrollView(
@@ -336,7 +336,7 @@ class _LandingPageState extends State<LandingPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("Hi, I'm Joshua.", textAlign: TextAlign.center, style: Theme.of(context).textTheme.headline1,),
+                          Text("Hi, I'm Joshua.", textAlign: TextAlign.center, style: headline1(context),),
                           shoebox,
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -346,7 +346,7 @@ class _LandingPageState extends State<LandingPage> {
                               Text(
                                 "Swansea, Wales",
                                 textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                                style: bodyText2(context)?.copyWith(
                                   color: workPersonalProvider.isWork
                                       ? (themeProvider.isDarkMode ? backgroundColour3Dark : backgroundColour3Light)
                                       : (themeProvider.isDarkMode ? pinkHighlightColour : purpleHighlightColour),
@@ -439,9 +439,9 @@ class _LandingPageState extends State<LandingPage> {
           children: [
             GestureDetector(
               child: Responsive(
-                mobile: mobileBuild(),
-                tablet: mobileBuild(),
-                desktop: desktopBuild(),
+                mobile: allBuild(),
+                tablet: allBuild(),
+                desktop: allBuild(),
               ),
               /*onTap: () {
                     if (isMenuOpen) setState(() => isMenuOpen = false);
