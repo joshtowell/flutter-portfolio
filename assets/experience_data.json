@@ -58,9 +58,26 @@
       "duration": "1 yr, 3 mos",
       "jobSummary": "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment.",
       "image": "",
-      "roleSummary": "",
+      "roleSummary": "I aid the progression of learning that enables students to develop into outstanding individuals who consistently demonstrate a greater personal potential and even a propensity to lead.\n\nThis takes place in an outdoor environment setting where we teach bushcraft and survival skills to build personal development.",
       "featureImage1": "",
-      "keyResponsibilities": {},
+      "keyResponsibilities": {
+        "educate": {
+          "icon": "0xf012e",
+          "text": "Educating individuals of all ages how to survive in the outdoor environment, and thrive by developing skills of personal value."
+        },
+        "engage": {
+          "icon": "0xf79d",
+          "text": "Engaging groups of young people whilst achieving maximum enjoyment and positive results."
+        },
+        "persist": {
+          "icon": "0xf016b",
+          "text": "Practical, persistent and engaging in every session despite potentially adverse circumstances."
+        },
+        "teamwork": {
+          "icon": "0xf7c8",
+          "text": "Flawless teamwork with instructors, managing cohorts 120+ students by working collectively providing critical feedback, achieving the highest standards."
+        }
+      },
       "involvementList": {}
     }
   },
