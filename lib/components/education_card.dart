@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../constants.dart';
 import '../controllers/app_themes.dart';
+import '../controllers/responsive.dart';
 import 'elevating_button.dart';
 
 class EducationCard extends StatelessWidget {
@@ -45,7 +46,10 @@ class EducationCard extends StatelessWidget {
           const SizedBox(height: defaultPadding * 0.25,),
           Text(dates, textAlign: TextAlign.center, style: bodyText2(context)?.copyWith(color: backgroundColour3Light),),
           const SizedBox(height: defaultPadding * 1.5,),
-          Text(courseSummary, textAlign: TextAlign.center, style: bodyText1(context),),
+          Container(
+            constraints: const BoxConstraints(maxWidth: 450,),
+            child: Text(courseSummary, textAlign: TextAlign.center, style: bodyText1(context),),
+          ),
         ],
       ),
     );
