@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
 import '../controllers/app_themes.dart';
+import '../controllers/responsive.dart';
 import 'change_theme_widget.dart';
 import 'elevating_button.dart';
 import 'elevating_switch.dart';
@@ -157,8 +158,9 @@ class _NavbarState extends State<Navbar> {
   @override
   Widget build(BuildContext context) {
     final workPersonalProvider = Provider.of<WorkPersonalProvider>(context);
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: defaultPadding, horizontal: defaultPadding,),
+    return Container(
+      constraints: BoxConstraints(maxWidth: Responsive.isMobile(context) ? 400 : (Responsive.isTablet(context) ? 600 : 800),),
+      margin: const EdgeInsets.symmetric(vertical: defaultPadding, horizontal: defaultPadding,),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [

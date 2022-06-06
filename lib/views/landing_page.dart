@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/components/change_theme_widget.dart';
 import 'package:flutter_portfolio/components/navbar.dart';
@@ -331,7 +332,7 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   Center(
                     child: Container(
-                      constraints: BoxConstraints(maxWidth: 500,),
+                      constraints: BoxConstraints(maxWidth: Responsive.isMobile(context) ? 400 : (Responsive.isTablet(context) ? 500 : 500),),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -447,7 +448,10 @@ class _LandingPageState extends State<LandingPage> {
                     if (isMenuOpen) setState(() => isMenuOpen = false);
                   },*/
             ),
-            Navbar(),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Navbar(),
+            ),
           ],
         ),
       ),
