@@ -21,6 +21,21 @@ class Navbar extends StatefulWidget {
 class _NavbarState extends State<Navbar> {
   bool isMenuOpen = false;
 
+  final SnackBar _copiedEmailSnackBar = SnackBar(
+    behavior: SnackBarBehavior.floating,
+    elevation: 5.0,
+    margin: const EdgeInsets.all(defaultPadding,),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+    backgroundColor: Colors.green,
+    content: Row(
+      children: const [
+        Icon(Icons.check_rounded, color: whiteColour,),
+        shoebox,
+        Flexible(child: Text('Copied! My email address is in your clipboard.')),
+      ],
+    ),
+  );
+
   void _launchMailTo() async {
     try {
       await launchUrl(Uri(
@@ -29,7 +44,8 @@ class _NavbarState extends State<Navbar> {
         queryParameters: {'subject': "👋 Hello, let's talk!"},
       ));
     } catch (e) {
-      await Clipboard.setData(const ClipboardData(text: contactEmail));   // TODO: Add snackbar for user confirmation of copy to clipboard
+      await Clipboard.setData(const ClipboardData(text: contactEmail));
+      ScaffoldMessenger.of(context).showSnackBar(_copiedEmailSnackBar);
       if (kDebugMode) {
         print(e);
       }
