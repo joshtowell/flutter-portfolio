@@ -58,6 +58,7 @@ class MyApp extends StatelessWidget {
       ],
       builder: (context, _) {
         final themeProvider = Provider.of<ThemeProvider>(context);
+        themeProvider.getExisting();
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Joshua Towell Portfolio',

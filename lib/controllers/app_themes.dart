@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/constants.dart';
+import 'package:flutter_portfolio/controllers/settings_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.system;
   bool get isDarkMode => themeMode == ThemeMode.dark;
 
+  void getExisting() {
+    switch (SettingsController.getColourThemeMode()) {
+      case "dark":
+        themeMode = ThemeMode.dark;
+        break;
+      case "light":
+        themeMode = ThemeMode.light;
+        break;
+      default:
+        themeMode = ThemeMode.system;
+        break;
+    }
+    notifyListeners();
+  }
+
   void toggleTheme() {
     themeMode = isDarkMode ? ThemeMode.light : ThemeMode.dark;
+    SettingsController.setColourThemeMode(themeMode == ThemeMode.light ? "light" : "dark");
     notifyListeners();
   }
 }
