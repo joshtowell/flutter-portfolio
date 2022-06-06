@@ -95,61 +95,170 @@ class _LandingPageState extends State<LandingPage> {
           courseSummary: "A 3 year course introducing essential Computer Science concepts and developing complex skills related to Cloud Computing, IoT, Machine Learning, Cyber Security and more.",
         ),
         SizedBox(height: defaultPadding * 3,),
-        QualificationCard(
-          icon: Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
-          ),
-          institutionName: "Microsoft",
-          qualificationTitle: "MTC: Security, Compliance and Identity Fundamentals",
-          issueDate: "Certified 2021",
-          qualificationSummary: "Ability to describe the following: concepts of security, compliance, and identity; capabilities of Microsoft identity and access management solutions; capabilities of Microsoft Security solutions; and capabilities of Microsoft compliance solutions.",
+        Container(
+          constraints: BoxConstraints(maxWidth: Responsive.isMobile(context) ? 400 : 600,),
+          child: Responsive.isMobile(context)
+            /// Mobile (columnar view)
+            ? Column(
+                children: [
+                  QualificationCard(
+                    icon: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
+                    ),
+                    institutionName: "Microsoft",
+                    qualificationTitle: "MTC: Security, Compliance and Identity Fundamentals",
+                    issueDate: "Certified 2021",
+                    qualificationSummary: "Ability to describe the following: concepts of security, compliance, and identity; capabilities of Microsoft identity and access management solutions; capabilities of Microsoft Security solutions; and capabilities of Microsoft compliance solutions.",
+                  ),
+                  SizedBox(height: defaultPadding * 3,),
+                  QualificationCard(
+                    icon: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
+                    ),
+                    institutionName: "Microsoft",
+                    qualificationTitle: "MTC: Azure AI Fundamentals",
+                    issueDate: "Certified 2021",
+                    qualificationSummary: "Demonstrate understanding of: AI workloads and considerations; fundamental principles of machine learning on Azure; features of computer vision workloads on Azure; and features of Natural Language Processing (NLP) workloads on Azure.",
+                  ),
+                  SizedBox(height: defaultPadding * 3,),
+                  QualificationCard(
+                    icon: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
+                    ),
+                    institutionName: "Microsoft",
+                    qualificationTitle: "MTA: Security Fundamentals",
+                    issueDate: "Certified 2020",
+                    qualificationSummary: "Experience with Windows Server, Windows-based networking, Active Directory, anti-malware products, firewalls, network topologies and devices, and network ports.",
+                  ),
+                  SizedBox(height: defaultPadding * 3,),
+                  QualificationCard(
+                    icon: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
+                    ),
+                    institutionName: "Microsoft",
+                    qualificationTitle: "MTA: Networking Fundamentals",
+                    issueDate: "Certified 2020",
+                    qualificationSummary: "Experience with Windows Server, Windows-based networking, network management tools, DNS, TCP/IP, names resolution process, and network protocols and topologies.",
+                  ),
+                  SizedBox(height: defaultPadding * 3,),
+                  QualificationCard(
+                    icon: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
+                    ),
+                    institutionName: "Microsoft",
+                    qualificationTitle: "MTC: Azure Fundamentals",
+                    issueDate: "Certified 2020",
+                    qualificationSummary: "Knowledge of cloud concepts, Azure services, Azure workloads, security and privacy in Azure, as well as Azure pricing and support. Understanding of cloud concepts such as networking, storage, compute, application support, and application development.",
+                  ),
+                  SizedBox(height: defaultPadding * 3,),
+                ],
+              )
+            /// Desktop (grid view)
+            : Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Flexible(
+                        flex: 1,
+                        child: QualificationCard(
+                          icon: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
+                          ),
+                          institutionName: "Microsoft",
+                          qualificationTitle: "MTC: Security, Compliance and Identity Fundamentals",
+                          issueDate: "Certified 2021",
+                          qualificationSummary: "Ability to describe the following: concepts of security, compliance, and identity; capabilities of Microsoft identity and access management solutions; capabilities of Microsoft Security solutions; and capabilities of Microsoft compliance solutions.",
+                        ),
+                      ),
+                      SizedBox(width: defaultPadding * 3,),
+                      Flexible(
+                        flex: 1,
+                        child: QualificationCard(
+                          icon: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
+                          ),
+                          institutionName: "Microsoft",
+                          qualificationTitle: "MTC: Azure AI Fundamentals",
+                          issueDate: "Certified 2021",
+                          qualificationSummary: "Demonstrate understanding of: AI workloads and considerations; fundamental principles of machine learning on Azure; features of computer vision workloads on Azure; and features of Natural Language Processing (NLP) workloads on Azure.",
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: defaultPadding * 3,),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Flexible(
+                        flex: 1,
+                        child: QualificationCard(
+                          icon: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
+                          ),
+                          institutionName: "Microsoft",
+                          qualificationTitle: "MTA: Security Fundamentals",
+                          issueDate: "Certified 2020",
+                          qualificationSummary: "Experience with Windows Server, Windows-based networking, Active Directory, anti-malware products, firewalls, network topologies and devices, and network ports.",
+                        ),
+                      ),
+                      SizedBox(width: defaultPadding * 3,),
+                      Flexible(
+                        flex: 1,
+                        child: QualificationCard(
+                          icon: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
+                          ),
+                          institutionName: "Microsoft",
+                          qualificationTitle: "MTA: Networking Fundamentals",
+                          issueDate: "Certified 2020",
+                          qualificationSummary: "Experience with Windows Server, Windows-based networking, network management tools, DNS, TCP/IP, names resolution process, and network protocols and topologies.",
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: defaultPadding * 3,),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Flexible(
+                        flex: 1,
+                        child: Container(),
+                      ),
+                      SizedBox(width: defaultPadding * 1.5,),
+                      Flexible(
+                        flex: 2,
+                        child: QualificationCard(
+                          icon: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
+                          ),
+                          institutionName: "Microsoft",
+                          qualificationTitle: "MTC: Azure Fundamentals",
+                          issueDate: "Certified 2020",
+                          qualificationSummary: "Knowledge of cloud concepts, Azure services, Azure workloads, security and privacy in Azure, as well as Azure pricing and support. Understanding of cloud concepts such as networking, storage, compute, application support, and application development.",
+                        ),
+                      ),
+                      SizedBox(width: defaultPadding * 1.5,),
+                      Flexible(
+                        flex: 1,
+                        child: Container(),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: defaultPadding * 3,),
+                ],
+              ),
         ),
-        SizedBox(height: defaultPadding * 3,),
-        QualificationCard(
-          icon: Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
-          ),
-          institutionName: "Microsoft",
-          qualificationTitle: "MTC: Azure AI Fundamentals",
-          issueDate: "Certified 2021",
-          qualificationSummary: "Demonstrate understanding of: AI workloads and considerations; fundamental principles of machine learning on Azure; features of computer vision workloads on Azure; and features of Natural Language Processing (NLP) workloads on Azure.",
-        ),
-        SizedBox(height: defaultPadding * 3,),
-        QualificationCard(
-          icon: Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
-          ),
-          institutionName: "Microsoft",
-          qualificationTitle: "MTA: Security Fundamentals",
-          issueDate: "Certified 2020",
-          qualificationSummary: "Experience with Windows Server, Windows-based networking, Active Directory, anti-malware products, firewalls, network topologies and devices, and network ports.",
-        ),
-        SizedBox(height: defaultPadding * 3,),
-        QualificationCard(
-          icon: Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
-          ),
-          institutionName: "Microsoft",
-          qualificationTitle: "MTA: Networking Fundamentals",
-          issueDate: "Certified 2020",
-          qualificationSummary: "Experience with Windows Server, Windows-based networking, network management tools, DNS, TCP/IP, names resolution process, and network protocols and topologies.",
-        ),
-        SizedBox(height: defaultPadding * 3,),
-        QualificationCard(
-          icon: Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: Image.asset("assets/images/qualification/ms_logo.png", width: 34.0, height: 34.0,),
-          ),
-          institutionName: "Microsoft",
-          qualificationTitle: "MTC: Azure Fundamentals",
-          issueDate: "Certified 2020",
-          qualificationSummary: "Knowledge of cloud concepts, Azure services, Azure workloads, security and privacy in Azure, as well as Azure pricing and support. Understanding of cloud concepts such as networking, storage, compute, application support, and application development.",
-        ),
-        SizedBox(height: defaultPadding * 3,),
       ],
     );
   }
