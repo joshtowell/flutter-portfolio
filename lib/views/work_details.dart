@@ -177,7 +177,10 @@ class _WorkDetailsState extends State<WorkDetails> {
                     if (isMenuOpen) setState(() => isMenuOpen = false);
                   },*/
             ),
-            const Navbar(),
+            const Align(
+              alignment: Alignment.topCenter,
+              child: Navbar(),
+            ),
             Align(
               alignment: Alignment.bottomLeft,
               child: Padding(
