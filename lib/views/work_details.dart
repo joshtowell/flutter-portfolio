@@ -160,10 +160,6 @@ class _WorkDetailsState extends State<WorkDetails> {
     );
   }
 
-  Widget desktopBuild() {
-    return Container();
-  }
-
   @override
   Widget build(BuildContext context) {
     screenSize = MediaQuery.of(context).size;
@@ -175,7 +171,7 @@ class _WorkDetailsState extends State<WorkDetails> {
               child: Responsive(
                 mobile: mobileBuild(),
                 tablet: mobileBuild(),
-                desktop: desktopBuild(),
+                desktop: mobileBuild(),
               ),
               /*onTap: () {
                     if (isMenuOpen) setState(() => isMenuOpen = false);

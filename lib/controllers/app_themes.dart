@@ -19,7 +19,7 @@ class ThemeProvider extends ChangeNotifier {
         themeMode = ThemeMode.system;
         break;
     }
-    notifyListeners();
+    // notifyListeners();   // TODO: Look into init on constructor - conflicting setState()
   }
 
   void toggleTheme() {
