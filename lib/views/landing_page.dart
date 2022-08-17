@@ -271,6 +271,7 @@ class _LandingPageState extends State<LandingPage> {
           child: ProjectCard(
             projectObject: _projectObjectController.list.where((projectObject) => projectObject.projectName == "Coffee App").first,
             padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+            underDevelopment: true,
           ),
         ),
         SizedBox(height: defaultPadding * 3,),

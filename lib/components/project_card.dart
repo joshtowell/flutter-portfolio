@@ -12,12 +12,32 @@ import 'elevating_button.dart';
 class ProjectCard extends StatelessWidget {
   final ProjectObject projectObject;
   final EdgeInsetsGeometry? padding;
+  final bool underDevelopment;
 
   const ProjectCard({
     required this.projectObject,
     this.padding,
+    this.underDevelopment = false,
     Key? key,
   }) : super(key: key);
+
+  Widget developmentChip(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: defaultPadding * 0.5, horizontal: defaultPadding,),
+      decoration: BoxDecoration(
+        color: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
+        borderRadius: BorderRadius.circular(30.0),
+      ),
+      child: ShaderMask(
+        blendMode: BlendMode.srcIn,
+        shaderCallback: (bounds) {
+          return purpleHighlightGradient.createShader(bounds);
+        },
+        child: Text("Under development", style: bodyText2(context),),
+      ),
+    );
+  }
 
   Widget mobileBuild(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -35,7 +55,9 @@ class ProjectCard extends StatelessWidget {
                 colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
                 child: projectObject.makeIcon(),
               ),
-              const Icon(Icons.chevron_right_rounded, size: 40.0,)
+              underDevelopment
+                  ? developmentChip(context)
+                  : const Icon(Icons.chevron_right_rounded, size: 40.0,),
             ],
           ),
           shoebox,
@@ -59,8 +81,10 @@ class ProjectCard extends StatelessWidget {
         ],
       ),
       tapAction: () async {
-        final args = projectObject;
-        await Navigator.pushNamed(context, AppRoutes.projectDetails, arguments: args,);
+        if (!underDevelopment) {
+          final args = projectObject;
+          await Navigator.pushNamed(context, AppRoutes.projectDetails, arguments: args,);
+        }
       },
     );
   }
@@ -81,7 +105,9 @@ class ProjectCard extends StatelessWidget {
                 colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
                 child: projectObject.makeIcon(),
               ),
-              const Icon(Icons.chevron_right_rounded, size: 40.0,)
+              underDevelopment
+                ? developmentChip(context)
+                : const Icon(Icons.chevron_right_rounded, size: 40.0,),
             ],
           ),
           shoebox,
@@ -116,8 +142,10 @@ class ProjectCard extends StatelessWidget {
         ],
       ),
       tapAction: () async {
-        final args = projectObject;
-        await Navigator.pushNamed(context, AppRoutes.projectDetails, arguments: args,);
+        if (!underDevelopment) {
+          final args = projectObject;
+          await Navigator.pushNamed(context, AppRoutes.projectDetails, arguments: args,);
+        }
       },
     );
   }
