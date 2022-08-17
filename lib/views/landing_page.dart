@@ -75,7 +75,9 @@ class _LandingPageState extends State<LandingPage> {
           visible: _workObjectController.list.isNotEmpty,
           child: WorkCard(
             workObject: _workObjectController.list.where((workObject) => workObject.companyName == "Probably Rational Ltd.").first,
-            padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+            padding: Responsive.isDesktop(context)
+              ? EdgeInsets.fromLTRB(defaultPadding * 2, defaultPadding * 2, defaultPadding * 2, 0.0,)
+              : EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
           ),
         ),
         SizedBox(height: defaultPadding * 3,),
@@ -270,7 +272,9 @@ class _LandingPageState extends State<LandingPage> {
           visible: _workObjectController.list.isNotEmpty,
           child: ProjectCard(
             projectObject: _projectObjectController.list.where((projectObject) => projectObject.projectName == "Coffee App").first,
-            padding: EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+            padding: Responsive.isDesktop(context)
+              ? EdgeInsets.fromLTRB(defaultPadding * 2, defaultPadding * 2, defaultPadding * 2, 0.0,)
+              : EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
             underDevelopment: true,
           ),
         ),

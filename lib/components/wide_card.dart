@@ -27,7 +27,7 @@ class WideCard extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                padding: padding ?? const EdgeInsets.all(defaultPadding,),
+                padding: padding ?? (Responsive.isDesktop(context) ? const EdgeInsets.all(defaultPadding * 2,) : const EdgeInsets.all(defaultPadding,)),
                 decoration: BoxDecoration(
                   color: themeProvider.isDarkMode ? backgroundColour1Dark : backgroundColour1Light,
                   borderRadius: BorderRadius.circular(20.0),
