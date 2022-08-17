@@ -3,6 +3,7 @@ import 'package:flutter_portfolio/constants.dart';
 import 'package:provider/provider.dart';
 
 import '../controllers/app_themes.dart';
+import '../controllers/responsive.dart';
 
 class WorkObject {
   final String icon;
@@ -91,6 +92,7 @@ class WorkObject {
             ],
           ),
           shoebox,
+          Responsive.isDesktop(context) ? shoebox : const SizedBox(),
         ],
       ),
     );
@@ -142,15 +144,20 @@ class WorkObject {
           ),
           Visibility(
             visible: _image?.isNotEmpty ?? false,
-            child: Column(
-              children: [
-                const SizedBox(height: defaultPadding * 0.5,),
-                AspectRatio(
-                  aspectRatio: 1.0,
-                  child: Image.asset(_image ?? '', errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) => Container(),),
-                ),
-                const SizedBox(height: defaultPadding * 1.5,),
-              ],
+            child: Center(
+              child: Column(
+                children: [
+                  const SizedBox(height: defaultPadding * 0.5,),
+                  SizedBox(
+                    width: Responsive.isDesktop(context) ? 500 : null,
+                    child: AspectRatio(
+                      aspectRatio: 1.0,
+                      child: Image.asset(_image ?? '', errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) => Container(),),
+                    ),
+                  ),
+                  const SizedBox(height: defaultPadding * 1.5,),
+                ],
+              ),
             ),
           ),
           Visibility(
