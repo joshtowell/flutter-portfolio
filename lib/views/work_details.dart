@@ -311,26 +311,26 @@ class _WorkDetailsState extends State<WorkDetails> {
               child: Navbar(),
             ),
             Responsive.isDesktop(context)
-            ? Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(left: defaultPadding, bottom: defaultPadding, right: 744,),
-                child: ElevatingButton(
-                  child: const Icon(Icons.arrow_back,),
-                  tapAction: () => Navigator.pop(context),
+              ? Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: defaultPadding, bottom: defaultPadding, right: 744,),
+                  child: ElevatingButton(
+                    child: const Icon(Icons.arrow_back,),
+                    tapAction: () => Navigator.pop(context),
+                    ),
+                  ),
+                )
+              : Align(
+                alignment: Alignment.bottomLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: defaultPadding, bottom: defaultPadding,),
+                  child: ElevatingButton(
+                    child: const Icon(Icons.arrow_back,),
+                    tapAction: () => Navigator.pop(context),
                   ),
                 ),
-              )
-            : Align(
-              alignment: Alignment.bottomLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: defaultPadding, bottom: defaultPadding,),
-                child: ElevatingButton(
-                  child: const Icon(Icons.arrow_back,),
-                  tapAction: () => Navigator.pop(context),
-                ),
               ),
-            ),
           ],
         ),
       ),

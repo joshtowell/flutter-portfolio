@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/constants.dart';
 
+import '../controllers/responsive.dart';
+
 class ProjectObject {
   final String icon;
   final String projectName;
@@ -84,6 +86,7 @@ class ProjectObject {
             ],
           ),
           shoebox,
+          Responsive.isDesktop(context) ? shoebox : const SizedBox(),
         ],
       ),
     );
@@ -126,9 +129,12 @@ class ProjectObject {
             child: Column(
               children: [
                 const SizedBox(height: defaultPadding * 0.5,),
-                AspectRatio(
-                  aspectRatio: 1.0,
-                  child: Image.asset(_image ?? '', errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) => Container(),),
+                SizedBox(
+                  width: Responsive.isDesktop(context) ? 500 : null,
+                  child: AspectRatio(
+                    aspectRatio: 1.0,
+                    child: Image.asset(_image ?? '', errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) => Container(),),
+                  ),
                 ),
                 const SizedBox(height: defaultPadding * 1.5,),
               ],
