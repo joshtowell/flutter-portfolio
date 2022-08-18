@@ -1,0 +1,155 @@
+{
+  "work": {
+    "cgi": {
+      "icon": "assets/images/work/cgi-logo-rounded.png",
+      "companyName": "CGI",
+      "jobTitle": "Technical Graduate",
+      "duration": "1 mon",
+      "jobSummary": "Delivering solutions to clients across various industries through the testing and development of cyber security.",
+      "image": "assets/images/work/cgi-cyber-security-triad.png",
+      "roleSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+      "featureImage1": "assets/images/work/pr_coffee_coding.jpg",
+      "keyResponsibilities": {
+        "build": {
+          "icon": "0xf5f3",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "collaborate": {
+          "icon": "0xf7c8",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "engage": {
+          "icon": "0xf69c",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "critical": {
+          "icon": "0xf00c4",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        }
+      }
+    },
+    "probablyRational": {
+      "icon": "assets/images/work/pr_logo_small.png",
+      "companyName": "Probably Rational Ltd.",
+      "jobTitle": "Software Engineer",
+      "duration": "2 yrs, 8 mos",
+      "jobSummary": "Build and develop efficient applications based on specified requirements set by the client.",
+      "image": "assets/images/work/ryb_mock_cropped.png",
+      "roleSummary": "As a Software Engineer, I take part in the consultation, design and implementation of mobile and web applications.\n\nMy responsibilities range from evaluating the initial requirements of the client, to ensuring that every user interaction is high quality.\n\nWorking as a small team, there are weekly delivery planning meetings and regular work and social interactions online and in-person.",
+      "featureImage1": "assets/images/work/pr_coffee_coding.jpg",
+      "keyResponsibilities": {
+        "build": {
+          "icon": "0xf5f3",
+          "text": "Build and develop mobile applications as a bespoke service for clients."
+        },
+        "collaborate": {
+          "icon": "0xf7c8",
+          "text": "Collaborate on implementing efficient and unique solutions as a unified team for simultaneous projects."
+        },
+        "engage": {
+          "icon": "0xf69c",
+          "text": "Engage with the design process and incorporate unique ideas."
+        },
+        "critical": {
+          "icon": "0xf00c4",
+          "text": "Consistent approach in applying technical skills and analytical thinking."
+        }
+      },
+      "involvementList": {
+        "readYourBody": {
+          "title": "Read Your Body",
+          "summary": "Read Your Body is the non-profit app that tracks your cycles to understand your unique patterns. This helps women to avoid or achieve pregnancy, confirm ovulation, anticipate their periods and take charge of their health. The app is highly customisable allowing users to fine tune and use professional charting methods to meet their specific health needs.\n\nRead Your Body is very well maintained as improvements and new features are added regularly - requested and prioritised by users.",
+          "involvement": "I have seen this project through from it's small beginnings in October 2019, and co-lead the development of the Android/iOS app into it's second version release.\n\nMy involvement in delivering this project have been: UI consultation & development, problem solving & feature integration, bug bashing and team task management.\n\nWorking on this project for over 2 years has taught me so many great lessons in agile software development and team organisation. I can confidently take this experience and apply it to new clients and other team related fields.",
+          "image": "assets/images/work/ryb_mock_full.png",
+          "url": "https://www.readyourbody.info/"
+        },
+        "equalEmployer": {
+          "title": "Equal Employer",
+          "summary": "This project aims to remove the bias from employment. The Equal Employer web and mobile app provides a job board platform for candiates to apply through and for employers to recurit.\n\nEqual Employer support, certify, and recognise businesses as an 'Equal Employer' upon successfully achieving our standards. It enables businesses to demonstrate their commitment to equality and prevent bias in recruitment through the use of our independent auditing service.",
+          "involvement": "My main involvement has been to support new staff working on this project and ensure each task is completed and shipped to a high quality. I aim to minimise the disparity between the clients expectations and the finalised product, improving team efficiency and the best service to their users.\n\nWorking from it's infant stages, this application is under constant revision and requires me to manage it simultaneously amongst other live projects.",
+          "image": "assets/images/work/equal_employer_approved.png",
+          "url": "https://equalemployer.com/"
+        },
+        "golfLadder": {
+          "title": "Golf Ladder",
+          "summary": "",
+          "involvement": "",
+          "image": "",
+          "url": ""
+        }
+      }
+    },
+    "reallyWildEducation": {
+      "icon": "assets/images/work/really_wild_logo.png",
+      "companyName": "Really Wild Education",
+      "jobTitle": "Trainee Instructor",
+      "duration": "1 yr, 3 mos",
+      "jobSummary": "Teaching and leading young people methods and skills required to survive and thrive in the outdoor environment.",
+      "image": "",
+      "roleSummary": "I aid the progression of learning that enables students to develop into outstanding individuals who consistently demonstrate a greater personal potential and even a propensity to lead.\n\nThis takes place in an outdoor environment setting where we teach bushcraft and survival skills to build personal development.",
+      "featureImage1": "",
+      "keyResponsibilities": {
+        "educate": {
+          "icon": "0xf012e",
+          "text": "Educating individuals of all ages how to survive in the outdoor environment, and thrive by developing skills of personal value."
+        },
+        "engage": {
+          "icon": "0xf79d",
+          "text": "Engaging groups of young people whilst achieving maximum enjoyment and positive results."
+        },
+        "persist": {
+          "icon": "0xf016b",
+          "text": "Practical, persistent and engaging in every session despite potentially adverse circumstances."
+        },
+        "teamwork": {
+          "icon": "0xf7c8",
+          "text": "Flawless teamwork with instructors, managing cohorts 120+ students by working collectively providing critical feedback, achieving the highest standards."
+        }
+      },
+      "involvementList": {}
+    }
+  },
+  "project": {
+    "coffeeApp": {
+      "icon": "assets/images/project/takeaway_coffee_icon.png",
+      "projectName": "Coffee App",
+      "projectType": "Personal Project",
+      "projectSummary": "Reminders to drink your coffee and remembers where you left it. Set timers for boiling and brewing so you never waste time or coffee again!",
+      "image": "assets/images/project/coffee_app_mocks_cropped.png",
+      "projectMotivation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+      "featureImage1": "assets/images/project/coffee-cup-feature.jpg",
+      "userStories": {
+        "build": {
+          "icon": "0xf5f3",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "collaborate": {
+          "icon": "0xf7c8",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "engage": {
+          "icon": "0xf69c",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "critical": {
+          "icon": "0xf00c4",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        }
+      },
+      "processList": {
+        "userAnalysis": {
+          "title": "User Analysis",
+          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+          "results": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
+          "image": ""
+        },
+        "adaptiveInterface": {
+          "title": "Adaptive Interface",
+          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+          "results": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
+          "image": ""
+        }
+      }
+    }
+  }
+}
