@@ -100,6 +100,15 @@ class _NavbarState extends State<Navbar> {
             tapAction: () => setState(() {
               final provider = Provider.of<WorkPersonalProvider>(context, listen: false,);
               provider.setWork();
+              /// Replaces and navigates to page widget with no animations
+              Navigator.pushReplacement(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation1, animation2) => const LandingPage(),
+                  transitionDuration: Duration.zero,
+                  reverseTransitionDuration: Duration.zero,
+                ),
+              );
             }),
           ),
           highlightingButton(
@@ -109,6 +118,15 @@ class _NavbarState extends State<Navbar> {
             tapAction: () => setState(() {
               final provider = Provider.of<WorkPersonalProvider>(context, listen: false,);
               provider.setPersonal();
+              /// Replaces and navigates to page widget with no animations
+              Navigator.pushReplacement(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation1, animation2) => const LandingPage(),
+                  transitionDuration: Duration.zero,
+                  reverseTransitionDuration: Duration.zero,
+                ),
+              );
             }),
           ),
           highlightingButton(
