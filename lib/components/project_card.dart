@@ -124,17 +124,16 @@ class ProjectCard extends StatelessWidget {
                     shoebox,
                     Text(projectObject.projectSummary, style: bodyText1(context),),
                     shoebox,
+                    Responsive.isDesktop(context) ? shoebox : const SizedBox(),
                   ],
                 ),
               ),
               shoebox,
               Expanded(
+                flex: (projectObject.image?.isNotEmpty ?? false) ? 1 : 0,
                 child: Visibility(
                   visible: projectObject.image?.isNotEmpty ?? false,
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: projectObject.makeImage(),
-                  ),
+                  child: projectObject.makeImage(fit: BoxFit.fitHeight,),
                 ),
               ),
             ],

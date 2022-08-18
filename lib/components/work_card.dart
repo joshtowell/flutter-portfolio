@@ -98,17 +98,16 @@ class WorkCard extends StatelessWidget {
                     shoebox,
                     Text(workObject.jobSummary, style: bodyText1(context),),
                     shoebox,
+                    Responsive.isDesktop(context) ? shoebox : const SizedBox(),
                   ],
                 ),
               ),
               shoebox,
               Expanded(
+                flex: (workObject.image?.isNotEmpty ?? false) ? 1 : 0,
                 child: Visibility(
                   visible: workObject.image?.isNotEmpty ?? false,
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: workObject.makeImage(),
-                  ),
+                  child: workObject.makeImage(fit: BoxFit.fitHeight,),
                 ),
               ),
             ],

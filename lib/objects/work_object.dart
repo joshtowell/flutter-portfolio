@@ -60,8 +60,8 @@ class WorkObject {
     return Image.asset(icon, width: 40.0, height: 40.0,);
   }
 
-  Widget makeImage() {
-    return image != null ? Image.asset(image ?? '',) : Container();
+  Widget makeImage({BoxFit? fit,}) {
+    return image != null ? Image.asset(image ?? '', fit: fit,) : Container();
   }
 
   Widget makeFeatureImage1() {
