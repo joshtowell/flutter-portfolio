@@ -2,10 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_portfolio/controllers/work_personal_controller.dart';
+import 'package:flutter_portfolio/views/landing_page.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
+import '../controllers/app_routes.dart';
 import '../controllers/app_themes.dart';
 import '../controllers/responsive.dart';
 import 'change_theme_widget.dart';
@@ -183,12 +185,30 @@ class _NavbarState extends State<Navbar> {
                   final provider = Provider.of<WorkPersonalProvider>(context, listen: false,);
                   provider.setWork();
                   if (isMenuOpen) isMenuOpen = false;
+                  /// Replaces and navigates to page widget with no animations
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation1, animation2) => const LandingPage(),
+                      transitionDuration: Duration.zero,
+                      reverseTransitionDuration: Duration.zero,
+                    ),
+                  );
                 }),
                 secondChild: const Icon(Icons.person_rounded),
                 secondAction: () => setState(() {
                   final provider = Provider.of<WorkPersonalProvider>(context, listen: false,);
                   provider.setPersonal();
                   if (isMenuOpen) isMenuOpen = false;
+                  /// Replaces and navigates to page widget with no animations
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation1, animation2) => const LandingPage(),
+                      transitionDuration: Duration.zero,
+                      reverseTransitionDuration: Duration.zero,
+                    ),
+                  );
                 }),
               ),
               ElevatingButton(
