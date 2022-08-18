@@ -378,7 +378,7 @@ class _LandingPageState extends State<LandingPage> {
                             padding: const EdgeInsets.symmetric(horizontal: defaultPadding,),
                             child: Text(
                               workPersonalProvider.isWork
-                                  ? "I am currently a Cyber Security Masters’ student, looking for a graduate job in the Cyber Security industry."
+                                  ? "A recent Cyber Security Master's Graduate working with CGI as a Technical Graduate in Cyber Security solutions."
                                   : "An enthusiastic, independent and confident learner. Looking to develop my passion for UI/UX into an exciting freelance career.",
                               textAlign: TextAlign.center,
                               style: bodyText1(context),
