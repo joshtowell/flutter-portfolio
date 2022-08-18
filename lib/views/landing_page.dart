@@ -382,7 +382,11 @@ class _LandingPageState extends State<LandingPage> {
                     child: ElevatingButton(
                       padding: EdgeInsets.all(defaultPadding * 0.5,),
                       child: Icon(Icons.expand_more_rounded, size: 40.0,),
-                      tapAction: () => landingScrollController.jumpTo(screenSize.height - (defaultPadding * 2)),
+                      tapAction: () => landingScrollController.animateTo(
+                        screenSize.height - (defaultPadding * 2),
+                        duration: Duration(milliseconds: 1000),
+                        curve: Curves.easeInOutQuart,
+                      ),
                     ),
                   ),
                 ],
