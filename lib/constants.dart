@@ -77,3 +77,6 @@ TextStyle? button (BuildContext context) => Responsive.isDesktop(context) ? Them
 
 /// # MINI WIDGETS
 const Widget shoebox = SizedBox(height: defaultPadding, width: defaultPadding,);
+
+/// # ANIMATIONS
+final slideTween = Tween(begin: const Offset(1.0, 0.0), end: Offset.zero,).chain(CurveTween(curve: Curves.easeInOutQuart));

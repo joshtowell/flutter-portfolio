@@ -13,12 +13,48 @@ import 'elevating_button.dart';
 class WorkCard extends StatelessWidget {
   final WorkObject workObject;
   final EdgeInsetsGeometry? padding;
+  final bool underDevelopment;
 
   const WorkCard({
     required this.workObject,
     this.padding,
+    this.underDevelopment = false,
     Key? key,
   }) : super(key: key);
+
+  Future<void> _handlePopNavigation(BuildContext context) async {
+    await Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, pushAnimation, popAnimation) => WorkDetails(workObject: workObject),
+        transitionDuration: const Duration(milliseconds: 1000),
+        transitionsBuilder: (context, pushAnimation, popAnimation, child) {
+          return SlideTransition(
+            position: pushAnimation.drive(slideTween),
+            child: child,
+          );
+        }
+      ),
+    );
+  }
+
+  Widget developmentChip(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: defaultPadding * 0.5, horizontal: defaultPadding,),
+      decoration: BoxDecoration(
+        color: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
+        borderRadius: BorderRadius.circular(30.0),
+      ),
+      child: ShaderMask(
+        blendMode: BlendMode.srcIn,
+        shaderCallback: (bounds) {
+          return purpleHighlightGradient.createShader(bounds);
+        },
+        child: Text("Under development", style: bodyText2(context),),
+      ),
+    );
+  }
 
   Widget mobileBuild(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -36,7 +72,9 @@ class WorkCard extends StatelessWidget {
                 colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
                 child: workObject.makeIcon(),
               ),
-              const Icon(Icons.chevron_right_rounded, size: 40.0,)
+              underDevelopment
+                  ? developmentChip(context)
+                  : const Icon(Icons.chevron_right_rounded, size: 40.0,),
             ],
           ),
           shoebox,
@@ -60,8 +98,9 @@ class WorkCard extends StatelessWidget {
         ],
       ),
       tapAction: () async {
-        final args = workObject;
-        await Navigator.pushNamed(context, AppRoutes.workDetails, arguments: args,);
+        if (!underDevelopment) {
+          await _handlePopNavigation(context);
+        }
       },
     );
   }
@@ -82,7 +121,9 @@ class WorkCard extends StatelessWidget {
                 colour: themeProvider.isDarkMode ? backgroundColour2Dark : backgroundColour2Light,
                 child: workObject.makeIcon(),
               ),
-              const Icon(Icons.chevron_right_rounded, size: 40.0,)
+              underDevelopment
+                  ? developmentChip(context)
+                  : const Icon(Icons.chevron_right_rounded, size: 40.0,),
             ],
           ),
           shoebox,
@@ -116,22 +157,9 @@ class WorkCard extends StatelessWidget {
         ],
       ),
       tapAction: () async {
-        // final args = workObject;
-        // await Navigator.pushNamed(context, AppRoutes.workDetails, arguments: args,);
-        final slideTween = Tween(begin: const Offset(0.0, 1.0), end: Offset.zero,).chain(CurveTween(curve: Curves.easeInOutQuart));
-        await Navigator.push(
-          context,
-          PageRouteBuilder(
-            pageBuilder: (c, a1, a2) => WorkDetails(workObject: workObject),
-            transitionDuration: const Duration(milliseconds: 1000),
-            transitionsBuilder: (context, pushAnimation, popAnimation, child) {
-              return SlideTransition(
-                position: pushAnimation.drive(slideTween),
-                child: child,
-              );
-            }
-          ),
-        );
+        if (!underDevelopment) {
+          await _handlePopNavigation(context);
+        }
       },
     );
   }

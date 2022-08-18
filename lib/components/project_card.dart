@@ -7,6 +7,7 @@ import '../controllers/app_routes.dart';
 import '../controllers/app_themes.dart';
 import '../controllers/responsive.dart';
 import '../objects/project_object.dart';
+import '../views/project_details.dart';
 import 'elevating_button.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -20,6 +21,22 @@ class ProjectCard extends StatelessWidget {
     this.underDevelopment = false,
     Key? key,
   }) : super(key: key);
+
+  Future<void> _handlePopNavigation(BuildContext context) async {
+    await Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, pushAnimation, popAnimation) => ProjectDetails(projectObject: projectObject),
+        transitionDuration: const Duration(milliseconds: 1000),
+        transitionsBuilder: (context, pushAnimation, popAnimation, child) {
+          return SlideTransition(
+            position: pushAnimation.drive(slideTween),
+            child: child,
+          );
+        }
+      ),
+    );
+  }
 
   Widget developmentChip(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -82,8 +99,7 @@ class ProjectCard extends StatelessWidget {
       ),
       tapAction: () async {
         if (!underDevelopment) {
-          final args = projectObject;
-          await Navigator.pushNamed(context, AppRoutes.projectDetails, arguments: args,);
+          await _handlePopNavigation(context);
         }
       },
     );
@@ -142,8 +158,7 @@ class ProjectCard extends StatelessWidget {
       ),
       tapAction: () async {
         if (!underDevelopment) {
-          final args = projectObject;
-          await Navigator.pushNamed(context, AppRoutes.projectDetails, arguments: args,);
+          await _handlePopNavigation(context);
         }
       },
     );
