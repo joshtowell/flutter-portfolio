@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/components/wide_card.dart';
 import 'package:flutter_portfolio/objects/work_object.dart';
+import 'package:flutter_portfolio/views/work_details.dart';
 import 'package:provider/provider.dart';
 
 import '../constants.dart';
@@ -115,8 +116,22 @@ class WorkCard extends StatelessWidget {
         ],
       ),
       tapAction: () async {
-        final args = workObject;
-        await Navigator.pushNamed(context, AppRoutes.workDetails, arguments: args,);
+        // final args = workObject;
+        // await Navigator.pushNamed(context, AppRoutes.workDetails, arguments: args,);
+        final slideTween = Tween(begin: const Offset(0.0, 1.0), end: Offset.zero,).chain(CurveTween(curve: Curves.easeInOutQuart));
+        await Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (c, a1, a2) => WorkDetails(workObject: workObject),
+            transitionDuration: const Duration(milliseconds: 1000),
+            transitionsBuilder: (context, pushAnimation, popAnimation, child) {
+              return SlideTransition(
+                position: pushAnimation.drive(slideTween),
+                child: child,
+              );
+            }
+          ),
+        );
       },
     );
   }
