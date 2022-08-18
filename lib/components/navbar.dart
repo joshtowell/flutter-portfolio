@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
-import '../controllers/app_routes.dart';
 import '../controllers/app_themes.dart';
 import '../controllers/responsive.dart';
 import 'change_theme_widget.dart';

@@ -3,7 +3,6 @@ import 'package:flutter_portfolio/components/wide_card.dart';
 import 'package:provider/provider.dart';
 
 import '../constants.dart';
-import '../controllers/app_routes.dart';
 import '../controllers/app_themes.dart';
 import '../controllers/responsive.dart';
 import '../objects/project_object.dart';
