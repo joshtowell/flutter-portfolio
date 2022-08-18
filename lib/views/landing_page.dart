@@ -29,6 +29,8 @@ class _LandingPageState extends State<LandingPage> {
   Size screenSize = Size(0.0, 0.0);
   bool isLightMode = false;
 
+  final ScrollController landingScrollController = ScrollController();
+
   final WorkObjectController _workObjectController = WorkObjectController();
   final ProjectObjectController _projectObjectController = ProjectObjectController();
 
@@ -297,6 +299,7 @@ class _LandingPageState extends State<LandingPage> {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final workPersonalProvider = Provider.of<WorkPersonalProvider>(context);
     return SingleChildScrollView(
+      controller: landingScrollController,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding,),
         child: Column(
@@ -379,12 +382,13 @@ class _LandingPageState extends State<LandingPage> {
                     child: ElevatingButton(
                       padding: EdgeInsets.all(defaultPadding * 0.5,),
                       child: Icon(Icons.expand_more_rounded, size: 40.0,),
+                      tapAction: () => landingScrollController.jumpTo(screenSize.height - (defaultPadding * 2)),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: defaultPadding * 4,),
+            SizedBox(height: screenSize.height * 0.2,),
 
             /// Start of second view
             FutureBuilder(
