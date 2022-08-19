@@ -7,8 +7,8 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
 "canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
 "canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
-"main.dart.js": "e732e08d3bb043765ec58d62f688dad4",
-"assets/AssetManifest.json": "185bab6e39ee1f6db468d5a1b83da88c",
+"main.dart.js": "a8bc932b68d917633e6013caa57d15b9",
+"assets/AssetManifest.json": "efd5b655358ba32836b22b37798a7272",
 "assets/assets/experience_data.json": "283ff9dd836cfd31c9089c0c733ef4db",
 "assets/assets/images/work/ryb_mock_cropped.png": "b8776b3610bb8276199d6addfeaeee13",
 "assets/assets/images/work/ryb_mock_full.png": "43ab3d90b5de6efe49be9a73deb80375",
@@ -28,6 +28,7 @@ const RESOURCES = {
 "assets/assets/images/project/takeaway_coffee_icon.png": "cd0b1840ab34f5976a593e4b4e622b18",
 "assets/assets/images/project/coffee-cup-feature.jpg": "e41b956de8b140369a06860256c256a5",
 "assets/assets/images/project/coffee_app_mocks_cropped.png": "63ae6fdd45e7597572a4b09b958a5295",
+"assets/assets/images/j-logo.png": "a21c96d33cd7bc70a31d53a6e0df3844",
 "assets/assets/svgs/tiktok_icon.svg": "721e71c81f57aef91e70637fdc2f80c6",
 "assets/assets/svgs/youtube_icon.svg": "140bc89e487a2e28d35591fc8a47bb6a",
 "assets/assets/svgs/github2_icon.svg": "a217270f88c7a4f12a02bfa92599cc2c",
@@ -40,15 +41,14 @@ const RESOURCES = {
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/NOTICES": "d5d1c1f415bc5789e21332bf828fbeb7",
-"index.html": "bdd01e4a093b00cf7e4acbbe547a4198",
-"/": "bdd01e4a093b00cf7e4acbbe547a4198",
-"favicon.png": "5dcef449791fa27946b3d35ad8803796",
+"index.html": "f0b6ad76b10fe19f35befafb5c961729",
+"/": "f0b6ad76b10fe19f35befafb5c961729",
+"favicon.png": "153b7693126bf886ee3b333eb7552398",
 "version.json": "c420e205d8eac4ccea99913b4a50bfa7",
 "manifest.json": "4d2a074e955647542596586cbde41715",
-"icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
-"icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1"
+"icons/apple-touch-icon.png": "5bffe66e9eefd9db202b1a0fbbd16695",
+"icons/android-chrome-512x512.png": "767465fcebc8f648553d549835dcd362",
+"icons/android-chrome-192x192.png": "b18fa16d8cdcfd30262fa6ac8123eef2"
 };
 
 // The application shell files that are downloaded before a service worker can
