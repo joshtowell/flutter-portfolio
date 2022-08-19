@@ -357,6 +357,14 @@ class _LandingPageState extends State<LandingPage> {
                         children: [
                           Text("Hi, I'm Joshua.", textAlign: TextAlign.center, style: headline1(context),),
                           shoebox,
+                          ShaderMask(
+                            blendMode: BlendMode.srcIn,
+                            shaderCallback: (bounds) {
+                              return purpleHighlightGradient.createShader(bounds);
+                            },
+                            child: Text("J", textAlign: TextAlign.center, style: headline1(context),),
+                          ),
+                          shoebox,
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
