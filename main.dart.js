@@ -13547,7 +13547,7 @@ a08:function a08(a){this.a=a},
 NG(a){var s=0,r=A.P(t.H)
 var $async$NG=A.Q(function(b,c){if(b===1)return A.M(c,r)
 while(true)switch(s){case 0:s=2
-return A.U(B.c7.dY("Clipboard.setData",A.aQ(["text","jntowell@hotmail.com"],t.N,t.z),t.H),$async$NG)
+return A.U(B.c7.dY("Clipboard.setData",A.aQ(["text","hello@joshuatowell.com"],t.N,t.z),t.H),$async$NG)
 case 2:return A.N(null,r)}})
 return A.O($async$NG,r)},
 NA:function NA(){},
@@ -53686,7 +53686,7 @@ lB(){var s=0,r=A.P(t.z),q=1,p,o=[],n=this,m,l,k,j
 var $async$lB=A.Q(function(a,b){if(a===1){p=b
 s=q}while(true)switch(s){case 0:q=3
 s=6
-return A.U(A.a5w(A.acT("jntowell@hotmail.com","subject=\ud83d\udc4b Hello, let's talk!","mailto")),$async$lB)
+return A.U(A.a5w(A.acT("hello@joshuatowell.com","subject=\ud83d\udc4b Hello, let's talk!","mailto")),$async$lB)
 case 6:q=1
 s=5
 break
