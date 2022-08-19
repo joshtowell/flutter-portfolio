@@ -4,7 +4,7 @@ import 'controllers/responsive.dart';
 
 /// # VALUES
 
-const String contactEmail = "jntowell@hotmail.com";
+const String contactEmail = "hello@joshuatowell.com";
 
 
 /// # COLOURS
