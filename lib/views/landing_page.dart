@@ -80,7 +80,7 @@ class _LandingPageState extends State<LandingPage> {
             padding: Responsive.isDesktop(context)
                 ? EdgeInsets.all(defaultPadding * 2,)
                 : EdgeInsets.all(defaultPadding,),
-            underDevelopment: true,
+            // underDevelopment: true,
           ),
         ),
         SizedBox(height: defaultPadding * 3,),

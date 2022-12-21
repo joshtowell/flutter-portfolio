@@ -23,6 +23,7 @@ class WorkDetails extends StatefulWidget {
 class _WorkDetailsState extends State<WorkDetails> {
   Size screenSize = const Size(0.0, 0.0);
 
+  /// Find Icon codes at: https://api.flutter.dev/flutter/material/Icons-class.html#constants
   List<Widget> generateKeyResponsibilities() {
     List<Widget> _list = [];
     widget.workObject.keyResponsibilities?.forEach((key, value) {
