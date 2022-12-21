@@ -4,27 +4,27 @@
       "icon": "assets/images/work/cgi-logo-rounded.png",
       "companyName": "CGI",
       "jobTitle": "Technical Graduate",
-      "duration": "1 mon",
+      "duration": "4 mos",
       "jobSummary": "Delivering solutions to clients across various industries through the testing and development of cyber security.",
       "image": "assets/images/work/cgi-cyber-security-triad.png",
-      "roleSummary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
-      "featureImage1": "assets/images/work/pr_coffee_coding.jpg",
+      "roleSummary": "CGI offer Technical Graduates multiple 6 month rotations across various projects in the Space, Defence & Intelligence business unit. So far, I have had the opportunity to work in Information Assurance and Operational Security Management roles, taking part in assessing the risk and running internal security operations.\n\nAlongside my day-to-day responsibilities, I work in a team with my peers to engineer and lead the development of a project that involves emerging technologies used in the current landscape of tech.",
+      "featureImage1": "assets/images/work/cgi_cyber_escape_lincoln.jpg",
       "keyResponsibilities": {
-        "build": {
-          "icon": "0xf5f3",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        "learn": {
+          "icon": "0xf8b4",
+          "text": "Work alongside Security Team members to learn project specific skills and knowledge."
         },
-        "collaborate": {
-          "icon": "0xf7c8",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        "best": {
+          "icon": "0xf01d4",
+          "text": "Complete tasks to the greatest ability of your understanding."
         },
-        "engage": {
-          "icon": "0xf69c",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        "social": {
+          "icon": "0xf79d",
+          "text": "Make the most of networking opportunities and social events."
         },
-        "critical": {
-          "icon": "0xf00c4",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        "values": {
+          "icon": "0xf0144",
+          "text": "Become a CGI Member and operate under the CGI framework and values."
         }
       }
     },
@@ -116,6 +116,47 @@
       "projectType": "Personal Project",
       "projectSummary": "Reminders to drink your coffee and remembers where you left it. Set timers for boiling and brewing so you never waste time or coffee again!",
       "image": "assets/images/project/coffee_app_mocks_cropped.png",
+      "projectMotivation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+      "featureImage1": "assets/images/project/coffee-cup-feature.jpg",
+      "userStories": {
+        "build": {
+          "icon": "0xf5f3",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "collaborate": {
+          "icon": "0xf7c8",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "engage": {
+          "icon": "0xf69c",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "critical": {
+          "icon": "0xf00c4",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        }
+      },
+      "processList": {
+        "userAnalysis": {
+          "title": "User Analysis",
+          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+          "results": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
+          "image": ""
+        },
+        "adaptiveInterface": {
+          "title": "Adaptive Interface",
+          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+          "results": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
+          "image": ""
+        }
+      }
+    },
+    "webPortfolio": {
+      "icon": "assets/images/project/web_programming_icon.png",
+      "projectName": "Web Portfolio",
+      "projectType": "Personal Project",
+      "projectSummary": "Using UI/UX experience, design and develop a personal web portfolio from scratch to share career experience and personal projects.",
+      "image": "assets/images/project/web_portfolio_figma.png",
       "projectMotivation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
       "featureImage1": "assets/images/project/coffee-cup-feature.jpg",
       "userStories": {
