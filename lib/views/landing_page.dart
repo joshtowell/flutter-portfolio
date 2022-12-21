@@ -363,7 +363,7 @@ class _LandingPageState extends State<LandingPage> {
                               Icon(Icons.person_pin_circle_rounded, size: 16.0, color: themeProvider.isDarkMode ? backgroundColour3Dark : backgroundColour3Light,),
                               SizedBox(width: defaultPadding * 0.5,),
                               Text(
-                                "Swansea, Wales",
+                                geoLocation,
                                 textAlign: TextAlign.center,
                                 style: bodyText2(context)?.copyWith(
                                   color: workPersonalProvider.isWork
