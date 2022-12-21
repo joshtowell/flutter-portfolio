@@ -150,6 +150,47 @@
           "image": ""
         }
       }
+    },
+    "webPortfolio": {
+      "icon": "assets/images/project/web_programming_icon.png",
+      "projectName": "Web Portfolio",
+      "projectType": "Personal Project",
+      "projectSummary": "Using UI/UX experience, design and develop a personal web portfolio from scratch to share career experience and personal projects.",
+      "image": "assets/images/project/web_portfolio_figma.png",
+      "projectMotivation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+      "featureImage1": "assets/images/project/coffee-cup-feature.jpg",
+      "userStories": {
+        "build": {
+          "icon": "0xf5f3",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "collaborate": {
+          "icon": "0xf7c8",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "engage": {
+          "icon": "0xf69c",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        },
+        "critical": {
+          "icon": "0xf00c4",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis."
+        }
+      },
+      "processList": {
+        "userAnalysis": {
+          "title": "User Analysis",
+          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+          "results": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
+          "image": ""
+        },
+        "adaptiveInterface": {
+          "title": "Adaptive Interface",
+          "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci libero, consectetur id finibus quis, mollis nec turpis.\n\nNulla commodo felis vel urna sagittis pellentesque. Pellentesque tempus est sed erat faucibus varius. Etiam vitae tincidunt leo. Sed iaculis ex enim, et porttitor sem accumsan eu.",
+          "results": "Nunc nisl metus, rutrum eu convallis eget, consequat id arcu. Nunc eu congue nisl. Aenean ut leo convallis, placerat erat at, viverra metus. Aliquam non iaculis arcu.",
+          "image": ""
+        }
+      }
     }
   }
 }
