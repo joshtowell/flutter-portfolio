@@ -16,7 +16,10 @@ class ThemeProvider extends ChangeNotifier {
         themeMode = ThemeMode.light;
         break;
       default:
-        themeMode = ThemeMode.system;
+        /// Had to remove default system theme as causing conflicting UI on device initial connection
+        /// Default theme is now light mode
+        // themeMode = ThemeMode.system;
+        themeMode = ThemeMode.light;
         break;
     }
     // notifyListeners();   // TODO: Look into init on constructor - conflicting setState()

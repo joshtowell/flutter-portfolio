@@ -5,6 +5,7 @@ import 'controllers/responsive.dart';
 /// # VALUES
 
 const String contactEmail = "hello@joshuatowell.com";
+const String geoLocation = "Manchester, UK";
 
 
 /// # COLOURS

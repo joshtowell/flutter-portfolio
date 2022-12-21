@@ -80,7 +80,7 @@ class _LandingPageState extends State<LandingPage> {
             padding: Responsive.isDesktop(context)
                 ? EdgeInsets.all(defaultPadding * 2,)
                 : EdgeInsets.all(defaultPadding,),
-            underDevelopment: true,
+            // underDevelopment: true,
           ),
         ),
         SizedBox(height: defaultPadding * 3,),
@@ -282,12 +282,23 @@ class _LandingPageState extends State<LandingPage> {
     return Column(
       children: [
         Visibility(
-          visible: _workObjectController.list.isNotEmpty,
+          visible: _projectObjectController.list.isNotEmpty,
           child: ProjectCard(
-            projectObject: _projectObjectController.list.where((projectObject) => projectObject.projectName == "Coffee App").first,
+            projectObject: _projectObjectController.list.where((projectObject) => projectObject.projectName == "Web Portfolio").first,
             padding: Responsive.isDesktop(context)
               ? EdgeInsets.fromLTRB(defaultPadding * 2, defaultPadding * 2, defaultPadding * 2, 0.0,)
               : EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
+            underDevelopment: true,
+          ),
+        ),
+        SizedBox(height: defaultPadding * 3,),
+        Visibility(
+          visible: _projectObjectController.list.isNotEmpty,
+          child: ProjectCard(
+            projectObject: _projectObjectController.list.where((projectObject) => projectObject.projectName == "Coffee App").first,
+            padding: Responsive.isDesktop(context)
+                ? EdgeInsets.fromLTRB(defaultPadding * 2, defaultPadding * 2, defaultPadding * 2, 0.0,)
+                : EdgeInsets.fromLTRB(defaultPadding, defaultPadding, defaultPadding, 0.0,),
             underDevelopment: true,
           ),
         ),
@@ -363,7 +374,7 @@ class _LandingPageState extends State<LandingPage> {
                               Icon(Icons.person_pin_circle_rounded, size: 16.0, color: themeProvider.isDarkMode ? backgroundColour3Dark : backgroundColour3Light,),
                               SizedBox(width: defaultPadding * 0.5,),
                               Text(
-                                "Swansea, Wales",
+                                geoLocation,
                                 textAlign: TextAlign.center,
                                 style: bodyText2(context)?.copyWith(
                                   color: workPersonalProvider.isWork
