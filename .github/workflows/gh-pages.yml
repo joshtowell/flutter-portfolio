@@ -27,7 +27,7 @@ jobs:
       - run: flutter analyze
 #      - run: flutter test
       - run: flutter clean
-      - run: flutter build web --release
+      - run: flutter build web --release --no-tree-shake-icons
 
       # Deploy to local repo
       - name: Push web build to gh-pages
