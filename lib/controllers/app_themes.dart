@@ -37,7 +37,7 @@ class AppThemes {
   /// FontWeight.normal (w400)
   /// FontWeight.normal (w700)
   static final TextTheme textTheme = TextTheme(
-    headline1: GoogleFonts.montserrat(
+    displayLarge: GoogleFonts.montserrat(
       textStyle: const TextStyle(
         /// Mobile: 36.0
         /// Desktop: 68.0
@@ -45,7 +45,7 @@ class AppThemes {
         fontWeight: FontWeight.w600,
       ),
     ),
-    headline2: GoogleFonts.montserrat(
+    displayMedium: GoogleFonts.montserrat(
       textStyle: const TextStyle(
         /// Mobile: 26.0
         /// Desktop: 36.0
@@ -53,7 +53,7 @@ class AppThemes {
         fontWeight: FontWeight.w600,
       ),
     ),
-    subtitle1: GoogleFonts.montserrat(
+    titleMedium: GoogleFonts.montserrat(
       textStyle: const TextStyle(
         /// Mobile: 18.0
         /// Desktop: 24.0
@@ -61,7 +61,7 @@ class AppThemes {
         fontWeight: FontWeight.w800,
       ),
     ),
-    subtitle2: GoogleFonts.montserrat(
+    titleSmall: GoogleFonts.montserrat(
       textStyle: const TextStyle(
         /// Mobile: 18.0
         /// Desktop: 24.0
@@ -69,7 +69,7 @@ class AppThemes {
         fontWeight: FontWeight.w300,
       ),
     ),
-    bodyText1: GoogleFonts.montserrat(
+    bodyLarge: GoogleFonts.montserrat(
       textStyle: const TextStyle(
         /// Mobile: 16.0
         /// Desktop: 16.0
@@ -77,7 +77,7 @@ class AppThemes {
         fontWeight: FontWeight.w300,
       ),
     ),
-    bodyText2: GoogleFonts.montserrat(
+    bodyMedium: GoogleFonts.montserrat(
       textStyle: const TextStyle(
         /// Mobile: 14.0
         /// Desktop: 16.0
@@ -85,7 +85,7 @@ class AppThemes {
         fontWeight: FontWeight.w300,
       ),
     ),
-    button: GoogleFonts.montserrat(
+    labelLarge: GoogleFonts.montserrat(
       textStyle: const TextStyle(
         /// Mobile: 16.0
         /// Desktop: 16.0

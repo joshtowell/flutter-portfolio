@@ -59,13 +59,13 @@ const double defaultPadding = 16.0;
 /// - Desktop 32 pixels
 
 /// # STYLE SHORTCUTS
-TextStyle? headline1 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.headline1?.copyWith(fontSize: 68.0,) : Theme.of(context).textTheme.headline1;
-TextStyle? headline2 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.headline2?.copyWith(fontSize: 32.0,) : Theme.of(context).textTheme.headline2;
-TextStyle? subtitle1 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.subtitle1?.copyWith(fontSize: 24.0,) : Theme.of(context).textTheme.subtitle1;
-TextStyle? subtitle2 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 24.0,) : Theme.of(context).textTheme.subtitle2;
-TextStyle? bodyText1 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 18.0,) : Theme.of(context).textTheme.bodyText1;
-TextStyle? bodyText2 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.bodyText2?.copyWith(fontSize: 16.0,) : Theme.of(context).textTheme.bodyText2;
-TextStyle? button (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.button?.copyWith(fontSize: 16.0,) : Theme.of(context).textTheme.button;
+TextStyle? headline1 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.displayLarge?.copyWith(fontSize: 68.0,) : Theme.of(context).textTheme.displayLarge;
+TextStyle? headline2 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.displayMedium?.copyWith(fontSize: 32.0,) : Theme.of(context).textTheme.displayMedium;
+TextStyle? subtitle1 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.titleMedium?.copyWith(fontSize: 24.0,) : Theme.of(context).textTheme.titleMedium;
+TextStyle? subtitle2 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.titleSmall?.copyWith(fontSize: 24.0,) : Theme.of(context).textTheme.titleSmall;
+TextStyle? bodyText1 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 18.0,) : Theme.of(context).textTheme.bodyLarge;
+TextStyle? bodyText2 (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 16.0,) : Theme.of(context).textTheme.bodyMedium;
+TextStyle? button (BuildContext context) => Responsive.isDesktop(context) ? Theme.of(context).textTheme.labelLarge?.copyWith(fontSize: 16.0,) : Theme.of(context).textTheme.labelLarge;
 
 /// Button shadows should use same colour as button
 /// Button shadow not too intense, but always used (never 100% flat)

@@ -29,8 +29,8 @@ class _NavbarState extends State<Navbar> {
     elevation: 5.0,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
     backgroundColor: Colors.green,
-    content: Row(
-      children: const [
+    content: const Row(
+      children: [
         Icon(Icons.check_rounded, color: whiteColour,),
         shoebox,
         Flexible(child: Text('Copied! My email address is in your clipboard.')),
