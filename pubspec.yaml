@@ -34,13 +34,13 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   # Add extra fonts (https://fonts.google.com/)
-  google_fonts: ^2.3.1
+  google_fonts: ^4.0.4
 
   # State management (see https://www.youtube.com/watch?v=HSAa9yi0OMA)
   provider: ^6.0.2
 
   # Allow SVGs to be displayed
-  flutter_svg: ^1.0.3
+  flutter_svg: ^2.0.5
 
   # Storing data locally (non-encrypted)
   shared_preferences: ^2.0.15
